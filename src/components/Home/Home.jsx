@@ -37,7 +37,7 @@ function Home() {
                     Deserunt, nihil.
                   </span>
                 </Modal>
-                <span>{el.name}</span>;<div>hello,world</div>
+                <span>{el.name}</span>
                 <img
                   alt="#"
                   src={"https://shikimori.org" + el.image.original}
