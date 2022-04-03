@@ -1,0 +1,31 @@
+.home_page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.element_list {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.element_content {
+  border: 1px solid black;
+  width: 250px;
+  margin: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.element_image {
+  width: 250px;
+  height: 350px;
+  max-height: 350px;
+  min-height: 350px;
+  min-width: 250px;
+  background-size: cover;
+}
+modal_content {
+}
