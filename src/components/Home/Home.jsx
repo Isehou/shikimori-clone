@@ -30,20 +30,19 @@ function Home() {
         {list.map((el, i) => {
           return (
             <div className="element_content">
-                <Modal isOpen={isModalOpen} changeModalVisible={setModalOpen}>
-                  <p className="modal_content">Lorem ipsum, dolor sit.</p>
-                </Modal>
+              <Modal isOpen={isModalOpen} changeModalVisible={setModalOpen}>
+                <p className="modal_content">Lorem ipsum, dolor sit.</p>
+              </Modal>
 
-                <span>{el.name}</span>
-                <img
-                  alt="#"
-                  src={"https://shikimori.org" + el.image.original}
-                  className="element_image"
-                  />
-                <button className="open_modal" onClick={() => setModalOpen(true)}>Open Modal</button>
-                
-                  
-
+              <span>{el.name}</span>
+              <img
+                alt="#"
+                src={"https://shikimori.org" + el.image.original}
+                className="element_image"
+              />
+              <button className="open_modal" onClick={() => setModalOpen(true)}>
+                Open Modal
+              </button>
             </div>
           );
         })}
