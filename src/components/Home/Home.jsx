@@ -9,7 +9,7 @@ function Home() {
   const [isModalOpen, setModalOpen] = useState(false);
   useEffect(() => {
     fetch(
-      `https://shikimori.org/api/animes?genre=5&r_plus&limit=30&page=${page}`
+      `https://shikimori.org/api/animes?genre=8&r_plus&limit=30&page=${page}`
     )
       .then((res) => res.json())
       .then((res) => setList(res));
@@ -34,7 +34,7 @@ function Home() {
                 <p className="modal_content">Lorem ipsum, dolor sit.</p>
               </Modal>
 
-              <span>{el.name}</span>
+              <span className="element_text">{el.russian}</span>
               <img
                 alt="#"
                 src={"https://shikimori.org" + el.image.original}
