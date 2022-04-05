@@ -9,7 +9,7 @@ function Home() {
   const [isModalOpen, setModalOpen] = useState(false);
   useEffect(() => {
     fetch(
-      `https://shikimori.org/api/animes?genre=14&r_plus&limit=30&page=${page}`
+      `https://shikimori.org/api/animes?genre=5&r_plus&limit=30&page=${page}`
     )
       .then((res) => res.json())
       .then((res) => setList(res));
@@ -30,20 +30,20 @@ function Home() {
         {list.map((el, i) => {
           return (
             <div className="element_content">
-              <div className="open_modale" onCLick={() => setModalOpen(true)}>
                 <Modal isOpen={isModalOpen} changeModalVisible={setModalOpen}>
-                  <span className="modal_content">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Deserunt, nihil.
-                  </span>
+                  <p className="modal_content">Lorem ipsum, dolor sit.</p>
                 </Modal>
+
                 <span>{el.name}</span>
                 <img
                   alt="#"
                   src={"https://shikimori.org" + el.image.original}
                   className="element_image"
-                />
-              </div>
+                  />
+                <button className="open_modal" onClick={() => setModalOpen(true)}>Open Modal</button>
+                
+                  
+
             </div>
           );
         })}
