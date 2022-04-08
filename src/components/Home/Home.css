@@ -6,11 +6,10 @@
 }
 .element_list {
   display: inline-flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
-.element_content {
+.block_content {
   border: 1px solid black;
   width: 300px;
   height: 500px;
@@ -22,11 +21,15 @@
   flex-wrap: wrap;
   font-size: 14pt;
 }
-.element_text {
+.modal_content {
+  position: fixed;
+  box-shadow: 10px solid black;
+}
+.block_text {
   margin: 5px;
   max-height: 40px;
 }
-.element_image {
+.block_image {
   width: 300px;
   height: 400px;
   max-width: 300px;
