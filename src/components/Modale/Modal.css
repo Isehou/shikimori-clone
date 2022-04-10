@@ -1,7 +1,7 @@
 .modal {
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.02);
+  background-color: rgba(0, 0, 0, 0.4);
   position: fixed;
   top: 0;
   left: 0;
@@ -20,7 +20,7 @@
 .modal_content {
   padding: 20px;
   background-color: white;
-  height: 300px;
-  width: 230px;
+  height: 350px;
+  width: 250px;
   transition: 0.4s all;
 }

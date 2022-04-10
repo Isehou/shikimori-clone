@@ -23,7 +23,11 @@
 }
 .modal_content {
   position: fixed;
-  box-shadow: 10px solid black;
+  box-shadow: 100px solid black;
+  border: 1px solid black;
+}
+.modal_content_text {
+  font-size: 14pt;
 }
 .block_text {
   margin: 5px;

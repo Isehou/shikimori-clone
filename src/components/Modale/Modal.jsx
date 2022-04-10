@@ -7,8 +7,9 @@ const Modal = ({ isOpen, changeModalVisible, children }) => {
       className={isOpen ? "modal active" : "modal"}
       onClick={() => changeModalVisible(false)}
     >
-      <div className="modal_content" onClick={(e) => e.stopPropagation()} />
-      {children}
+      <div className="modal_content" onClick={(e) => e.stopPropagation()}>
+        {children}
+      </div>
     </div>
   );
 };

@@ -6,10 +6,15 @@ import "./Home.css";
 function Home() {
   const [list, setList] = useState([]);
   const [page, setPage] = useState(1);
+  const [curr, setCurr] = useState(null);
   const [isModalOpen, setModalOpen] = useState(false);
+  const openModal = (state, element) => {
+    setModalOpen(state);
+    setCurr(element);
+  };
   useEffect(() => {
     fetch(
-      `https://shikimori.org/api/animes?genre=8&r_plus&limit=20&page=${page}`
+      `https://shikimori.org/api/animes?genre=7&r_plus&limit=30&page=${page}`
     )
       .then((res) => res.json())
       .then((res) => setList(res));
@@ -27,25 +32,33 @@ function Home() {
         Next
       </button>
       <div className="element_list">
+        <Modal
+          isOpen={isModalOpen}
+          changeModalVisible={setModalOpen}
+          className="modal_content"
+        >
+          <div className="modal_content_text">{curr ? curr.name : ""}</div>
+          <div className="modal_content_text">{curr ? curr.russian : ""}</div>
+          <div className="modal_content_text">{curr ? curr.kind : ""}</div>
+          <div className="modal_content_text">{curr ? curr.score : ""}</div>
+          <div className="modal_content_text">{curr ? curr.aired_on : ""}</div>
+          <div className="modal_content_text">{curr ? curr.episodes : ""}</div>
+          <div className="modal_content_text">{curr ? curr.status : ""}</div>
+        </Modal>
+
         {list.map((el, i) => {
           return (
-            <div className="block_content">
+            <div className="block_content" key={el.id}>
               <span className="block_text">{el.russian}</span>
-
-              <Modal
-                isOpen={isModalOpen}
-                changeModalVisible={setModalOpen}
-                className="modal_content"
-              >
-                {el.url}
-              </Modal>
-
               <img
                 alt="#"
                 src={"https://shikimori.org" + el.image.original}
                 className="block_image"
               />
-              <button className="open_modal" onClick={() => setModalOpen(true)}>
+              <button
+                className="open_modal"
+                onClick={() => openModal(true, el)}
+              >
                 Open Modal
               </button>
             </div>
