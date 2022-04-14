@@ -2,7 +2,8 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
-import UsestateTest from './components/someData/UsestateTest';
+import UseStateTest from './components/someData/UsestateTest';
+import UseEffectTest from './components/someData/UseEffectTest';
 
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
       <Header changeLink={changeLink} links={links} />
       {link === 'home' && <Home />}
       {link === 'about' && <h1>About</h1>}
-      <UsestateTest /> 
+      <UseStateTest /> 
+      <UseEffectTest /> 
     </div>
   );
 }

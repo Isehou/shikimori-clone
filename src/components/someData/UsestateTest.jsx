@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function UsestateTest() {
+function UseStateTest() {
     const [counter, setCounter] = useState(0)
 
     function increment() {
@@ -18,4 +18,4 @@ function UsestateTest() {
     )
 }
 
-export default UsestateTest
+export default UseStateTest
