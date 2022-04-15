@@ -59,7 +59,7 @@ function Home() {
                 className="open_modal"
                 onClick={() => openModal(true, el)}
               >
-                Open Modal
+                Более подробно
               </button>
             </div>
           );

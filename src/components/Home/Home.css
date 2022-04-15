@@ -4,6 +4,12 @@
   align-items: center;
   flex-wrap: wrap;
 }
+.btn {
+  background-color: #F6F6F6;
+  width: 100px;
+  height: 30px;
+  margin: 5px;
+}
 .element_list {
   display: inline-flex;
   flex-wrap: wrap;
@@ -40,6 +46,8 @@
   max-height: 400px;
 }
 .open_modal {
-  width: 150px;
-  height: 30px;
+  width: 200px;
+  height: 35px;
+  border-radius: none;
+  font-size: 11pt;
 }

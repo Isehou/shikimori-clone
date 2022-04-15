@@ -1,0 +1,11 @@
+.SomeButton {
+    width: 100px;
+    height: 30px;
+    margin: 5px;
+    background-color: #F6F6F6;
+    font-size: 11pt;
+}
+.someDiv {
+    width: 40%;
+    margin-left: 50px;
+}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./testStyle.css";
 
 function UseEffectTest() {
     const [type, setType] = useState('users')
@@ -12,9 +13,9 @@ function UseEffectTest() {
     return (
         <div className="someDiv">
             <h1>Resource: {type}</h1>
-        <button onClick={() => setType('users')}>Users</button>
-        <button onClick={() => setType('todos')}>Todos</button>
-        <button onClick={() => setType('posts')}>Post</button>
+        <button className='SomeButton' onClick={() => setType('users')}>Users</button>
+        <button className='SomeButton' onClick={() => setType('todos')}>Todos</button>
+        <button className='SomeButton' onClick={() => setType('posts')}>Post</button>
         <pre>{JSON.stringify(data, null, 2)}</pre>
         </div>
     )
