@@ -1,39 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
 }
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 .clear {
-    clear: both;
+  clear: both;
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: rgb(13, 70, 114) ;
-    height: 50px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: rgb(13, 70, 114);
+  height: 50px;
+}
+.header_link {
+  color: white;
 }
 .header .head_logo {
-    display: flex;
-    align-items: center;
-    font-size: 16pt;
-    text-transform: uppercase;
-    color: #fff;
-    padding-left: 40px;
-    cursor: pointer!important;
+  display: flex;
+  align-items: center;
+  font-size: 16pt;
+  text-transform: uppercase;
+  color: #fff;
+  padding-left: 40px;
+  cursor: pointer !important;
 }
 .header .head_list {
-    color: #fff;
-    font-size: 14pt;
-    display: flex;
-    align-items: center;
-    padding: 0  40px;
-    list-style-type: none;
-    gap: 30px;
-    cursor: pointer!important;
+  color: #fff;
+  font-size: 14pt;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  list-style-type: none;
+  gap: 30px;
+  cursor: pointer !important;
 }

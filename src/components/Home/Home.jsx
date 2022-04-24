@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Modal from "../Modale/Modal";
 import "./Home.css";
 
-function Home() {
+function Home(props) {
   const [list, setList] = useState([]);
   const [page, setPage] = useState(1);
   const [curr, setCurr] = useState(null);

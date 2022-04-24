@@ -17,10 +17,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={ <App /> }>
-        </Route>
-      </Routes>
+        <App />
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

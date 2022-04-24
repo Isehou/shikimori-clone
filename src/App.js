@@ -8,22 +8,18 @@ import { Routes,  Route, } from "react-router-dom";
 
 
 function App() {
-  const [link, setLink] = useState('home')
-  const links = [{ label: "Home", link: "home" }, { label: "About", link: "about" }]
-  const changeLink = (name) => {
-    setLink(name)
-  }
+  const [counter, setCounter] = useState(0)
+  const links = [{ label: "Home", link: "/" }, 
+                  { label: "Value", link: "/state" }, 
+                  { label: "Resource", link: "/effect" }]
   return (
     <div className='main'>
-      <Header changeLink={changeLink} links={links} />
-      {link === 'home' && <Home />}
-      {link === 'about' && <h1>About</h1>}
-
+      <Header links={links} />
         <Routes>
-            <Route path="/components/someData/UseStateTest" element={ <UseStateTest /> }></Route>
-            <Route path="/components/someData/UseEffectTest" element={ <UseEffectTest /> }>{}</Route>
+          <Route path="/" element={ <Home counter={counter} />} />
+            <Route path="/state" element={ <UseStateTest counter={counter} setCounter={setCounter} />}></Route>
+            <Route path="/effect" element={ <UseEffectTest /> }></Route>
         </Routes>
-
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 const Header = (props) => {
   return (
@@ -8,8 +9,10 @@ const Header = (props) => {
       <ul className="head_list">
         {props.links.map((el, i) => {
           return (
-            <li onClick={() => props.changeLink(el.link)} key={i}>
-              {el.label}
+            <li key={i}>
+              <Link className="header_link" to={el.link}>
+                {el.label}
+              </Link>
             </li>
           );
         })}
