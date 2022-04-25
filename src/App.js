@@ -5,20 +5,23 @@ import Home from './components/Home/Home';
 import UseStateTest from './components/someData/UsestateTest';
 import UseEffectTest from './components/someData/UseEffectTest';
 import { Routes,  Route, } from "react-router-dom";
+import Animes from './components/Animes/Animes';
 
 
 function App() {
   const [counter, setCounter] = useState(0)
   const links = [{ label: "Home", link: "/" }, 
+                  { label: "Animes", link: "/animes" },
                   { label: "Value", link: "/state" }, 
-                  { label: "Resource", link: "/effect" }]
+                  { label: "Resource", link: "/resource" }]
   return (
     <div className='main'>
       <Header links={links} />
         <Routes>
           <Route path="/" element={ <Home counter={counter} />} />
+            <Route path="/animes/*" element={ <Animes />}></Route>
             <Route path="/state" element={ <UseStateTest counter={counter} setCounter={setCounter} />}></Route>
-            <Route path="/effect" element={ <UseEffectTest /> }></Route>
+            <Route path="/resource" element={ <UseEffectTest /> }></Route>
         </Routes>
     </div>
   );

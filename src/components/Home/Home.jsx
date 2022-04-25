@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Modal from "../Modale/Modal";
 import "./Home.css";
 
@@ -14,7 +15,7 @@ function Home(props) {
   };
   useEffect(() => {
     fetch(
-      `https://shikimori.org/api/animes?genre=7&r_plus&limit=30&page=${page}`
+      `https://shikimori.one/api/animes?genre=7&r_plus&limit=30&page=${page}`
     )
       .then((res) => res.json())
       .then((res) => setList(res));
@@ -52,7 +53,7 @@ function Home(props) {
               <span className="block_text">{el.russian}</span>
               <img
                 alt="#"
-                src={"https://shikimori.org" + el.image.original}
+                src={"https://shikimori.one" + el.image.original}
                 className="block_image"
               />
               <button
