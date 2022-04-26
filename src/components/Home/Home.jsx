@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import Animes from "../Animes/Animes";
 import Modal from "../Modale/Modal";
 import "./Home.css";
 
@@ -46,7 +46,6 @@ function Home(props) {
           <div className="modal_content_text">{curr ? curr.episodes : ""}</div>
           <div className="modal_content_text">{curr ? curr.status : ""}</div>
         </Modal>
-
         {list.map((el, i) => {
           return (
             <div className="block_content" key={el.id}>
@@ -60,7 +59,7 @@ function Home(props) {
                 className="open_modal"
                 onClick={() => openModal(true, el)}
               >
-                Более подробно
+                More Info
               </button>
             </div>
           );

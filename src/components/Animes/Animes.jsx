@@ -4,9 +4,11 @@ import Home from "../Home/Home";
 
 function Animes(props) {
     const [AnimesList, setAnimesList] = useState();
+    const getConsoleTest = () => {
+        console.log('hello')
+    }
     return (
         <div>
-            Animes: {<Home />}
         </div>
     )
 }

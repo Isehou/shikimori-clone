@@ -4,7 +4,7 @@ import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import UseStateTest from './components/someData/UsestateTest';
 import UseEffectTest from './components/someData/UseEffectTest';
-import { Routes,  Route, } from "react-router-dom";
+import { Routes,  Route, Link, } from "react-router-dom";
 import Animes from './components/Animes/Animes';
 
 
@@ -19,7 +19,8 @@ function App() {
       <Header links={links} />
         <Routes>
           <Route path="/" element={ <Home counter={counter} />} />
-            <Route path="/animes/*" element={ <Animes />}></Route>
+            {/* <Link to="/animes/1">go to</Link> */}
+            <Route path="/animes" element={ <Animes />}></Route>
             <Route path="/state" element={ <UseStateTest counter={counter} setCounter={setCounter} />}></Route>
             <Route path="/resource" element={ <UseEffectTest /> }></Route>
         </Routes>
