@@ -22,7 +22,6 @@ function Home(props) {
   }, [page]);
   return (
     <div className="home_page">
-      <h2>Home Page</h2>
       <button
         className="btn"
         onClick={() => setPage((curr) => (curr === 1 ? 1 : curr - 1))}
