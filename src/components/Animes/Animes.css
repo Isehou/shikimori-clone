@@ -1,0 +1,9 @@
+.animes_main {
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    padding: 20px;
+    width: 1000px;
+    height: 700px;
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Animes from "../Animes/Animes";
 import Modal from "../Modale/Modal";
 import "./Home.css";
@@ -14,9 +14,9 @@ function Home(props) {
     setModalOpen(state);
     setCurr(element);
   };
-  const getApi = useEffect(() => {
+  const getApiData = useEffect(() => {
     fetch(
-      `https://shikimori.one/api/animes?genre=14&r_plus&limit=30&page=${page}`
+      `https://shikimori.one/api/animes?genre=5&r_plus&limit=30&page=${page}`
     )
       .then((res) => res.json())
       .then((res) => setList(res));
@@ -38,17 +38,22 @@ function Home(props) {
           changeModalVisible={setModalOpen}
           className="modal_content"
         >
-          <div className="modal_content_text">{curr ? curr.name : ""}</div>
-          <div className="modal_content_text">{curr ? curr.russian : ""}</div>
-          <div className="modal_content_text">{curr ? curr.kind : ""}</div>
-          <div className="modal_content_text">{curr ? curr.score : ""}</div>
-          <div className="modal_content_text">{curr ? curr.aired_on : ""}</div>
-          <div className="modal_content_text">{curr ? curr.episodes : ""}</div>
-          <div className="modal_content_text">{curr ? curr.status : ""}</div>
+          <div className="modal_content_text">
+            <h4>
+              {curr ? curr.name : ""} / {curr ? curr.russian : ""}
+            </h4>
+          </div>
+          <div className="modal_content_text">
+            <p>Type: {curr ? curr.kind : ""}</p>
+            <p>Rating: {curr ? curr.score : ""}</p>
+            <p>Aired on: {curr ? curr.aired_on : ""}</p>
+            <p>Episode: {curr ? curr.episodes : ""}</p>
+            <p>Status: {curr ? curr.status : ""}</p>
+          </div>
 
           <Link to="/animes">
             <button className="btn_modal_more_details">
-              View full details
+              View Full Details
             </button>
           </Link>
         </Modal>
