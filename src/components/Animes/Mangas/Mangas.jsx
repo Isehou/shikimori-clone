@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
-import "./style.css";
 import { useParams } from "react-router-dom";
 
-function Animes(props) {
-  const [anime, setAnime] = useState();
+function Mangas(props) {
+  const [manga, setManga] = useState();
   let params = useParams();
   useEffect(() => {
-    fetch(`https://shikimori.one/api/animes/${params.id}`)
+    fetch(`https://shikimori.one/api/mangas/${params.id}`)
       .then((res) => res.json())
-      .then((res) => setAnime(res));
+      .then((res) => setManga(res));
   }, [params]);
   return (
-    <div className="animes-main">
-      <div className="animes-main_details">
+    <div className="mangas-main">
+      <div className="mangas-main_details">
         <p></p>
         <pre>{JSON.stringify(params, null, 5)}</pre>
       </div>
@@ -20,4 +19,4 @@ function Animes(props) {
   );
 }
 
-export default Animes;
+export default Mangas;

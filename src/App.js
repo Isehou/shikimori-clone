@@ -10,8 +10,8 @@ import Animes from './components/Animes/Animes';
 
 function App() {
   const [counter, setCounter] = useState(0)
-  const links = [{ label: "Home", link: "/" }, 
-                  { label: "Animes", link: "/animes" },
+  const links = [{ label: "Anime", link: "/" }, 
+                  { label: "Manga", link: "/manga" }, 
                   { label: "Value", link: "/state" }, 
                   { label: "Resource", link: "/resource" }]
   return (
@@ -19,8 +19,7 @@ function App() {
       <Header links={links} />
         <Routes>
           <Route path="/" element={ <Home counter={counter} />} />
-            {/* <Link to="/animes/1">go to</Link> */}
-            <Route path="/animes" element={ <Animes />}></Route>
+            <Route path="/animes/:id" element={ <Animes />}></Route>
             <Route path="/state" element={ <UseStateTest counter={counter} setCounter={setCounter} />}></Route>
             <Route path="/resource" element={ <UseEffectTest /> }></Route>
         </Routes>

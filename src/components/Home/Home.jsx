@@ -1,9 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Animes from "../Animes/Animes";
 import Modal from "../Modale/Modal";
-import "./Home.css";
+import "./style.css";
 
 function Home(props) {
   const [list, setList] = useState([]);
@@ -14,7 +13,7 @@ function Home(props) {
     setModalOpen(state);
     setCurr(element);
   };
-  const getApiData = useEffect(() => {
+  useEffect(() => {
     fetch(
       `https://shikimori.one/api/animes?genre=5&r_plus&limit=30&page=${page}`
     )
@@ -51,7 +50,7 @@ function Home(props) {
             <p>Status: {curr ? curr.status : ""}</p>
           </div>
 
-          <Link to="/animes">
+          <Link to={"/animes/" + (curr ? curr.id : "")}>
             <button className="btn_modal_more_details">
               View Full Details
             </button>
