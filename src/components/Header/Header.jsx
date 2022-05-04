@@ -16,8 +16,6 @@ const Header = (props) => {
             </li>
           );
         })}
-
-        <div className="head_login"></div>
       </ul>
     </div>
   );

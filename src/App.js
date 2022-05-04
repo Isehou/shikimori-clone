@@ -1,11 +1,12 @@
 import './App.css';
 import { useState } from 'react';
 import Header from './components/Header/Header';
-import Home from './components/Home/Home';
+import MainAnime from './components/MainAnimeManga/MainAnime';
 import UseStateTest from './components/someData/UsestateTest';
 import UseEffectTest from './components/someData/UseEffectTest';
 import { Routes,  Route, Link, } from "react-router-dom";
-import Animes from './components/Animes/Animes';
+import Animes from './components/LinkAnimeManga/Animes';
+import Mangas from './components/LinkAnimeManga/Mangas';
 
 
 function App() {
@@ -13,13 +14,14 @@ function App() {
   const links = [{ label: "Anime", link: "/" }, 
                   { label: "Manga", link: "/manga" }, 
                   { label: "Value", link: "/state" }, 
-                  { label: "Resource", link: "/resource" }]
+                  { label: "TestAPi", link: "/resource" }]
   return (
     <div className='main'>
       <Header links={links} />
         <Routes>
-          <Route path="/" element={ <Home counter={counter} />} />
+          <Route path="/" element={ <MainAnime counter={counter} />} />
             <Route path="/animes/:id" element={ <Animes />}></Route>
+            <Route path="/manga/:id" element={ <Mangas />}></Route>
             <Route path="/state" element={ <UseStateTest counter={counter} setCounter={setCounter} />}></Route>
             <Route path="/resource" element={ <UseEffectTest /> }></Route>
         </Routes>

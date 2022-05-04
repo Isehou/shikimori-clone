@@ -1,11 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 * {
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Montserrat',
+  sans-serif;
 }
 a {
   text-decoration: none;
+}
+a:active,
+a:hover {
+  color: black;
 }
 .clear {
   clear: both;
@@ -27,16 +32,22 @@ a {
   font-size: 16pt;
   text-transform: uppercase;
   color: #fff;
-  padding-left: 40px;
+  padding-left: 70px;
   cursor: pointer !important;
 }
 .header .head_list {
   color: #fff;
+
   font-size: 14pt;
   display: flex;
   align-items: center;
-  padding: 0 40px;
+  padding: 0 70px;
   list-style-type: none;
-  gap: 30px;
+  gap: 50px;
   cursor: pointer !important;
 }
+/* li {
+  border: 1px solid black;
+  margin: none;
+  padding: 25px;
+} */

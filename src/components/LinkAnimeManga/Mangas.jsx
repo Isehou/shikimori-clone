@@ -12,6 +12,7 @@ function Mangas(props) {
   return (
     <div className="mangas-main">
       <div className="mangas-main_details">
+        hello
         <p></p>
         <pre>{JSON.stringify(params, null, 5)}</pre>
       </div>

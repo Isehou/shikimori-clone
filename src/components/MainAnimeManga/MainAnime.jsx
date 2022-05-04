@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Modal from "../Modale/Modal";
 import "./style.css";
 
-function Home(props) {
+function MainAnime(props) {
   const [list, setList] = useState([]);
   const [page, setPage] = useState(1);
   const [curr, setCurr] = useState(null);
@@ -15,7 +15,7 @@ function Home(props) {
   };
   useEffect(() => {
     fetch(
-      `https://shikimori.one/api/animes?genre=5&r_plus&limit=30&page=${page}`
+      `https://shikimori.one/api/animes?genre=7&r_plus&limit=30&page=${page}`
     )
       .then((res) => res.json())
       .then((res) => setList(res));
@@ -66,7 +66,7 @@ function Home(props) {
                 className="block_image"
               />
               <button
-                className="open_modal"
+                className="open_modal_btn"
                 onClick={() => openModal(true, el)}
               >
                 More Information
@@ -79,4 +79,4 @@ function Home(props) {
   );
 }
 
-export default Home;
+export default MainAnime;
