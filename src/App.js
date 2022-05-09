@@ -2,27 +2,26 @@ import './App.css';
 import { useState } from 'react';
 import Header from './components/Header/Header';
 import MainAnime from './components/MainAnimeManga/MainAnime';
-import UseStateTest from './components/someData/UsestateTest';
 import UseEffectTest from './components/someData/UseEffectTest';
 import { Routes,  Route, Link, } from "react-router-dom";
-import Animes from './components/LinkAnimeManga/Animes';
-import Mangas from './components/LinkAnimeManga/Mangas';
+import Anime from './components/LinkAnimeManga/Anime';
+import Manga from './components/LinkAnimeManga/Manga';
+import MainManga from './components/MainAnimeManga/MainManga';
 
 
 function App() {
   const [counter, setCounter] = useState(0)
   const links = [{ label: "Anime", link: "/" }, 
                   { label: "Manga", link: "/manga" }, 
-                  { label: "Value", link: "/state" }, 
                   { label: "TestAPi", link: "/resource" }]
   return (
     <div className='main'>
       <Header links={links} />
         <Routes>
           <Route path="/" element={ <MainAnime counter={counter} />} />
-            <Route path="/animes/:id" element={ <Animes />}></Route>
-            <Route path="/manga/:id" element={ <Mangas />}></Route>
-            <Route path="/state" element={ <UseStateTest counter={counter} setCounter={setCounter} />}></Route>
+            <Route path="/manga" element={ <MainManga />}></Route>
+            <Route path="/manga/:id" element={ <Manga />}></Route>
+            <Route path="/anime/:id" element={ <Anime />}></Route>
             <Route path="/resource" element={ <UseEffectTest /> }></Route>
         </Routes>
     </div>

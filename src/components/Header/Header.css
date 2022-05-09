@@ -33,18 +33,17 @@ a:hover {
   text-transform: uppercase;
   color: #fff;
   padding-left: 70px;
-  cursor: pointer !important;
+  cursor: pointer;
 }
 .header .head_list {
   color: #fff;
-
   font-size: 14pt;
   display: flex;
   align-items: center;
   padding: 0 70px;
   list-style-type: none;
   gap: 50px;
-  cursor: pointer !important;
+  cursor: pointer;
 }
 /* li {
   border: 1px solid black;

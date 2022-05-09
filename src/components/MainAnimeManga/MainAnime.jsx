@@ -15,7 +15,7 @@ function MainAnime(props) {
   };
   useEffect(() => {
     fetch(
-      `https://shikimori.one/api/animes?genre=7&r_plus&limit=30&page=${page}`
+      `https://shikimori.one/api/animes?genre=24&r_plus&limit=30&page=${page}`
     )
       .then((res) => res.json())
       .then((res) => setList(res));
@@ -50,7 +50,7 @@ function MainAnime(props) {
             <p>Status: {curr ? curr.status : ""}</p>
           </div>
 
-          <Link to={"/animes/" + (curr ? curr.id : "")}>
+          <Link to={"/anime/" + (curr ? curr.id : "")}>
             <button className="btn_modal_more_details">
               View Full Details
             </button>
@@ -59,12 +59,12 @@ function MainAnime(props) {
         {list.map((el, i) => {
           return (
             <div className="block_content" key={el.id}>
-              <span className="block_text">{el.russian}</span>
               <img
                 alt="#"
                 src={"https://shikimori.one" + el.image.original}
                 className="block_image"
               />
+              <span className="block_text">{el.russian}</span>
               <button
                 className="open_modal_btn"
                 onClick={() => openModal(true, el)}
