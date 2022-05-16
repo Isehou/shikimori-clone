@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Modal from "../Modale/Modal";
 import "./style.css";
 
-function MainManga(props) {
+function MainAnime(props) {
   const [list, setList] = useState([]);
   const [page, setPage] = useState(1);
   const [curr, setCurr] = useState(null);
@@ -30,30 +30,31 @@ function MainManga(props) {
         Next
       </button>
       <div className="element_list">
+        {( curr && 
         <Modal
           isOpen={isModalOpen}
           changeModalVisible={setModalOpen}
           className="modal_content"
-        >
-          <div className="modal_content_text">
-            <h4>
-              {curr ? curr.name : ""} / {curr ? curr.russian : ""}
+          >
+            <h4 className="modal_content_text">
+            {curr.russian}  /  {curr.name} 
             </h4>
+          <div className="modal_content_text-all">
+            <p>Тип:  {curr.kind}</p>
+            <p>Выпущен:  {curr.aired_on}</p>
+            <p>Эпизоды:  {curr.episodes}</p>
+            <p>:  {curr.genres}</p>
+            <p>:  {curr.duration}</p>
+            <p>Статус:  {curr.status}</p>
+            <p className="modal_content_text-rating">Рейтинг:  {curr.score}</p>
           </div>
-          <div className="modal_content_text">
-            <p>Type: {curr ? curr.kind : ""}</p>
-            <p>Rating: {curr ? curr.score : ""}</p>
-            <p>Aired on: {curr ? curr.aired_on : ""}</p>
-            <p>Episode: {curr ? curr.episodes : ""}</p>
-            <p>Status: {curr ? curr.status : ""}</p>
-          </div>
-
-          <Link to={"/manga/" + (curr ? curr.id : "")}>
+          <Link to={"/manga/" + (curr.id)}>
             <button className="btn_modal_more_details">
               View Full Details
             </button>
           </Link>
         </Modal>
+                )}
         {list.map((el, i) => {
           return (
             <div className="block_content" key={el.id}>
@@ -76,5 +77,4 @@ function MainManga(props) {
     </div>
   );
 }
-
-export default MainManga;
+export default MainAnime;
