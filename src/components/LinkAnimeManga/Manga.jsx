@@ -12,7 +12,7 @@ function Manga(props) {
   return (
     <div className="aniManga-main">
       {aniMangaData && (
-        <div className="aniManga-main_details">
+        <div className="animes_main_details">
           <h2>
             {aniMangaData.name} / {aniMangaData.russian}
           </h2>

@@ -11,7 +11,7 @@ function Anime(props) {
       .then((res) => setAnimeData(res));
   }, [params]);
   return (
-    <div className="animes_main">
+    <div className="aniManga-main">
       {animeData && (
         <div className="animes_main_details">
           <h2>
