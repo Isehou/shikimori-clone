@@ -19,7 +19,7 @@ function App() {
                 
                   
   return (
-    <div className='main'>
+    <div className='main-container'>
       <Header links={links} />
         <Routes>
           <Route path="/" element={ <MainAnime counter={counter} />} />

@@ -41,11 +41,10 @@ function MainAnime(props) {
             </h4>
             <div className="modal_content_text-all">
               <p>Тип: {curr.kind}</p>
-              <p>Выпущен: {curr.aired_on}</p>
-              <p>Эпизоды: {curr.episodes}</p>
-              <p>: {curr.genres}</p>
-              <p>: {curr.duration}</p>
+              <p>Главы: {curr.chapters}</p>
               <p>Статус: {curr.status}</p>
+              <p>Дата релиза: {curr.released_on}</p>
+              <p>Выпущен: {curr.aired_on}</p>
               <p className="modal_content_text-rating">Рейтинг: {curr.score}</p>
             </div>
             <Link to={"/manga/" + curr.id}>

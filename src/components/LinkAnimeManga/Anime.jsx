@@ -29,10 +29,10 @@ function Anime(props) {
           )}
           <p>Тип: {animeData.kind}</p>
           <p>Рейтинг: {animeData.score}</p>
-          <p>Aired on: {animeData.aired_on}</p>
-          <p>released_on: {animeData.released_on}</p>
-          <p>Episode: {animeData.episodes}</p>
-          <p>Status: {animeData.status}</p>
+          <p>Выпущен: {animeData.aired_on}</p>
+          <p>Дата релиза: {animeData.released_on}</p>
+          <p>Эпизоды: {animeData.episodes}</p>
+          <p>Статус: {animeData.status}</p>
         </div>
       )}
     </div>

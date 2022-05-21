@@ -28,10 +28,11 @@ function Manga(props) {
           )}
           <p>Тип: {aniMangaData.kind}</p>
           <p>Рейтинг: {aniMangaData.score}</p>
-          <p>Aired on: {aniMangaData.aired_on}</p>
-          <p>released_on: {aniMangaData.released_on}</p>
-          <p>Episode: {aniMangaData.episodes}</p>
-          <p>Status: {aniMangaData.status}</p>
+          <p>Выпущен: {aniMangaData.aired_on}</p>
+          <p>Дата релиза: {aniMangaData.released_on}</p>
+          <p>Главы: {aniMangaData.chapters}</p>
+          <p>Статус: {aniMangaData.status}</p>
+          <p>Объем: {aniMangaData.volumes}</p>
         </div>
       )}
     </div>

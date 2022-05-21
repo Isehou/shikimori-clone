@@ -94,16 +94,12 @@
   position: fixed;
   border: 1px solid black;
 }
-.modal_content_text main {
-  font-size: 16pt;
-}
 .modal_content_text {
   width: 100%;
   height: 120px;
   color: rgb(13, 70, 114);
-  font-size: 14pt;
+  font-size: 16pt;
   height: 140px;
-  /* background-color: red; */
 }
 .modal_content_text-all {
   font-size: 14pt;
@@ -111,10 +107,9 @@
   height: 140px;
   opacity: 70%;
   margin: 10px 0;
-  /* background-color: blue; */
 }
 .modal_content_text-rating {  
   width: 100%;
   text-align: right;
-  margin-top: 95px;
+  margin-top: 110px;
 }
