@@ -12,13 +12,10 @@ function Manga(props) {
   return (
     <div className="aniManga-main">
       {aniMangaData && (
-        <div className="animes_main_details">
+        <div className="aniManga-content_details">
           <h2>
-            {aniMangaData.name} / {aniMangaData.russian}
+            {aniMangaData.name}  |  {aniMangaData.russian}  |  {aniMangaData.english}  |  {aniMangaData.japanese}
           </h2>
-          <h3>
-            {aniMangaData.english} / {aniMangaData.japanese}
-          </h3>
           {aniMangaData?.image?.original && (
             <img
               className="aniManga-image_block"
@@ -26,13 +23,21 @@ function Manga(props) {
               alt="#"
             ></img>
           )}
-          <p>Тип: {aniMangaData.kind}</p>
-          <p>Рейтинг: {aniMangaData.score}</p>
-          <p>Выпущен: {aniMangaData.aired_on}</p>
-          <p>Дата релиза: {aniMangaData.released_on}</p>
-          <p>Главы: {aniMangaData.chapters}</p>
-          <p>Статус: {aniMangaData.status}</p>
-          <p>Объем: {aniMangaData.volumes}</p>
+          <div className="aniManga-text_block">
+            <p>Тип: {aniMangaData.kind}</p>
+            <p>Начало показа: с {aniMangaData.aired_on ? aniMangaData.aired_on : "Неизвестно"}</p>
+            <p>Дата релиза: {aniMangaData.released_on ? aniMangaData.released_on >= null : "Неизвестно"} </p>
+            <p>Количество глав: {aniMangaData.chapters ? aniMangaData.chapters >= 0  : "Неизвестно"}</p>
+            <p>Статус: {aniMangaData.status}</p>
+            <p>Объем: {aniMangaData.volumes ? aniMangaData.volumes >= 0 : "Неизвестно" }</p>
+            <p>Рейтинг: {aniMangaData.score}</p>
+          </div>
+           <div className="aniManga-content_description">
+            ОПИСАНИЕ 
+            <div>
+              {aniMangaData.description}
+            </div>
+          </div>
         </div>
       )}
     </div>

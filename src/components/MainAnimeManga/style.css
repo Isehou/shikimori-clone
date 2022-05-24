@@ -19,7 +19,7 @@
   font-size: 11pt;
   text-transform: uppercase;
   border-radius: 5px;
- cursor: pointer;
+  cursor: pointer;
 }
 .btn:hover {
   text-decoration: none;
@@ -96,20 +96,26 @@
 }
 .modal_content_text {
   width: 100%;
-  height: 120px;
   color: rgb(13, 70, 114);
   font-size: 16pt;
   height: 140px;
+  overflow: auto;
+  text-overflow: clip;
 }
 .modal_content_text-all {
   font-size: 14pt;
   width: 100%;
-  height: 140px;
+  height: 150px;
   opacity: 70%;
   margin: 10px 0;
+  /* background-color: red; */
 }
-.modal_content_text-rating {  
-  width: 100%;
+.modal_content_text-rating { 
+  position: absolute;
+  margin-top: 68px;
+  width: 270px;
+  padding: 5px;
   text-align: right;
-  margin-top: 110px;
+  font-size: 14pt;
+  /* background-color: red; */
 }

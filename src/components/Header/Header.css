@@ -20,7 +20,7 @@ a:hover {
   display: flex;
   justify-content: space-between;
   background-color: rgb(13, 70, 114);
-  height: 80px;
+  height: 75px;
 }
 .header_link {
   color: white;
@@ -31,7 +31,7 @@ a:hover {
   font-size: 16pt;
   text-transform: uppercase;
   color: #fff;
-  margin-left: 5%;
+  margin-left: 30px;
   cursor: pointer;
 }
 .header .head_list {
@@ -39,10 +39,11 @@ a:hover {
   font-size: 14pt;
   display: flex;
   align-items: center;
-  margin-right: 5%;
+  margin-right: 30px;
   list-style-type: none;
   gap: 40px;
   cursor: pointer;
+  text-transform: uppercase;
 }
 .head_shiki_logo {
   width: 60%;

@@ -11,7 +11,7 @@ const Example = () => {
   const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
 
   return (
-    <div>
+    <div className="device_block">
       <h1>Device Test!</h1>
       {isDesktopOrLaptop && <p>You are a desktop or laptop</p>}
       {isBigScreen && <p>You have a huge screen</p>}

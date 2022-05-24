@@ -3,36 +3,41 @@ import "./style.css";
 import { useParams } from "react-router-dom";
 
 function Anime(props) {
-  const [animeData, setAnimeData] = useState(null);
+  const [aniMangaData, setAniMangaData] = useState(null);
   let params = useParams();
   useEffect(() => {
     fetch(`https://shikimori.one/api/animes/${params.id}`)
       .then((res) => res.json())
-      .then((res) => setAnimeData(res));
+      .then((res) => setAniMangaData(res));
   }, [params]);
   return (
     <div className="aniManga-main">
-      {animeData && (
-        <div className="animes_main_details">
+      {aniMangaData && (
+        <div className="aniManga-content_details">
           <h2>
-            {animeData.name} / {animeData.russian}
+            {aniMangaData.name}  |  {aniMangaData.russian}  |  {aniMangaData.english}  |  {aniMangaData.japanese}
           </h2>
-          <h3>
-            {animeData.english} / {animeData.japanese}
-          </h3>
-          {animeData?.image?.original && (
+          {aniMangaData?.image?.original && (
             <img
-              className="animes_image_block"
-              src={"https://shikimori.one" + animeData.image.original}
+              className="aniManga-image_block"
+              src={"https://shikimori.one" + aniMangaData.image.original}
               alt="#"
             ></img>
           )}
-          <p>Тип: {animeData.kind}</p>
-          <p>Рейтинг: {animeData.score}</p>
-          <p>Выпущен: {animeData.aired_on}</p>
-          <p>Дата релиза: {animeData.released_on}</p>
-          <p>Эпизоды: {animeData.episodes}</p>
-          <p>Статус: {animeData.status}</p>
+          <div className="aniManga-text_block"> ИНФОРМАЦИЯ
+            <p>Тип: {aniMangaData.kind}</p>
+            <p>Начало показа: с {aniMangaData.aired_on}</p>
+            <p>Дата релиза: в {aniMangaData.released_on}</p>
+            <p>Количество серий: {aniMangaData.episodes}</p>
+            <p>Статус: {aniMangaData.status}</p>
+            <p>Рейтинг: {aniMangaData.score}</p>
+          </div>
+          <div className="aniManga-content_description">
+            ОПИСАНИЕ 
+            <div>
+              {aniMangaData.description}
+            </div>
+          </div>
         </div>
       )}
     </div>
