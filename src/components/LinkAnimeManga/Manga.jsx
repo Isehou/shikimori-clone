@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import DetailsTitle from "./Details/DetailsTitle";
+import DetailsImage from "./Details/DetailsImage";
+import DetailsInfo from "./Details/DetailsInfo";
 
 function Manga(props) {
   const [aniMangaData, setAniMangaData] = useState(null);
@@ -13,30 +16,33 @@ function Manga(props) {
     <div className="aniManga-main">
       {aniMangaData && (
         <div className="aniManga-content_details">
-          <h2>
-            {aniMangaData.name}  |  {aniMangaData.russian}  |  {aniMangaData.english}  |  {aniMangaData.japanese}
-          </h2>
+          <DetailsTitle
+            name={aniMangaData.name}
+            russian={aniMangaData.russian}
+            english={aniMangaData.english}
+            japanese={aniMangaData.japanese}
+          ></DetailsTitle>
           {aniMangaData?.image?.original && (
-            <img
-              className="aniManga-image_block"
-              src={"https://shikimori.one" + aniMangaData.image.original}
-              alt="#"
-            ></img>
+            <DetailsImage src={aniMangaData.image.original} />
           )}
           <div className="aniManga-text_block">
-            <p>Тип: {aniMangaData.kind}</p>
-            <p>Начало показа: с {aniMangaData.aired_on ? aniMangaData.aired_on : "Неизвестно"}</p>
-            <p>Дата релиза: {aniMangaData.released_on ? aniMangaData.released_on >= null : "Неизвестно"} </p>
-            <p>Количество глав: {aniMangaData.chapters ? aniMangaData.chapters >= 0  : "Неизвестно"}</p>
-            <p>Статус: {aniMangaData.status}</p>
-            <p>Объем: {aniMangaData.volumes ? aniMangaData.volumes >= 0 : "Неизвестно" }</p>
-            <p>Рейтинг: {aniMangaData.score}</p>
+            <DetailsInfo
+              data={[
+                { title: "Тип:", info: aniMangaData.kind },
+                {
+                  title: "Начало показа: с",
+                  info: aniMangaData.aired_on,
+                },
+                { title: "Дата релиза:", info: aniMangaData.released_on },
+                { title: "Количество глав:", info: aniMangaData.chapters },
+                { title: "Статус:", info: aniMangaData.status },
+                { title: "Объем:", info: aniMangaData.volumes },
+                { title: "Рейтинг:", info: aniMangaData.score },
+              ]}
+            />
           </div>
-           <div className="aniManga-content_description">
-            ОПИСАНИЕ 
-            <div>
-              {aniMangaData.description}
-            </div>
+          <div className="aniManga-content_description">
+            <div>{aniMangaData.description}</div>
           </div>
         </div>
       )}

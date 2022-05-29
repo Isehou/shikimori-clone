@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
 import { useParams } from "react-router-dom";
+import DetailsTitle from "./Details/DetailsTitle";
+import DetailsImage from "./Details/DetailsImage";
+import DetailsInfo from "./Details/DetailsInfo";
 
 function Anime(props) {
   const [aniMangaData, setAniMangaData] = useState(null);
@@ -14,29 +17,29 @@ function Anime(props) {
     <div className="aniManga-main">
       {aniMangaData && (
         <div className="aniManga-content_details">
-          <h2>
-            {aniMangaData.name}  |  {aniMangaData.russian}  |  {aniMangaData.english}  |  {aniMangaData.japanese}
-          </h2>
+          <DetailsTitle
+            name={aniMangaData.name}
+            russian={aniMangaData.russian}
+            english={aniMangaData.english}
+            japanese={aniMangaData.japanese}
+          ></DetailsTitle>
           {aniMangaData?.image?.original && (
-            <img
-              className="aniManga-image_block"
-              src={"https://shikimori.one" + aniMangaData.image.original}
-              alt="#"
-            ></img>
+            <DetailsImage src={aniMangaData.image.original} />
           )}
-          <div className="aniManga-text_block"> ИНФОРМАЦИЯ
-            <p>Тип: {aniMangaData.kind}</p>
-            <p>Начало показа: с {aniMangaData.aired_on}</p>
-            <p>Дата релиза: в {aniMangaData.released_on}</p>
-            <p>Количество серий: {aniMangaData.episodes}</p>
-            <p>Статус: {aniMangaData.status}</p>
-            <p>Рейтинг: {aniMangaData.score}</p>
+          <div className="aniManga-text_block">
+            ИНФОРМАЦИЯ
+            <DetailsInfo
+              data={[
+                { title: "Тип:", info: aniMangaData.kind },
+                { title: "Начало показа: с", info: aniMangaData.aired_on },
+                { title: "Дата релиза:", info: aniMangaData.released_on },
+                { title: "Количество серий:", info: aniMangaData.episodes },
+                { title: "Рейтинг:", info: aniMangaData.score },
+              ]}
+            />
           </div>
           <div className="aniManga-content_description">
-            ОПИСАНИЕ 
-            <div>
-              {aniMangaData.description}
-            </div>
+            <div>{aniMangaData.description}</div>
           </div>
         </div>
       )}
