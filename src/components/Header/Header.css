@@ -33,7 +33,7 @@ a:hover {
   height: 80px;
   align-items: center;
 }
-.head_shiki_logo {
+.head__shiki__logo {
   width: auto;
   height: 50px;
   color: white;
@@ -41,17 +41,17 @@ a:hover {
   /* background-color: red; */
   margin: none;
 }
-.header_link {
+.head__list {
   color: white;
 }
-.head_title-text {
+.head__title__text {
   font-size: 16pt;
   text-transform: uppercase;
   color: #fff;
   cursor: pointer;
   /* background-color: red; */
 }
-.head_list {
+.head__list {
   color: #fff;
   font-size: 14pt;
   list-style-type: none;
@@ -61,18 +61,18 @@ a:hover {
   display: flex;
   /* background-color: red; */
 }
-.header_other {
+.head__subitle__other {
   display: none;
 }
 @media (max-width: 767px) {
-  .header_other {
+  .head__subitle__other {
     display: block;
     position: relative;
     width: 30px;
     height: 20px;
   }
-  .header_other::before,
-  .header_other::after{
+  .head__subitle__other::before,
+  .head__subitle__other::after{
     content: '';
     background-color: #fff;
     position: absolute;
