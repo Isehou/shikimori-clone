@@ -15,37 +15,69 @@ a:hover {
 .clear {
   clear: both;
 }
-
 .header {
+  background-color: rgb(13, 70, 114);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.container {
+  max-width: 1180px;
+  margin: 0px auto;
+  padding: 0px 30px;
+  position: relative;
+  z-index: 2;
   display: flex;
   justify-content: space-between;
-  background-color: rgb(13, 70, 114);
-  height: 75px;
+  height: 80px;
+  align-items: center;
+}
+.head_shiki_logo {
+  width: auto;
+  height: 50px;
+  color: white;
+  padding: 10px;
+  /* background-color: red; */
+  margin: none;
 }
 .header_link {
   color: white;
 }
-.header .head_main-text {
-  display: flex;
-  align-items: center;
+.head_title-text {
   font-size: 16pt;
   text-transform: uppercase;
   color: #fff;
-  margin-left: 30px;
   cursor: pointer;
+  /* background-color: red; */
 }
-.header .head_list {
+.head_list {
   color: #fff;
   font-size: 14pt;
-  display: flex;
-  align-items: center;
-  margin-right: 30px;
   list-style-type: none;
-  gap: 40px;
+  gap: 30px;
   cursor: pointer;
   text-transform: uppercase;
+  display: flex;
+  /* background-color: red; */
 }
-.head_shiki_logo {
-  width: 60%;
-  height: 60%;
+.header_other {
+  display: none;
+}
+@media (max-width: 767px) {
+  .header_other {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+  }
+  .header_other::before,
+  .header_other::after{
+    content: '';
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+  }
 }
