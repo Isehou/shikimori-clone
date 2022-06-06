@@ -4,12 +4,14 @@ import { Link } from "react-router-dom";
 import { SiShikimori } from "react-icons/si";
 
 const HandleClick = (e) => {
-  let openHamb = document.querySelectorAll("head__adaptive__btn");
-  let headMenu = document.querySelectorAll("head__menu");
-  for (let i = 0; i < openHamb.length; i++) {
-    openHamb[i].classList.remove("_active");
-  }
-  e.currentTarget.classList.add("_active");
+  let openHamb = document.getElementById("head__adaptive__btn");
+  let headMenu = document.getElementById("head__menu");
+  // for (let i = 0; i < openHamb.length; i++) {
+  //   openHamb[i].classList.remove("_active");
+  // }
+  // e.currentTarget.classList.add("_active");
+  openHamb.classList.toggle("_active");
+  headMenu.classList.toggle("_active");
 };
 
 function Header(props) {
@@ -20,12 +22,12 @@ function Header(props) {
         <div className="head__title__text">Shikimori clone</div>
         <button
           className="head__adaptive__btn"
-          id="hamb__btn"
+          id="head__adaptive__btn"
           onClick={HandleClick}
         >
           <span></span>
         </button>
-        <div className="head__menu">
+        <div className="head__menu" id="head__menu">
           <ul className="head__list">
             {props.links.map((el, i) => {
               return (
