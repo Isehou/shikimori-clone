@@ -2,23 +2,29 @@ import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import { SiShikimori } from "react-icons/si";
-import { useState } from "react";
-import MobileMenu from "./MobileMenu";
 
-const Header = (props) => {
-  const [menuActive, setMenuActive] = useState(false);
+const HandleClick = (e) => {
+  let openHamb = document.querySelectorAll("head__adaptive__btn");
+  let headMenu = document.querySelectorAll("head__menu");
+  for (let i = 0; i < openHamb.length; i++) {
+    openHamb[i].classList.remove("_active");
+  }
+  e.currentTarget.classList.add("_active");
+};
+
+function Header(props) {
   return (
     <div className="header">
       <div className="container">
         <SiShikimori className="head__shiki__logo"></SiShikimori>
         <div className="head__title__text">Shikimori clone</div>
-        <button className="head__adaptive__btn" onClick={() => menuActive}>
+        <button
+          className="head__adaptive__btn"
+          id="hamb__btn"
+          onClick={HandleClick}
+        >
           <span></span>
         </button>
-        <MobileMenu
-          openMenu={menuActive}
-          changeMenu={setMenuActive}
-        ></MobileMenu>
         <div className="head__menu">
           <ul className="head__list">
             {props.links.map((el, i) => {
@@ -35,6 +41,6 @@ const Header = (props) => {
       </div>
     </div>
   );
-};
+}
 
 export default Header;
