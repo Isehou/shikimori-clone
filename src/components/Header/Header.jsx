@@ -2,22 +2,13 @@ import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import { SiShikimori } from "react-icons/si";
+import HandleClick from "./HandClick";
 
-const HandleClick = (e) => {
-  let openHamb = document.getElementById("head__adaptive__btn");
-  let headMenu = document.getElementById("head__menu");
-  // for (let i = 0; i < openHamb.length; i++) {
-  //   openHamb[i].classList.remove("_active");
-  // }
-  // e.currentTarget.classList.add("_active");
-  openHamb.classList.toggle("_active");
-  headMenu.classList.toggle("_active");
-};
 
 function Header(props) {
   return (
     <div className="header">
-      <div className="container">
+      <div className="container" id="container">
         <SiShikimori className="head__shiki__logo"></SiShikimori>
         <div className="head__title__text">Shikimori clone</div>
         <button

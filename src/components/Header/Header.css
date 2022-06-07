@@ -78,10 +78,10 @@ a:hover {
 }
 @media (max-width: 767px) {
   .container{
-    height: 50px;
+    height: 50px; 
   }
   .head__shiki__logo{
-      height: 30px;
+    height: 30px;
   }
   .head__adaptive__btn {
     display: block;
@@ -92,7 +92,7 @@ a:hover {
     margin: 0 20px;
     border: none;
     background: none;
-      cursor: pointer;
+    cursor: pointer;
   }
   .head__adaptive__btn::before,
   .head__adaptive__btn::after{
@@ -102,6 +102,7 @@ a:hover {
     width: 100%;
     height: 2px;
     left: 0;
+    transition: all 0.3s ease 0s;
   }
   .head__adaptive__btn span {
     content: '';
@@ -111,6 +112,7 @@ a:hover {
     height: 2px;
     left: 0;
     top: 9px;
+    transition: all 0.3s ease 0s;
   }
   .head__adaptive__btn::before {
     top: 0;
@@ -118,21 +120,38 @@ a:hover {
   .head__adaptive__btn::after{
     bottom: 0;
   }
+  .head__adaptive__btn.active span {
+    transform: scale(0);
+  }
+  .head__adaptive__btn.active::before {
+    transform:  rotate(45deg);
+    top: 9px;
+  }
+  .head__adaptive__btn.active::after {
+    transform:  rotate(-45deg);
+    bottom: 9px;
+  }
   .head__menu {
     position: fixed;
-    top: 0;
+    top: 0%;
     left: 0;
     width: 100%;
     height: 100%;
-    transform: translate(-100%, 0px);
-    background-color: rgba(0, 0, 0, 1);
+    transform: translate(100%, 0px);
+    background-color: rgba(0, 0, 0, 0.9);
     padding: 100px 30px 30px 30px;
-    transition: left 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 0;
   }
-  .head__menu._active {
+  .head__menu.active {
     transform: translate(0px, 0px);
+    top: 0;
+    white-space: nowrap;
   }
-  .head__menu::before{
+  .head__menu::before {
     content: "";
     position: fixed;
     width: 100%;
@@ -140,11 +159,20 @@ a:hover {
     left: 0;
     height: 70px;
     z-index: 2;
+    transition: left 0.3s ease 0.3s;
   }
-  .head__list{
+  .head__list {
     display: block;
+    font-size: 16pt;
   }
   .head__list li {
     margin: 0 0 30px 0;
+  }
+  .head__list li:hover {
+    margin: 0 0 30px 0;
+    color: black;
+  }
+  .container.lock {
+    overflow: hidden;
   }
 }

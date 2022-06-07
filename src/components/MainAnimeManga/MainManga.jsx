@@ -14,7 +14,7 @@ function MainAnime(props) {
     setCurr(element);
   };
   useEffect(() => {
-    fetch(`https://shikimori.one/api/mangas?limit=30&page=${page}`)
+    fetch(`https://shikimori.one/api/mangas?season=2016,2015&limit=30&page=${page}`)
       .then((res) => res.json())
       .then((res) => setList(res));
   }, [page]);
