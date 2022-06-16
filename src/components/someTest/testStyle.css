@@ -12,3 +12,11 @@
 .device_block {
     margin: 20px;
 }
+@media (max-width: 767px) {
+    .device_block {
+    margin-top: 70px;
+    }
+    .someDiv {
+        margin-top: 70px;
+    }
+}

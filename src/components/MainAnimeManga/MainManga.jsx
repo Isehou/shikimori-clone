@@ -14,7 +14,9 @@ function MainAnime(props) {
     setCurr(element);
   };
   useEffect(() => {
-    fetch(`https://shikimori.one/api/mangas?season=2016,2015&limit=30&page=${page}`)
+    fetch(
+      `https://shikimori.one/api/mangas?season=2016,2015&limit=30&page=${page}`
+    )
       .then((res) => res.json())
       .then((res) => setList(res));
   }, [page]);
@@ -41,12 +43,17 @@ function MainAnime(props) {
             </h4>
             <div className="modal_content_text-all">
               <p>Тип: {curr.kind}</p>
-              <p>Количество глав: {curr.chapters >= null ? (curr.chapters) : ("Неизвестно")}</p>
+              <p>
+                Количество глав:{" "}
+                {curr.chapters >= null ? curr.chapters : "Неизвестно"}
+              </p>
               <p>Статус: {curr.status}</p>
               <p>Дата релиза: {curr.released_on}</p>
               <p>Начало показа: {curr.aired_on}</p>
             </div>
-              <div className="modal_content_text-rating">Рейтинг: {curr.score}</div>
+            <div className="modal_content_text-rating">
+              Рейтинг: {curr.score}
+            </div>
             <Link to={"/manga/" + curr.id}>
               <button className="btn_modal_more_details">
                 View Full Details

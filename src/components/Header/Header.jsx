@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { SiShikimori } from "react-icons/si";
 import HandleClick from "./HandClick";
 
-
 function Header(props) {
   return (
     <div className="header">
