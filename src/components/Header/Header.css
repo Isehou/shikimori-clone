@@ -138,7 +138,7 @@ a:hover {
     width: 100%;
     height: 100%;
     transform: translate(100%, 0px);
-    background-color: rgb(5, 120, 120);
+    background-color: rgb(20, 90, 120, 1);
     padding: 100px 30px 30px 30px;
     transition: all 0.3s ease 0s;
     display: flex;
@@ -163,21 +163,20 @@ a:hover {
   }
   .head__list {
     display: block;
-    font-size: 20pt;
+    font-size: 16pt;
+    height: 30px;
   }
   .head__list li {
     margin: 0 0 40px 0;
   }
   .head__list li:hover {
-    margin: 0 0 40px 0;
-    color: black;
+    margin: 0 0 30px 0;
   }
   .container.lock {
     overflow: hidden;
   }
     a:active,
     a:hover {
-
       color: black;
     }
     

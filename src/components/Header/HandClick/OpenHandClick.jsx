@@ -1,4 +1,4 @@
-const HandleClick = (e) => {
+const OpenHandleClick = (e) => {
   let openHambBtn = document.getElementById("head__adaptive__btn");
   let headMenu = document.getElementById("head__menu");
   let lockContent = document.getElementById("container");
@@ -6,5 +6,4 @@ const HandleClick = (e) => {
   openHambBtn.classList.toggle("active");
   headMenu.classList.toggle("active");
 };
-
-export default HandleClick;
+export default OpenHandleClick;
