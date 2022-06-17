@@ -2,8 +2,7 @@ import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import { SiShikimori } from "react-icons/si";
-import OpenHandleClick from "./HandClick/OpenHandClick";
-// import CloseHandleClick from "./HandClick/CloseHandClick";
+import HandleClick from "./HandleClick";
 
 
 function Header(props) {
@@ -15,12 +14,12 @@ function Header(props) {
         <button
           className="head__adaptive__btn"
           id="head__adaptive__btn"
-          onClick={OpenHandleClick}
+          onClick={HandleClick}
         >
           <span></span>
         </button>
         <div className="head__menu" id="head__menu">
-          <ul className="head__list" onClick={OpenHandleClick}>
+          <ul className="head__list" onClick={HandleClick}>
             {props.links.map((el, i) => {
               return (
                 <li key={i}>
