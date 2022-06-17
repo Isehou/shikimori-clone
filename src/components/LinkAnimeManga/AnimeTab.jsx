@@ -4,8 +4,9 @@ import { useParams } from "react-router-dom";
 import DetailsTitle from "./Details/DetailsTitle";
 import DetailsImage from "./Details/DetailsImage";
 import DetailsInfo from "./Details/DetailsInfo";
+import StarRating from "./StarRating/StarRating";
 
-function Anime(props) {
+function AnimeTab(props) {
   const [aniMangaData, setAniMangaData] = useState(null);
   let params = useParams();
   useEffect(() => {
@@ -38,6 +39,7 @@ function Anime(props) {
               ]}
             />
           </div>
+          <StarRating></StarRating>
           <div className="aniManga-content_description">
             <div>{aniMangaData.description}</div>
           </div>
@@ -47,4 +49,4 @@ function Anime(props) {
   );
 }
 
-export default Anime;
+export default AnimeTab;

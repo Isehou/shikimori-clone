@@ -4,7 +4,7 @@ import DetailsTitle from "./Details/DetailsTitle";
 import DetailsImage from "./Details/DetailsImage";
 import DetailsInfo from "./Details/DetailsInfo";
 
-function Manga(props) {
+function MangaTab(props) {
   const [aniMangaData, setAniMangaData] = useState(null);
   let params = useParams();
   useEffect(() => {
@@ -50,4 +50,4 @@ function Manga(props) {
   );
 }
 
-export default Manga;
+export default MangaTab;

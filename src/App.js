@@ -4,8 +4,8 @@ import Header from './components/Header/Header';
 import MainAnime from './components/MainAnimeManga/MainAnime';
 import UseEffectTest from './components/someTest/UseEffectTest';
 import { Routes,  Route, Link, } from "react-router-dom";
-import Anime from './components/LinkAnimeManga/Anime';
-import Manga from './components/LinkAnimeManga/Manga';
+import AnimeTab from './components/LinkAnimeManga/AnimeTab';
+import MangaTab from './components/LinkAnimeManga/MangaTab';
 import MainManga from './components/MainAnimeManga/MainManga';
 import Example from './components/someTest/DeviceTest';
 
@@ -24,8 +24,8 @@ function App() {
         <Routes>
           <Route path="/" element={ <MainAnime counter={counter} />} />
             <Route path="/manga" element={ <MainManga />}></Route>
-            <Route path="/manga/:id" element={ <Manga />}></Route>
-            <Route path="/anime/:id" element={ <Anime />}></Route>
+            <Route path="/manga/:id" element={ <MangaTab />}></Route>
+            <Route path="/anime/:id" element={ <AnimeTab />}></Route>
             <Route path="/resource" element={ <UseEffectTest /> }></Route>
             <Route path="/device" element={ <Example /> }></Route>
         </Routes>
