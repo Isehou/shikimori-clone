@@ -1,39 +1,39 @@
-.aniManga-main {
+.aniManga {
     margin-top: 130px;
-    padding-left: 20px;
+    padding: 0px 20px;
     height: 700px;
 }
-.aniManga-content_details {
+.aniManga__content-details {
     height: 700px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
-.aniManga-content_details h2 {
+.aniManga__content-details h2 {
     width: 100%;
     height: auto;
     /* background-color: red; */
     text-transform: uppercase;
 }
-.aniManga-image_block {
+.aniManga__image-block {
     width: 300px;
-    height: 400px;
-    max-width: 300px;
-    max-height: 400px;
+    height: 420px;
     border-radius: 15px;
+    margin: 10px 10px 0px 0px;
 }
-.aniManga-text_block {
-    margin-left: 15px;
+.aniManga__text-block {
+    margin: 10px 15px 20px;
     width: 300px;
-    padding-left: 15px;
-    max-width: 450px;
     height: 400px;
+    padding: 10px;
+    max-width: 450px;
     font-size: 14pt;
     line-height: 30px;
     background-color: rgb(240, 240, 240);
     border-radius: 15px;
 }
-.aniManga-content_description {
+.aniManga__content-description {
+    height: auto;
     width: 100%;
     font-size: 14pt;
     padding: 10px;
@@ -42,7 +42,38 @@
     background-color: rgb(240, 240, 240);
 }
 @media  (max-width: 767px) {
-    .aniManga-main {
-        margin-top: 80px;
-    }  
+    .aniManga {
+        display: flex;
+        justify-content: center;
+        margin: 70px 15px 10px;
+    }
+    .aniManga__content-details {
+        margin: 10px 15px 10px;
+        height: auto;
+    }
+    .aniManga__content-details h2 {
+        font-size: 13pt;
+        text-transform: uppercase;
+        margin: 10px 15px 10px;
+        height: auto;
+    }
+    .aniManga__text-block {
+        margin: 10px 15px 10px;
+        height: auto;
+        font-size: 12pt;
+        width: 320px;
+    }
+    .aniManga__image-block {
+
+        width: auto;
+        border-radius: 15px;
+        margin: 10px 15px 10px;
+        height: auto;
+    }
+    .aniManga__content-description {
+        margin: 10px 15px 10px;
+        height: auto;
+        font-size: 12pt;
+        width: 320px;
+    }
   }

@@ -15,9 +15,9 @@ function AnimeTab(props) {
       .then((res) => setAniMangaData(res));
   }, [params]);
   return (
-    <div className="aniManga-main">
+    <div className="aniManga">
       {aniMangaData && (
-        <div className="aniManga-content_details">
+        <div className="aniManga__content-details">
           <DetailsTitle
             name={aniMangaData.name}
             russian={aniMangaData.russian}
@@ -27,7 +27,7 @@ function AnimeTab(props) {
           {aniMangaData?.image?.original && (
             <DetailsImage src={aniMangaData.image.original} />
           )}
-          <div className="aniManga-text_block">
+          <div className="aniManga__text-block">
             ИНФОРМАЦИЯ
             <DetailsInfo
               data={[
@@ -40,7 +40,7 @@ function AnimeTab(props) {
             />
           </div>
           <StarRating></StarRating>
-          <div className="aniManga-content_description">
+          <div className="aniManga__content-description">
             <div>{aniMangaData.description}</div>
           </div>
         </div>

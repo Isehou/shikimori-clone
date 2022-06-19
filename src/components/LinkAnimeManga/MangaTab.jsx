@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import DetailsTitle from "./Details/DetailsTitle";
 import DetailsImage from "./Details/DetailsImage";
 import DetailsInfo from "./Details/DetailsInfo";
+import StarRating from "./StarRating/StarRating";
 
 function MangaTab(props) {
   const [aniMangaData, setAniMangaData] = useState(null);
@@ -13,9 +14,9 @@ function MangaTab(props) {
       .then((res) => setAniMangaData(res));
   }, [params]);
   return (
-    <div className="aniManga-main">
+    <div className="aniManga">
       {aniMangaData && (
-        <div className="aniManga-content_details">
+        <div className="aniManga__content-details">
           <DetailsTitle
             name={aniMangaData.name}
             russian={aniMangaData.russian}
@@ -25,7 +26,7 @@ function MangaTab(props) {
           {aniMangaData?.image?.original && (
             <DetailsImage src={aniMangaData.image.original} />
           )}
-          <div className="aniManga-text_block">
+          <div className="aniManga__text-block">
             <DetailsInfo
               data={[
                 { title: "Тип:", info: aniMangaData.kind },
@@ -41,7 +42,8 @@ function MangaTab(props) {
               ]}
             />
           </div>
-          <div className="aniManga-content_description">
+          <StarRating></StarRating>
+          <div className="aniManga__content-description">
             <div>{aniMangaData.description}</div>
           </div>
         </div>

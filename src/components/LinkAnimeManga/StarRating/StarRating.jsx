@@ -1,9 +1,10 @@
 import "./style.css";
+
 function StarRating() {
   return (
     <div className="rating">
       <div className="rating__body">
-        <div className="rating__active"></div>
+        <div className="rating__active" style={{ width: `&{score}%` }}></div>
         <div className="rating__items">
           <input
             type="radio"
@@ -36,9 +37,10 @@ function StarRating() {
             value="5"
           />
         </div>
-        <div className="rating__value">4</div>
       </div>
+      <div className="rating__value">3.6</div>
     </div>
   );
 }
+
 export default StarRating;

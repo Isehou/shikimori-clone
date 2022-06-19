@@ -10,5 +10,14 @@ https://ru.reactjs.org/docs/lists-and-keys.html
 https://metanit.com/web/react/4.6.php
 
 Сделать рейтинг.
-Адаптивность меню (бургер-меню react) --
-адаптивность деталей
+
+Слайдер картинок
+swiper.js.com
+
+-\* {
+margin: 0;
+padding: 0;
+box-sizing: border-box
+}
+
+css normalize
