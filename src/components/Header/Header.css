@@ -21,6 +21,7 @@ a:hover {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 3;
 }
 .container {
   margin: 0px auto;
@@ -43,11 +44,11 @@ a:hover {
 }
 .head__shiki__logo {
   position: relative;
-  z-index: 3;
+  z-index: 999;
   width: auto;
   height: 50px;
   color: white;
-  padding: 10px;
+  padding: 5px;
   margin: none;
   /* background-color: red; */
 }
@@ -56,8 +57,9 @@ a:hover {
   text-transform: uppercase;
   color: #fff;
   cursor: pointer;
-  /* position: relative;
-  z-index: 2; */
+  position: relative;
+  z-index: 2;
+  padding-right: 500px;
 }
 .head__list {
   font-size: 14pt;
@@ -79,9 +81,10 @@ a:hover {
 @media (max-width: 767px) {
   .container{
     height: 50px; 
+    padding: 0px 25px;
   }
   .head__shiki__logo{
-    height: 30px;
+    height: 45px;
   }
   .head__adaptive__btn {
     display: block;
@@ -162,6 +165,10 @@ a:hover {
     z-index: 2;
     transition: left 0.3s ease 0.3s;
   }
+  .head__title__text {
+    padding: 0;
+    font-size: 13pt;
+  }
   .head__list {
     display: block;
     font-size: 16pt;
@@ -176,9 +183,9 @@ a:hover {
   .container.lock {
     overflow: hidden;
   }
-    a:active,
-    a:hover {
-      color: black;
+  .head__link:active,
+  .head__link:hover {
+      background-color: black;
     }
     
 }

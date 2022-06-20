@@ -39,7 +39,7 @@ function AnimeTab(props) {
               ]}
             />
           </div>
-          <StarRating></StarRating>
+          {aniMangaData && <StarRating rating={Number(aniMangaData.score)}></StarRating>}
           <div className="aniManga__content-description">
             <div>{aniMangaData.description}</div>
           </div>

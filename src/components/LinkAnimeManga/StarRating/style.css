@@ -1,6 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+    }
+    
 .rating {
     display: flex;
     justify-content: center;
+    align-items: center;
     font-size: 40px;
     line-height: 0.75;
     width: 320px;
@@ -13,6 +20,7 @@
 .rating__body {
     position: relative;
     z-index: 0;
+    
 }
 .rating__body::before {
     content: "★★★★★";
@@ -51,12 +59,10 @@
     cursor: pointer;
 }
 .rating__value {
-    margin-top: 10px;
-    /* background-color: red; */
-    width: 30px;
+
+    margin-left: 5px;
     font-size: 50%;
     line-height: 1;
-    padding: 0px 0px 0px 20px;
 }
 @media (max-width: 767px) {
     .rating {
