@@ -5,6 +5,7 @@ import DetailsTitle from "./Details/DetailsTitle";
 import DetailsImage from "./Details/DetailsImage";
 import DetailsInfo from "./Details/DetailsInfo";
 import StarRating from "./StarRating/StarRating";
+import SwiperImg from "./Swiper/SwiperImg";
 
 function AnimeTab(props) {
   const [aniMangaData, setAniMangaData] = useState(null);
@@ -24,9 +25,14 @@ function AnimeTab(props) {
             english={aniMangaData.english}
             japanese={aniMangaData.japanese}
           ></DetailsTitle>
+
           {aniMangaData?.image?.original && (
             <DetailsImage src={aniMangaData.image.original} />
           )}
+          {aniMangaData.screenshots && (
+            <SwiperImg src={aniMangaData.screenshots.preview}></SwiperImg>
+          )}
+
           <div className="aniManga__text-block">
             ИНФОРМАЦИЯ
             <DetailsInfo
@@ -39,7 +45,9 @@ function AnimeTab(props) {
               ]}
             />
           </div>
-          {aniMangaData && <StarRating rating={Number(aniMangaData.score)}></StarRating>}
+          {aniMangaData && (
+            <StarRating rating={Number(aniMangaData.score)}></StarRating>
+          )}
           <div className="aniManga__content-description">
             <div>{aniMangaData.description}</div>
           </div>

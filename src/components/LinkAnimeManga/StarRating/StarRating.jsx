@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import "./style.css";
 
-function StarRating({rating}) {
+function StarRating({ rating }) {
   const [score, setScore] = useState();
   useEffect(() => {
-    setScore((rating))
-  },[rating]); 
+    setScore(rating * 10);
+  }, [rating]);
   return (
     <div className="rating">
       <div className="rating__body">
-        <div className="rating__active" style={{width: `${score}%` }}></div>
+        <div className="rating__active" style={{ width: `${score}%` }}></div>
         <div className="rating__items">
           <input
             type="radio"

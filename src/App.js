@@ -16,7 +16,7 @@ function App() {
   const links = [{ label: "Anime", link: "/" }, 
                   { label: "Manga", link: "/manga" }, 
                   { label: "Api-Test", link: "/resource" },
-                  { label: "MyTestCode", link: "/testcode" },
+                  // { label: "MyTestCode", link: "/testcode" },
                   { label: "Device-Test", link: "/device" }]
                 
                   
@@ -29,7 +29,7 @@ function App() {
             <Route path="/manga/:id" element={ <MangaTab />}></Route>
             <Route path="/anime/:id" element={ <AnimeTab />}></Route>
             <Route path="/resource" element={ <UseEffectTest /> }></Route>
-            <Route path="/testcode" element={ <MyTestCode /> }></Route>
+            {/* <Route path="/testcode" element={ <MyTestCode /> }></Route> */}
             <Route path="/device" element={ <Example /> }></Route>
         </Routes>
     </div>

@@ -183,9 +183,9 @@ a:hover {
   .container.lock {
     overflow: hidden;
   }
-  .head__link:active,
+  /* .head__link:active,
   .head__link:hover {
       background-color: black;
-    }
+    } */
     
 }
