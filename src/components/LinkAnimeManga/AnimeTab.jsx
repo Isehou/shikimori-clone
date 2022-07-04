@@ -30,7 +30,7 @@ function AnimeTab(props) {
             <DetailsImage src={aniMangaData.image.original} />
           )}
           {aniMangaData.screenshots && (
-            <SwiperImg src={aniMangaData.screenshots.preview}></SwiperImg>
+            <SwiperImg src={aniMangaData.screenshots} />
           )}
 
           <div className="aniManga__text-block">

@@ -4,6 +4,7 @@ import DetailsTitle from "./Details/DetailsTitle";
 import DetailsImage from "./Details/DetailsImage";
 import DetailsInfo from "./Details/DetailsInfo";
 import StarRating from "./StarRating/StarRating";
+import SwiperImg from "./Swiper/SwiperImg";
 
 function MangaTab(props) {
   const [aniMangaData, setAniMangaData] = useState(null);
@@ -42,7 +43,7 @@ function MangaTab(props) {
               ]}
             />
           </div>
-          <StarRating></StarRating>
+          <StarRating rating={Number(aniMangaData.score)}></StarRating>
           <div className="aniManga__content-description">
             <div>{aniMangaData.description}</div>
           </div>
