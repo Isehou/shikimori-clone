@@ -1,15 +1,13 @@
-import { useState, useEffect } from "react";
 import "./style.css";
 
-function StarRating({rating}) {
-  const [score, setScore] = useState();
-  useEffect(() => {
-    setScore((rating  * 10).toFixed(1))
-  },[rating]); 
+function StarRating({ rating }) {
   return (
     <div className="rating">
       <div className="rating__body">
-        <div className="rating__active" style={{width: `${score}%`}}></div>
+        <div
+          className="rating__active"
+          style={{ width: `${rating * 10}%` }}
+        ></div>
         <div className="rating__items">
           <input
             type="radio"
@@ -43,7 +41,7 @@ function StarRating({rating}) {
           />
         </div>
       </div>
-      <div className="rating__value">{score}</div>
+      <div className="rating__value">{rating.toFixed(1)}</div>
     </div>
   );
 }

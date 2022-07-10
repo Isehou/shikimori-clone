@@ -27,6 +27,7 @@ function MangaTab(props) {
           {aniMangaData?.image?.original && (
             <DetailsImage src={aniMangaData.image.original} />
           )}
+
           <div className="aniManga__text-block">
             <DetailsInfo
               data={[

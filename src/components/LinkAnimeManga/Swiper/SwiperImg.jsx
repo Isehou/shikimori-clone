@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Navigation, Pagination } from "swiper";
-import "swiper/css";
 import "./styles.css";
+import "swiper/css";
+import "swiper/css/effect-fade";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 function SwiperImg(props) {
   return (
     <Swiper
-      spaceBetween={30}
+      slidesPerView={1}
       effect={"fade"}
       navigation={true}
       pagination={{
@@ -17,21 +19,11 @@ function SwiperImg(props) {
       modules={[EffectFade, Navigation, Pagination]}
       className="swiper"
     >
-      <SwiperSlide className="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-      </SwiperSlide>
-      <SwiperSlide className="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-      </SwiperSlide>
-      <SwiperSlide className="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-      </SwiperSlide>
-      <SwiperSlide className="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-      </SwiperSlide>
-      <SwiperSlide className="swiper-slide">
-        <img src={"https://shikimori.one" + props.src} alt="#" />
-      </SwiperSlide>
+      {props.list.map((el, i) => (
+        <SwiperSlide key={i} className="swiper-slide">
+          <img src={"https://shikimori.one" + el.original} />
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 }
