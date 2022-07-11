@@ -62,6 +62,7 @@ a:hover {
   padding-right: 500px;
   position: fixed;
   margin-left: 100px;
+  
 }
 .head__list {
   font-size: 14pt;
@@ -169,9 +170,7 @@ a:hover {
     transition: left 0.3s ease 0.3s;
   }
   .head__title-text {
-    padding: 0;
-    font-size: 14pt;
-    
+    display: none;
   }
   .head__list {
     display: block;

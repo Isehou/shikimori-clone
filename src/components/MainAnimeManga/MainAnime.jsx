@@ -15,7 +15,7 @@ function MainAnime(props) {
   };
   useEffect(() => {
     fetch(
-      `https://shikimori.one/api/animes?genre=40,11&r_plus&limit=30&page=${page}`
+      `https://shikimori.one/api/animes?genre=7&order=popularity&r_plus&limit=30&page=${page}`
     )
       .then((res) => res.json())
       .then((res) => setList(res));

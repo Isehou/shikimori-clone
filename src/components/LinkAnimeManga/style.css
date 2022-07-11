@@ -6,20 +6,19 @@
 .aniManga__content-details {
     height: 700px;
     display: flex;
-    flex-direction: row;
+    justify-content: start;
     flex-wrap: wrap;
 }
 .aniManga__content-details h2 {
     width: 100%;
-    height: auto;
-    /* background-color: red; */
     text-transform: uppercase;
+    margin: 10px 15px 10px;
 }
 .aniManga__image-block {
     width: 300px;
     height: 420px;
     border-radius: 15px;
-    margin: 10px 10px 0px 0px;
+    margin: 10px 15px 20px;
 }
 .aniManga__text-block {
     margin: 10px 15px 20px;
@@ -38,42 +37,44 @@
     font-size: 14pt;
     padding: 10px;
     border-radius: 15px;
-    /* border: 1px solid black; */
+    margin: 10px 15px 10px;
     background-color: rgb(240, 240, 240);
 }
 @media  (max-width: 767px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box
+    }
     .aniManga {
-        display: flex;
-        justify-content: center;
         margin: 70px 15px 10px;
+        
     }
     .aniManga__content-details {
+        justify-content: center;
         margin: 10px 15px 10px;
-        height: auto;
     }
     .aniManga__content-details h2 {
         font-size: 13pt;
         text-transform: uppercase;
         margin: 10px 15px 10px;
         height: auto;
+        width: auto;
     }
     .aniManga__text-block {
         margin: 10px 15px 10px;
         height: auto;
         font-size: 12pt;
         width: 320px;
+        
     }
     .aniManga__image-block {
-
-        width: auto;
         border-radius: 15px;
         margin: 10px 15px 10px;
-        height: auto;
     }
     .aniManga__content-description {
         margin: 10px 15px 10px;
-        height: auto;
         font-size: 12pt;
-        width: 320px;
+        width: auto;
     }
   }

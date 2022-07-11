@@ -40,11 +40,10 @@ function MangaTab(props) {
                 { title: "Количество глав:", info: aniMangaData.chapters },
                 { title: "Статус:", info: aniMangaData.status },
                 { title: "Объем:", info: aniMangaData.volumes },
-                { title: "Рейтинг:", info: aniMangaData.score },
               ]}
             />
+            <br />Рейтинг<StarRating rating={Number(aniMangaData.score)}></StarRating>
           </div>
-          <StarRating rating={Number(aniMangaData.score)}></StarRating>
           <div className="aniManga__content-description">
             <div>{aniMangaData.description}</div>
           </div>

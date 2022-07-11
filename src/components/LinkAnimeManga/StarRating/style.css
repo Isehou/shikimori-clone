@@ -6,15 +6,8 @@
     
 .rating {
     display: flex;
-    justify-content: center;
     font-size: 40px;
     line-height: 0.75;
-    width: 320px;
-    background-color: rgb(240, 240, 240);
-    border-radius: 15px;
-    margin: 10px 15px 10px;
-    max-height: 420px;
-    padding: 10px;
 }
 .rating__body {
     position: relative;

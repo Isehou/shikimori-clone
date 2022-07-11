@@ -12,7 +12,7 @@ function Header(props) {
   return (
     <div className="header">
       <div className="container">
-        <SiShikimori className="head__shiki-logo"></SiShikimori>
+        <Link to="/"><SiShikimori className="head__shiki-logo"></SiShikimori></Link>
         <div className="head__title-text">Shikimori clone</div>
         <button
           className="head__adaptive__btn"

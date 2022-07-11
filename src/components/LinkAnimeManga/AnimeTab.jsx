@@ -25,14 +25,12 @@ function AnimeTab(props) {
             english={aniMangaData.english}
             japanese={aniMangaData.japanese}
           ></DetailsTitle>
-
           {aniMangaData?.image?.original && (
             <DetailsImage src={aniMangaData.image.original} />
           )}
           {aniMangaData.screenshots && (
             <SwiperImg list={aniMangaData.screenshots} />
           )}
-
           <div className="aniManga__text-block">
             ИНФОРМАЦИЯ
             <DetailsInfo
@@ -41,13 +39,10 @@ function AnimeTab(props) {
                 { title: "Начало показа: с", info: aniMangaData.aired_on },
                 { title: "Дата релиза:", info: aniMangaData.released_on },
                 { title: "Количество серий:", info: aniMangaData.episodes },
-                { title: "Рейтинг:", info: aniMangaData.score },
               ]}
             />
+            <br />Рейтинг<StarRating rating={Number(aniMangaData.score)}></StarRating>
           </div>
-          {aniMangaData && (
-            <StarRating rating={Number(aniMangaData.score)}></StarRating>
-          )}
           <div className="aniManga__content-description">
             <div>{aniMangaData.description}</div>
           </div>

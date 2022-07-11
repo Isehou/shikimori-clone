@@ -1,12 +1,13 @@
 .swiper {
-    /* display: flex;
-    justify-content: center; */
-    width: 620px;
+    display: flex;
+    justify-content: center;
+    width: 720px;
     height: 100%;
     background-color: rgb(240, 240, 240);
     border-radius: 15px;
     margin: 10px 15px 10px;
     max-height: 420px;
+    padding: none;
 }
 .swiper-slide {
     text-align: center;
