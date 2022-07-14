@@ -15,13 +15,14 @@ function MainAnime(props) {
   };
   useEffect(() => {
     fetch(
-      `https://shikimori.one/api/mangas?season=2016,2015&limit=30&page=${page}`
+      `https://shikimori.one/api/mangas?season=2016,2015&limit=15&page=${page}`
     )
       .then((res) => res.json())
       .then((res) => setList(res));
   }, [page]);
   return (
     <div className="home_page">
+      <div className="button__block">
       <button
         className="btn"
         onClick={() => setPage((curr) => (curr === 1 ? 1 : curr - 1))}
@@ -30,7 +31,7 @@ function MainAnime(props) {
       </button>
       <button className="btn" onClick={() => setPage((curr) => curr + 1)}>
         Next
-      </button>
+      </button></div>
       <div className="element_list">
         {curr && (
           <Modal
