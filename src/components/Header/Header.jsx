@@ -12,8 +12,10 @@ function Header(props) {
   return (
     <div className="header">
       <div className="container">
-        <Link to="/"><SiShikimori className="head__shiki-logo"></SiShikimori></Link>
-        <div className="head__title-text">Shikimori clone</div>
+        <Link className="title__logo__link" to="/">
+          <SiShikimori className="head__shiki-logo"></SiShikimori>
+          <div className="head__title-text">Shikimori clone</div>
+        </Link>
         <button
           className="head__adaptive__btn"
           id="head__adaptive__btn"

@@ -10,7 +10,16 @@
   align-items: center;
   flex-wrap: wrap;
   z-index: 1;
-  width: 100%;
+  width: 85%;
+  /* background-color: red; */
+}
+.filter {
+  position: fixed;
+  width: 320px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: rebeccapurple;
 }
 .button__block {
   width: 100%;
@@ -69,18 +78,10 @@
 .element_list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: center;
   align-items: start;
   position: relative;
-  width: 80%;
-}
-.filter {
-  position: fixed;
-  width: 320px;
-  height: 100%;
-  top: 0; 
-  right: 0;
-  background-color: rebeccapurple;
+  width: 100%;
 }
 .block_content {
   border: 1px solid rgb(13, 70, 114);

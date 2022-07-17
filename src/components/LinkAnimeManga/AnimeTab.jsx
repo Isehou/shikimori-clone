@@ -18,7 +18,7 @@ function AnimeTab(props) {
   return (
     <div className="aniManga">
       {aniMangaData && (
-        <div className="aniManga__content-details">
+        <div className="aniManga__content">
           <DetailsTitle
             name={aniMangaData.name}
             russian={aniMangaData.russian}
@@ -27,9 +27,6 @@ function AnimeTab(props) {
           ></DetailsTitle>
           {aniMangaData?.image?.original && (
             <DetailsImage src={aniMangaData.image.original} />
-          )}
-          {aniMangaData.screenshots && (
-            <SwiperImg list={aniMangaData.screenshots} />
           )}
           <div className="aniManga__text-block">
             ИНФОРМАЦИЯ
@@ -41,8 +38,14 @@ function AnimeTab(props) {
                 { title: "Количество серий:", info: aniMangaData.episodes },
               ]}
             />
-            <br />Рейтинг<StarRating rating={Number(aniMangaData.score)}></StarRating>
+            <br />
+            Рейтинг
+            <StarRating rating={Number(aniMangaData.score)}></StarRating>
           </div>
+          {aniMangaData.screenshots && (
+            <SwiperImg list={aniMangaData.screenshots} />
+          )}
+
           <div className="aniManga__content-description">
             <div>{aniMangaData.description}</div>
           </div>

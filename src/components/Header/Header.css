@@ -42,6 +42,10 @@ a:hover {
   z-index: 2;
   background-color: rgb(13, 70, 114);
 }
+.title__logo__link {
+  display: flex;
+  align-items: center;
+}
 .head__shiki-logo {
   position: relative;
   z-index: 999;
@@ -57,13 +61,15 @@ a:hover {
   text-transform: uppercase;
   color: #fff;
   cursor: pointer;
-  position: relative;
   z-index: 2;
   padding-right: 500px;
   position: fixed;
   margin-left: 100px;
-  
 }
+.head__title-text:hover {
+  color: black;
+}
+
 .head__list {
   font-size: 14pt;
   list-style-type: none;

@@ -17,7 +17,7 @@ function MangaTab(props) {
   return (
     <div className="aniManga">
       {aniMangaData && (
-        <div className="aniManga__content-details">
+        <div className="aniManga__content">
           <DetailsTitle
             name={aniMangaData.name}
             russian={aniMangaData.russian}
@@ -26,8 +26,7 @@ function MangaTab(props) {
           ></DetailsTitle>
           {aniMangaData?.image?.original && (
             <DetailsImage src={aniMangaData.image.original} />
-          )}
-
+          )}{" "}
           <div className="aniManga__text-block">
             <DetailsInfo
               data={[
@@ -42,7 +41,8 @@ function MangaTab(props) {
                 { title: "Объем:", info: aniMangaData.volumes },
               ]}
             />
-            <br />Рейтинг<StarRating rating={Number(aniMangaData.score)}></StarRating>
+            <br />
+            Рейтинг<StarRating rating={Number(aniMangaData.score)}></StarRating>
           </div>
           <div className="aniManga__content-description">
             <div>{aniMangaData.description}</div>
