@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Modal from "../Modale/Modal";
+import Modal from "./Modal/Modal";
 import FilterFunction from "./Filter/FilterFunction";
 import "./style.css";
 
