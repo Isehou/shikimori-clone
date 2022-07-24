@@ -1,0 +1,15 @@
+.filter__block {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-top: 30px;
+}
+.filter__items {
+  width: 80%;
+  list-style: none;
+  font-size: 11pt;
+}
+.filter__item {
+}

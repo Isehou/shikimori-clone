@@ -12,7 +12,7 @@ function MainAnime(props) {
   const [isModalOpen, setModalOpen] = useState(false);
   const openModal = (state, element) => {
     setModalOpen(state);
-    setCurr(element);  
+    setCurr(element);
   };
   useEffect(() => {
     fetch(
