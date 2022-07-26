@@ -9,10 +9,6 @@ https://ru.reactjs.org/docs/lists-and-keys.html
 передача данных между компонентами в react router fetch
 https://metanit.com/web/react/4.6.php
 
-Сделать рейтинг.
-Слайдер картинок
-swiper.js.com
-
 /* -\* {
 margin: 0;
 padding: 0;
@@ -24,4 +20,7 @@ css normalize
 сделать genresg
 
 https://qna.habr.com/q/691162
-фильтрация данных react
+
+
+фильтрация данных react  - - https://jsfiddle.net/gxab98nq/
+                             https://codesandbox.io/s/crazy-turing-jd3ym?fontsize=14&hidenavigation=1&theme=dark

@@ -1,0 +1,39 @@
+.filter {
+  position: absolute;
+  width: 320px;
+  height: auto;
+  top: 0;
+  right: 0;
+  /* background-color: rgb(13, 70, 114); */
+  border-color: rgb(13, 70, 114);;
+  padding-top: 5%;
+}
+.filter__block {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  color: black;
+  margin-top: 30px;
+}
+.filter__items {
+  width: 80%;
+  list-style: none;
+  font-size: 11pt;
+}
+.filter__item {
+  padding-top: 5px;
+}
+.filter__item span {
+  padding-left: 10px;
+}
+.filter__item-genre {
+    background-color: rgb(13, 70, 114);
+    color: white;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    border-radius: 3px;
+}

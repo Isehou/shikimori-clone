@@ -15,9 +15,9 @@ function App() {
   const [counter, setCounter] = useState(0)
   const links = [{ label: "Anime", link: "/" }, 
                   { label: "Manga", link: "/manga" }, 
-                  { label: "Api-Test", link: "/resource" },
+                  { label: "Api Тест", link: "/resource" },
                   // { label: "MyTestCode", link: "/testcode" },
-                  { label: "Device-Test", link: "/device" }]
+                  { label: "Device Test", link: "/device" }]
                 
                   
   return (

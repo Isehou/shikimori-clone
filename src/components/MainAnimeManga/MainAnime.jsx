@@ -12,7 +12,7 @@ function MainAnime(props) {
   const [isModalOpen, setModalOpen] = useState(false);
   const openModal = (state, element) => {
     setModalOpen(state);
-    setCurr(element);  
+    setCurr(element);
   };
   useEffect(() => {
     fetch(
@@ -29,10 +29,10 @@ function MainAnime(props) {
           className="btn"
           onClick={() => setPage((curr) => (curr === 1 ? 1 : curr - 1))}
         >
-          Prev
+          Пред
         </button>
         <button className="btn" onClick={() => setPage((curr) => curr + 1)}>
-          Next
+          След
         </button>
       </div>
       <div className="element_list">
