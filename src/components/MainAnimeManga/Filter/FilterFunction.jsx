@@ -1,9 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import "./style.css";
+import "./FilterFunction.css";
 
 function FilterFunction() {
   const [items, setItems] = useState([]);
+
   useEffect(() => {
     fetch("https://shikimori.one/api/genres?limit=20")
       .then((res) => res.json())
@@ -13,6 +14,8 @@ function FilterFunction() {
       });
   });
 
+  function handleToggle(index) {}
+
   return (
     <div className="filter">
       <div className="filter__block">
@@ -20,7 +23,7 @@ function FilterFunction() {
           <div className="filter__item-genre">ЖАНРЫ</div>
           {items.map((el, i) => (
             <li className="filter__item" key={el.id}>
-              <input type="checkbox" />
+              <input onChange={() => handleToggle(el.id)} type="checkbox" />
               <span>{el.russian}</span>
             </li>
           ))}
