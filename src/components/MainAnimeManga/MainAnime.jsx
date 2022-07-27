@@ -16,80 +16,82 @@ function MainAnime(props) {
   };
   useEffect(() => {
     fetch(
-      `https://shikimori.one/api/animes?order=popularity&r_plus&limit=16&page=${page}`
+      `https://shikimori.one/api/animes?order=popularity&&r_plus&limit=16&page=${page}`
     )
       .then((res) => res.json())
       .then((res) => setList(res));
   }, [page]);
   return (
     <div className="home_page">
-      <FilterFunction></FilterFunction>
-      <div className="button__block">
-        <button
-          className="btn"
-          onClick={() => setPage((curr) => (curr === 1 ? 1 : curr - 1))}
-        >
-          Пред
-        </button>
-        <button className="btn" onClick={() => setPage((curr) => curr + 1)}>
-          След
-        </button>
-      </div>
-      <div className="element_list">
-        {curr && (
-          <Modal
-            isOpen={isModalOpen}
-            changeModalVisible={setModalOpen}
-            className="modal_content"
+      <div className="wrapper">
+        <div className="button__block">
+          <button
+            className="btn"
+            onClick={() => setPage((curr) => (curr === 1 ? 1 : curr - 1))}
           >
-            <h4 className="modal_content_text">
-              {curr.russian} / {curr.name}
-            </h4>
-            <div className="modal_content_text-all">
-              <p>Тип: {curr.kind}</p>
-              <p>
-                Количество серий:{" "}
-                {curr.episodes >= null ? curr.episodes : "Неизвестно"}
-              </p>
-              <p>Статус: {curr.status}</p>
-              <p>
-                Дата релиза:{" "}
-                {curr.released_on >= null ? "Неизвестно" : curr.released_on}
-              </p>
-              <p>
-                Начало показа:{" "}
-                {curr.aired_on >= null ? "Неизвестно" : curr.aired_on}
-              </p>
-            </div>
-            <div className="modal_content_text-rating">
-              Рейтинг: {curr.score}
-            </div>
-            <Link to={"/anime/" + curr.id}>
-              <button className="btn_modal_more_details">
-                View Full Details
-              </button>
-            </Link>
-          </Modal>
-        )}
-        {list.map((el, i) => {
-          return (
-            <div className="block_content" key={el.id}>
-              <img
-                alt="#"
-                src={"https://shikimori.one" + el.image.original}
-                className="block_image"
-              />
-              <span className="block_text">{el.russian}</span>
-              <button
-                className="open_modal_btn"
-                onClick={() => openModal(true, el)}
-              >
-                More Information
-              </button>
-            </div>
-          );
-        })}
+            Пред
+          </button>
+          <button className="btn" onClick={() => setPage((curr) => curr + 1)}>
+            След
+          </button>
+        </div>
+        <div className="element_list">
+          {curr && (
+            <Modal
+              isOpen={isModalOpen}
+              changeModalVisible={setModalOpen}
+              className="modal_content"
+            >
+              <h4 className="modal_content_text">
+                {curr.russian} / {curr.name}
+              </h4>
+              <div className="modal_content_text-all">
+                <p>Тип: {curr.kind}</p>
+                <p>
+                  Количество серий:{" "}
+                  {curr.episodes >= null ? curr.episodes : "Неизвестно"}
+                </p>
+                <p>Статус: {curr.status}</p>
+                <p>
+                  Дата релиза:{" "}
+                  {curr.released_on >= null ? "Неизвестно" : curr.released_on}
+                </p>
+                <p>
+                  Начало показа:{" "}
+                  {curr.aired_on >= null ? "Неизвестно" : curr.aired_on}
+                </p>
+              </div>
+              <div className="modal_content_text-rating">
+                Рейтинг: {curr.score}
+              </div>
+              <Link to={"/anime/" + curr.id}>
+                <button className="btn_modal_more_details">
+                  Посмотреть
+                </button>
+              </Link>
+            </Modal>
+          )}
+          {list.map((el, i) => {
+            return (
+              <div className="block_content" key={el.id}>
+                <img
+                  alt="#"
+                  src={"https://shikimori.one" + el.image.original}
+                  className="block_image"
+                />
+                <span className="block_text">{el.russian}</span>
+                <button
+                  className="open_modal_btn"
+                  onClick={() => openModal(true, el)}
+                >
+                  Подробнее
+                </button>
+              </div>
+            );
+          })}
+        </div>
       </div>
+      <FilterFunction ></FilterFunction>
     </div>
   );
 }

@@ -5,12 +5,11 @@
 .home_page {
   margin-top: 120px;
   display: flex;
+  /* background-color: blueviolet; */
+}
+.wrapper {
   justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
   z-index: 1;
-  width: 85%;
-  /* background-color: red; */
 }
 .button__block {
   width: 100%;
@@ -85,7 +84,7 @@
   text-align: center;
   flex-wrap: wrap;
   font-size: 14pt;
-  border-radius: 7px;
+  border-radius: 5px;
 }
 .block_text {
   width: 100%;
