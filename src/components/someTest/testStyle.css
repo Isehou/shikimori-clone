@@ -1,25 +1,25 @@
 .SomeButton {
-    width: 100px;
-    height: 30px;
-    margin: 5px;
-    background-color: #F6F6F6;
-    font-size: 11pt;
+  width: 100px;
+  height: 30px;
+  margin: 5px;
+  background-color: #f6f6f6;
+  font-size: 11pt;
 }
 .someDiv {
-    width: 40%;
-    margin-left: 50px;
+  width: 40%;
+  margin-left: 50px;
 }
 .device_block {
-    margin: 20px;
+  margin: 20px;
 }
 .TestUl {
-    margin-top: 150px;
+  margin-top: 150px;
 }
 @media (max-width: 767px) {
-    .device_block {
+  .device_block {
     margin-top: 70px;
-    }
-    .someDiv {
-        margin-top: 70px;
-    }
+  }
+  .someDiv {
+    margin-top: 70px;
+  }
 }

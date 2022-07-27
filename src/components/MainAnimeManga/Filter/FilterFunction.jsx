@@ -3,13 +3,13 @@ import { useState, useEffect } from "react";
 import "./FilterFunction.css";
 
 function FilterFunction() {
-  const [itemsData, setItemsData] = useState([]);
+  const [itemsFromData, setItemsFromData] = useState([]);
   const [getFiltering, setGetFiltering] = useState();
   useEffect(() => {
     fetch("https://shikimori.one/api/genres")
       .then((res) => res.json())
       .then((res) => {
-        setItemsData(res);
+        setItemsFromData(res);
         console.log(res);
       });
   }, []);
@@ -19,9 +19,12 @@ function FilterFunction() {
       <div className="filter__block">
         <ul className="filter__items">
           <div className="filter__item-genre">ЖАНРЫ</div>
-          {itemsData.map((el, i) => (
+          {itemsFromData.map((el, i) => (
             <li className="filter__item" key={el.id}>
-              <input type="checkbox" onClick={() => setGetFiltering(console.log('click'))} />
+              <input
+                type="checkbox"
+                onClick={() => setGetFiltering(console.log("click"))}
+              />
               <span>{el.russian}</span>
             </li>
           ))}
