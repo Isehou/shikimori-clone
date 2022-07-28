@@ -26,5 +26,7 @@ https://qna.habr.com/q/691162
                              https://codesandbox.io/s/crazy-turing-jd3ym?fontsize=14&hidenavigation=1&theme=dark
                              How to filter Products in React.js? site:stackoverflow.com
                              checkbox filter react 
+                             React filter by category
                              https://codepen.io/trezy/pen/GROLXqo?editors=0010
                              https://www.codegrepper.com/code-examples/javascript/checkbox+filter+in+react
+                             https://contactmentor.com/filter-list-by-category-react-js/

@@ -13,6 +13,14 @@ function FilterFunction() {
         console.log(res);
       });
   }, []);
+  // const menuItems = [...new Set(itemsFromData.map((Val) => Val.category))];
+  // const filterItem = (curcat) => {
+  //   const newItem = itemsFromData.filter((newVal) => {
+  //     return newVal.category === curcat;
+  //     // comparing category for displaying data
+  //   });
+  //   setItemsFromData(newItem);
+  // };
 
   return (
     <div className="filter">
@@ -20,11 +28,12 @@ function FilterFunction() {
         <ul className="filter__items">
           <div className="filter__item-genre">ЖАНРЫ</div>
           {itemsFromData.map((el, i) => (
-            <li className="filter__item" key={el.id}>
-              <input
-                type="checkbox"
-                onClick={() => setGetFiltering(console.log("click"))}
-              />
+            <li
+              className="filter__item"
+              key={el.id}
+              onClick={() => setItemsFromData(console.log("click"))}
+            >
+              <input type="checkbox" />
               <span>{el.russian}</span>
             </li>
           ))}

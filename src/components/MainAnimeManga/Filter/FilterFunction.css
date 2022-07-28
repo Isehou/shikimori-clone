@@ -16,6 +16,7 @@
 }
 .filter__item {
   padding-top: 5px;
+  cursor: pointer;
 }
 .filter__item span {
   padding-left: 10px;
