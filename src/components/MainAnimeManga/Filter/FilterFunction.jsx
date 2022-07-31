@@ -2,25 +2,13 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./FilterFunction.css";
 
-function FilterFunction() {
+function FilterFunction({ filterList, toggleFilter }) {
   const [itemsFromData, setItemsFromData] = useState([]);
-  const [getFiltering, setGetFiltering] = useState();
   useEffect(() => {
     fetch("https://shikimori.one/api/genres")
       .then((res) => res.json())
-      .then((res) => {
-        setItemsFromData(res);
-        console.log(res);
-      });
+      .then((res) => setItemsFromData(res.filter((e) => e.kind === "anime")));
   }, []);
-  // const menuItems = [...new Set(itemsFromData.map((Val) => Val.category))];
-  // const filterItem = (curcat) => {
-  //   const newItem = itemsFromData.filter((newVal) => {
-  //     return newVal.category === curcat;
-  //     // comparing category for displaying data
-  //   });
-  //   setItemsFromData(newItem);
-  // };
 
   return (
     <div className="filter">
@@ -29,12 +17,12 @@ function FilterFunction() {
           <div className="filter__item-genre">ЖАНРЫ</div>
           {itemsFromData.map((el, i) => (
             <li
-              className="filter__item"
+              className={`filter__item ${filterList[el.id] ? "active" : ""}`}
+              onClick={() => toggleFilter(el.id)}
               key={el.id}
-              onClick={() => setItemsFromData(console.log("click"))}
             >
               <input type="checkbox" />
-              <span>{el.russian}</span>
+              {el.russian}
             </li>
           ))}
         </ul>

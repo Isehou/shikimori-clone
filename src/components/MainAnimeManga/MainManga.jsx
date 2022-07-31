@@ -5,7 +5,7 @@ import Modal from "./Modal/Modal";
 import FilterFunction from "./Filter/FilterFunction";
 import "./style.css";
 
-function MainAnime(props) {
+function MainAnime({ props, filter }) {
   const [list, setList] = useState([]);
   const [page, setPage] = useState(1);
   const [curr, setCurr] = useState(null);
@@ -59,9 +59,7 @@ function MainAnime(props) {
                 Рейтинг: {curr.score}
               </div>
               <Link to={"/manga/" + curr.id}>
-                <button className="btn_modal_more_details">
-                Посмотреть
-                </button>
+                <button className="btn_modal_more_details">Посмотреть</button>
               </Link>
             </Modal>
           )}
@@ -85,7 +83,6 @@ function MainAnime(props) {
           })}
         </div>
       </div>
-      <FilterFunction></FilterFunction>
     </div>
   );
 }

@@ -14,13 +14,26 @@ function MainAnime(props) {
     setModalOpen(state);
     setCurr(element);
   };
+
+  const [filterList, setFilterList] = useState({});
+  const toggleFilter = (id) => {
+    setFilterList((prev) => {
+      if (prev.hasOwnProperty(id)) {
+        return { ...prev, [id]: !prev[id] };
+      }
+      return { ...prev, [id]: true };
+    });
+  };
+  const filterString = Object.keys(filterList).filter((key) => filterList[key]);
+
   useEffect(() => {
     fetch(
-      `https://shikimori.one/api/animes?order=popularity&&r_plus&limit=16&page=${page}`
+      `https://shikimori.one/api/animes?&order=popularity&limit=20&genre=${filterString.join()}&page=${page}`
     )
       .then((res) => res.json())
       .then((res) => setList(res));
-  }, [page]);
+  }, [filterString, page]);
+
   return (
     <div className="home_page">
       <div className="wrapper">
@@ -65,9 +78,7 @@ function MainAnime(props) {
                 Рейтинг: {curr.score}
               </div>
               <Link to={"/anime/" + curr.id}>
-                <button className="btn_modal_more_details">
-                  Посмотреть
-                </button>
+                <button className="btn_modal_more_details">Посмотреть</button>
               </Link>
             </Modal>
           )}
@@ -91,7 +102,10 @@ function MainAnime(props) {
           })}
         </div>
       </div>
-      <FilterFunction ></FilterFunction>
+      <FilterFunction
+        filterList={filterList}
+        toggleFilter={toggleFilter}
+      ></FilterFunction>
     </div>
   );
 }
