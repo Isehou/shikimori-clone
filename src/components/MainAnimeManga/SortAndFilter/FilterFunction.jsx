@@ -18,10 +18,9 @@ function FilterFunction({ filterList, toggleFilter }) {
           {itemsFromData.map((el, i) => (
             <li
               className={`filter__item ${filterList[el.id] ? "active" : ""}`}
-              onClick={() => toggleFilter(el.id)}
               key={el.id}
             >
-              <input type="checkbox" />
+              <input type="checkbox" onClick={() => toggleFilter(el.id)} />
               {el.russian}
             </li>
           ))}

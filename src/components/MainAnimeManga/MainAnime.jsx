@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from "./Modal/Modal";
-import FilterFunction from "./Filter/FilterFunction";
+import FilterFunction from "./SortAndFilter/FilterFunction";
 import "./style.css";
 
 function MainAnime(props) {
@@ -28,7 +28,7 @@ function MainAnime(props) {
 
   useEffect(() => {
     fetch(
-      `https://shikimori.one/api/animes?&order=popularity&limit=20&genre=${filterString.join()}&page=${page}`
+      `https://shikimori.one/api/animes?&order=popularity&limit=30&genre=${filterString.join()}&page=${page}`
     )
       .then((res) => res.json())
       .then((res) => setList(res));

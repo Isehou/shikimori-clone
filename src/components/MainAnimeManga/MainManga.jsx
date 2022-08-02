@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from "./Modal/Modal";
-import FilterFunction from "./Filter/FilterFunction";
+import FilterFunction from "./SortAndFilter/FilterFunction";
 import "./style.css";
 
 function MainAnime({ props, filter }) {
