@@ -1,8 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import "./FilterFunction.css";
+import "./Filter__Sort.css";
 
-function FilterFunction({ filterList, toggleFilter }) {
+function Filter({ filterList, toggleFilter }) {
   const [itemsFromData, setItemsFromData] = useState([]);
   useEffect(() => {
     fetch("https://shikimori.one/api/genres")
@@ -30,4 +30,4 @@ function FilterFunction({ filterList, toggleFilter }) {
   );
 }
 
-export default FilterFunction;
+export default Filter;

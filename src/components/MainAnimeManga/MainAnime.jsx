@@ -2,7 +2,8 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from "./Modal/Modal";
-import FilterFunction from "./SortAndFilter/FilterFunction";
+import Filter from "./SortAndFilter/Filter";
+import Sort from "./SortAndFilter/Sort";
 import "./style.css";
 
 function MainAnime(props) {
@@ -14,7 +15,14 @@ function MainAnime(props) {
     setModalOpen(state);
     setCurr(element);
   };
-
+  const [sortBy, setSortBy] = useState("id");
+  const sortTypes = ["id", "popularity", "name", "random"];
+  const sortNames = {
+    id: "По ID",
+    popularity: "По популярности",
+    name: "По алфавиту",
+    random: "Случайно",
+  };
   const [filterList, setFilterList] = useState({});
   const toggleFilter = (id) => {
     setFilterList((prev) => {
@@ -28,7 +36,7 @@ function MainAnime(props) {
 
   useEffect(() => {
     fetch(
-      `https://shikimori.one/api/animes?&order=popularity&limit=30&genre=${filterString.join()}&page=${page}`
+      `https://shikimori.one/api/animes?&order=popularity&limit=30&page=${page}&genre=${filterString.join()}`
     )
       .then((res) => res.json())
       .then((res) => setList(res));
@@ -102,10 +110,8 @@ function MainAnime(props) {
           })}
         </div>
       </div>
-      <FilterFunction
-        filterList={filterList}
-        toggleFilter={toggleFilter}
-      ></FilterFunction>
+      <Filter filterList={filterList} toggleFilter={toggleFilter}></Filter>
+      <Sort value={sortBy}></Sort>
     </div>
   );
 }
