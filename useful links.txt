@@ -38,3 +38,5 @@ Object.keys(obj).filter(key => )
 object.keys/entries/owlproperties
 
 filter.join()
+
+Обновление компонентов 

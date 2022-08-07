@@ -1,7 +1,6 @@
 .filter {
 }
 .filter__block {
-  background-color: blueviolet;
   width: 260px;
   height: auto;
   display: flex;
@@ -30,13 +29,13 @@
   border-radius: 3px;
 }
 .sort {
+  margin-top: 30px;
 }
 .sort__block {
-  background-color: red;
   width: 260px;
-  height: 600px;
-  color: black;
+  height: 60px;
 }
+
 .sort__item-genre {
   background-color: rgb(13, 70, 114);
   color: white;
@@ -46,8 +45,12 @@
   align-items: center;
   padding-left: 5px;
   border-radius: 3px;
+  box-shadow: none;
 }
-
+.sort__item {
+  padding-top: 5px;
+  cursor: pointer;
+}
 @media (max-width: 767px) {
   .filter {
     display: none;

@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import Modal from "./Modal/Modal";
 import Filter from "./SortAndFilter/Filter";
@@ -15,14 +15,8 @@ function MainAnime(props) {
     setModalOpen(state);
     setCurr(element);
   };
-  const [sortBy, setSortBy] = useState("id");
-  const sortTypes = ["id", "popularity", "name", "random"];
-  const sortNames = {
-    id: "По ID",
-    popularity: "По популярности",
-    name: "По алфавиту",
-    random: "Случайно",
-  };
+  const [isLoading, setIsLoading] = useState(false);
+  const [sortType, setSortType] = useState("");
   const [filterList, setFilterList] = useState({});
   const toggleFilter = (id) => {
     setFilterList((prev) => {
@@ -32,18 +26,28 @@ function MainAnime(props) {
       return { ...prev, [id]: true };
     });
   };
-  const filterString = Object.keys(filterList).filter((key) => filterList[key]);
 
   useEffect(() => {
+    const filterString = Object.keys(filterList).filter(
+      (key) => filterList[key]
+    );
+    setIsLoading(true);
     fetch(
-      `https://shikimori.one/api/animes?&order=popularity&limit=30&page=${page}&genre=${filterString.join()}`
+      `https://shikimori.one/api/animes?&limit=30&page=${page}&genre=${filterString.join()}&order=${sortType}`
     )
-      .then((res) => res.json())
-      .then((res) => setList(res));
-  }, [filterString, page]);
+      .then((res) => {
+        console.log(res.status, res.ok);
+        if (res.status === 200 && res.ok) return res.json();
+      })
+      .then((res) => {
+        setList(res);
+        setIsLoading(false);
+      });
+  }, [filterList, page, sortType]);
 
   return (
     <div className="home_page">
+      {isLoading && <div className="loader">Loading...</div>}
       <div className="wrapper">
         <div className="button__block">
           <button
@@ -110,8 +114,10 @@ function MainAnime(props) {
           })}
         </div>
       </div>
-      <Filter filterList={filterList} toggleFilter={toggleFilter}></Filter>
-      <Sort value={sortBy}></Sort>
+      <div>
+        <Filter filterList={filterList} toggleFilter={toggleFilter}></Filter>
+        <Sort sortValue={sortType} onChangeSort={setSortType}></Sort>
+      </div>
     </div>
   );
 }
