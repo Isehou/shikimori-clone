@@ -40,3 +40,5 @@ object.keys/entries/owlproperties
 filter.join()
 
 Обновление компонентов 
+
+https://loading.io/spinner/

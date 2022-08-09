@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from "./Modal/Modal";
 import Filter from "./SortAndFilter/Filter";
+import Sort from "./SortAndFilter/Sort";
 import "./style.css";
+import "./LoaderWindow.css";
 
 function MainAnime({ props, filter }) {
   const [list, setList] = useState([]);
@@ -14,15 +16,38 @@ function MainAnime({ props, filter }) {
     setModalOpen(state);
     setCurr(element);
   };
+  const [isLoading, setIsLoading] = useState(false);
+  const [sortType, setSortType] = useState("");
+  const [filterList, setFilterList] = useState({});
+  const toggleFilter = (id) => {
+    setFilterList((prev) => {
+      if (prev.hasOwnProperty(id)) {
+        return { ...prev, [id]: !prev[id] };
+      }
+      return { ...prev, [id]: true };
+    });
+  };
+
   useEffect(() => {
+    const filterString = Object.keys(filterList).filter(
+      (key) => filterList[key]
+    );
+    setIsLoading(true);
     fetch(
-      `https://shikimori.one/api/mangas?&order=popularity&limit=16&page=${page}`
+      `https://shikimori.one/api/mangas?&limit=30&page=${page}&genre=${filterString.join()}&order=${sortType}`
     )
-      .then((res) => res.json())
-      .then((res) => setList(res));
-  }, [page]);
+      .then((res) => {
+        console.log(res.status, res.ok);
+        if (res.status === 200 && res.ok) return res.json();
+      })
+      .then((res) => {
+        setList(res);
+        setIsLoading(false);
+      });
+  }, [filterList, page, sortType]);
   return (
     <div className="home_page">
+      {isLoading && <div className="lds-hourglass"></div>}
       <div className="wrapper">
         <div className="button__block">
           <button
@@ -82,6 +107,10 @@ function MainAnime({ props, filter }) {
             );
           })}
         </div>
+      </div>
+      <div>
+        {/* <Filter filterList={filterList} toggleFilter={toggleFilter}></Filter> */}
+        <Sort sortValue={sortType} onChangeSort={setSortType}></Sort>
       </div>
     </div>
   );

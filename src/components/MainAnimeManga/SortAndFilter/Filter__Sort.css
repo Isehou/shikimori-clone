@@ -53,6 +53,6 @@
 }
 @media (max-width: 767px) {
   .filter {
-    display: none;
+    /* display: none; */
   }
 }

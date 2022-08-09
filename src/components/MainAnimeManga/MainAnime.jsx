@@ -5,6 +5,7 @@ import Modal from "./Modal/Modal";
 import Filter from "./SortAndFilter/Filter";
 import Sort from "./SortAndFilter/Sort";
 import "./style.css";
+import "./LoaderWindow.css";
 
 function MainAnime(props) {
   const [list, setList] = useState([]);
@@ -26,7 +27,6 @@ function MainAnime(props) {
       return { ...prev, [id]: true };
     });
   };
-
   useEffect(() => {
     const filterString = Object.keys(filterList).filter(
       (key) => filterList[key]
@@ -44,10 +44,9 @@ function MainAnime(props) {
         setIsLoading(false);
       });
   }, [filterList, page, sortType]);
-
   return (
     <div className="home_page">
-      {isLoading && <div className="loader">Loading...</div>}
+      {isLoading && <div className="lds-hourglass"></div>}
       <div className="wrapper">
         <div className="button__block">
           <button

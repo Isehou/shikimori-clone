@@ -17,7 +17,7 @@ function App() {
     { label: "Manga", link: "/manga" },
     { label: "Api Тест", link: "/resource" },
     // { label: "MyTestCode", link: "/testcode" },
-    { label: "Device Test", link: "/device" },
+    // { label: "Device Test", link: "/device" },
   ];
 
   return (
@@ -30,7 +30,7 @@ function App() {
         <Route path="/anime/:id" element={<AnimeTab />}></Route>
         <Route path="/resource" element={<UseEffectTest />}></Route>
         {/* <Route path="/testcode" element={ <MyTestCode /> }></Route> */}
-        <Route path="/device" element={<Example />}></Route>
+        {/* <Route path="/device" element={<Example />}></Route> */}
       </Routes>
     </div>
   );
