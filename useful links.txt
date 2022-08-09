@@ -42,3 +42,4 @@ filter.join()
 Обновление компонентов 
 
 https://loading.io/spinner/
+https://rajdee.gitbooks.io/redux-in-russian/content/docs/basics/Actions.html
