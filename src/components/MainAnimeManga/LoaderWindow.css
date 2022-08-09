@@ -1,4 +1,4 @@
-.lds-hourglass {
+.loader {
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -11,7 +11,7 @@
   justify-content: center;
   z-index: 999;
 }
-.lds-hourglass:after {
+.loader:after {
   content: " ";
   display: block;
   border-radius: 50%;
@@ -21,9 +21,9 @@
   box-sizing: border-box;
   border: 32px solid #fff;
   border-color: #fff transparent #fff transparent;
-  animation: lds-hourglass 1.2s infinite;
+  animation: loader 1.2s infinite;
 }
-@keyframes lds-hourglass {
+@keyframes loader {
   0% {
     transform: rotate(0);
     animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);

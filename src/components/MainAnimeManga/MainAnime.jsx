@@ -46,7 +46,7 @@ function MainAnime(props) {
   }, [filterList, page, sortType]);
   return (
     <div className="home_page">
-      {isLoading && <div className="lds-hourglass"></div>}
+      {isLoading && <div className="loader"></div>}
       <div className="wrapper">
         <div className="button__block">
           <button
