@@ -8,7 +8,6 @@ import AnimeTab from "./components/LinkAnimeManga/AnimeTab";
 import MangaTab from "./components/LinkAnimeManga/MangaTab";
 import MainManga from "./components/MainAnimeManga/MainManga";
 import Example from "./components/someTest/DeviceTest";
-import { Store } from "@reduxjs/toolkit";
 // import MyTestCode from "./components/someTest/MyTestCode";
 
 function App() {
