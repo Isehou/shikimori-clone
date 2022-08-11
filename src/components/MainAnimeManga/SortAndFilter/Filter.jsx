@@ -19,14 +19,13 @@ function Filter({ filterList, toggleFilter }) {
             <li
               className={`filter__item ${filterList[el.id] ? "active" : ""}`}
               key={el.id}
-              onClick={() => toggleFilter(el.id)}
             >
               <input
-                className={`chkbox ${filterList[el.id] ? "selected" : ""}`}
                 type="checkbox"
-                autoComplete="off"
+                onClick={() => toggleFilter(el.id)}
+                // className={`chkbox ${filterList[el.id] ? "selected" : ""}`}
               />
-              {el.russian}
+              <span>{el.russian}</span>
             </li>
           ))}
         </ul>

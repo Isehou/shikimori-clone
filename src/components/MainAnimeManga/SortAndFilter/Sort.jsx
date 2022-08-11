@@ -16,7 +16,7 @@ function Sort({ sortValue, onChangeSort }) {
               type="radio"
               onChange={(e) => onChangeSort(e.target.value)}
             />
-            По ID
+            <span>По ID</span>
           </div>
           <div className="sort__item">
             <input
@@ -26,7 +26,7 @@ function Sort({ sortValue, onChangeSort }) {
               type="radio"
               onChange={(e) => onChangeSort(e.target.value)}
             />
-            По популярности
+            <span>По популярности</span>
           </div>
           <div className="sort__item">
             <input
@@ -36,7 +36,7 @@ function Sort({ sortValue, onChangeSort }) {
               type="radio"
               onChange={(e) => onChangeSort(e.target.value)}
             />
-            По алфавиту
+            <span>По алфавиту</span>
           </div>
         </ul>
       </div>

@@ -5,6 +5,6 @@ const rootReducer = combineReducer({
   toolkit: ToolkitSlice,
 });
 
-export const store = configureStore({
+export const StoreRedux = configureStore({
   reducer: rootReducer,
 });

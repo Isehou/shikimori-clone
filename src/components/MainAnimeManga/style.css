@@ -129,6 +129,10 @@
   font-size: 14pt;
   /* background-color: red; */
 }
+.filters {
+  display: block;
+  min-height: 1300px;
+}
 @media (max-width: 767px) {
   .home_page {
     margin-top: 80px;

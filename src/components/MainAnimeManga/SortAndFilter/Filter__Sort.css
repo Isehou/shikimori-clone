@@ -12,11 +12,7 @@
   font-size: 11pt;
 }
 .filter__item {
-  padding-top: 5px;
-  cursor: pointer;
-}
-.filter__item .active {
-  background-color: red;
+  margin-top: 5px;
 }
 .filter__item span {
   padding-left: 10px;
@@ -31,11 +27,6 @@
   padding-left: 5px;
   border-radius: 3px;
 }
-/* .chkbox {
-}
-.chkbox.selected {
-  display: none;
-} */
 .sort {
   margin-top: 30px;
 }
@@ -56,8 +47,10 @@
   box-shadow: none;
 }
 .sort__item {
-  padding-top: 5px;
-  cursor: pointer;
+  margin-top: 5px;
+}
+.sort__item span {
+  padding-left: 10px;
 }
 @media (max-width: 767px) {
   .filter {
