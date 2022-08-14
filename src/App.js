@@ -8,15 +8,14 @@ import AnimeTab from "./components/LinkAnimeManga/AnimeTab";
 import MangaTab from "./components/LinkAnimeManga/MangaTab";
 import MainManga from "./components/MainAnimeManga/MainManga";
 import Example from "./components/someTest/DeviceTest";
-// import MyTestCode from "./components/someTest/MyTestCode";
 
 function App() {
   const [counter, setCounter] = useState(0);
   const links = [
     { label: "Anime", link: "/" },
     { label: "Manga", link: "/manga" },
-    { label: "Api Тест", link: "/resource" },
-    { label: "TodoRedux", link: "/testcode" },
+    { label: "Some_API", link: "/resource" },
+    // { label: "TodoRedux", link: "/testcode" },
     // { label: "Device Test", link: "/device" },
   ];
 

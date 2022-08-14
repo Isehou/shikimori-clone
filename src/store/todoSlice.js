@@ -1,4 +1,4 @@
-const { createSlice } = require("@reduxjs/toolkit");
+import { createSlice } from "@reduxjs/toolkit";
 
 const todoSlice = createSlice({
   name: "toolkit",
@@ -20,5 +20,6 @@ const todoSlice = createSlice({
     TooggleTodoComplete(state, action) {},
   },
 });
-export const {AddTodo, RemoveTodo, TooggleTodoComplete} = todoSlice.actions
+
+export const { AddTodo, RemoveTodo, TooggleTodoComplete } = todoSlice.actions;
 export default todoSlice.reducers;
