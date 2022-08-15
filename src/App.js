@@ -8,6 +8,7 @@ import AnimeTab from "./components/LinkAnimeManga/AnimeTab";
 import MangaTab from "./components/LinkAnimeManga/MangaTab";
 import MainManga from "./components/MainAnimeManga/MainManga";
 import Example from "./components/someTest/DeviceTest";
+import todoApp from "./store/todoApp";
 
 function App() {
   const [counter, setCounter] = useState(0);
@@ -15,7 +16,7 @@ function App() {
     { label: "Anime", link: "/" },
     { label: "Manga", link: "/manga" },
     { label: "Some_API", link: "/resource" },
-    // { label: "TodoRedux", link: "/testcode" },
+    { label: "TodoAPP", link: "/todoApp" },
     // { label: "Device Test", link: "/device" },
   ];
 
@@ -28,7 +29,7 @@ function App() {
         <Route path="/manga/:id" element={<MangaTab />}></Route>
         <Route path="/anime/:id" element={<AnimeTab />}></Route>
         <Route path="/resource" element={<UseEffectTest />}></Route>
-        {/* <Route path="/testcode" element={ <MyTestCode /> }></Route> */}
+        <Route path="/todoApp" element={<todoApp />}></Route>
         {/* <Route path="/device" element={<Example />}></Route> */}
       </Routes>
     </div>
