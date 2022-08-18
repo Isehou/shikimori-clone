@@ -1,9 +1,21 @@
-import React, { useCallback, useEffect, useState } from "react";
-
+let page = {
+  name: "yoo!",
+  content: "",
+  render() {
+    console.log(this.content);
+    // alert(this.name);
+  },
+  getname(value) {
+    this.name.getname = value;
+  },
+};
+page.content = `<div>Content About this</div>`;
+page.render();
 export default function TestCode() {
   return (
-    <div>
-      <div></div>
+    <div className="testCode">
+      <h1></h1>
+      <h2>Start editing to see some magic happen!</h2>
     </div>
   );
 }
