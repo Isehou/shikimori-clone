@@ -15,7 +15,7 @@ export default function TestCode() {
   return (
     <div className="testCode">
       <h1></h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <h2>Start !</h2>
     </div>
   );
 }

@@ -43,7 +43,10 @@ function AnimeTab(props) {
             <StarRating rating={Number(aniMangaData.score)}></StarRating>
           </div>
           {aniMangaData.screenshots && (
-            <SwiperImg list={aniMangaData.screenshots} />
+            <SwiperImg
+              list={aniMangaData.screenshots}
+              className="swiper-block"
+            />
           )}
 
           <div className="aniManga__content-description">

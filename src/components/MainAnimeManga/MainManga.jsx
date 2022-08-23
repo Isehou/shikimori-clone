@@ -109,8 +109,8 @@ function MainAnime({ props, filter }) {
         </div>
       </div>
       <div>
-        {/* <Filter filterList={filterList} toggleFilter={toggleFilter}></Filter> */}
         <Sort sortValue={sortType} onChangeSort={setSortType}></Sort>
+        {/* <Filter filterList={filterList} toggleFilter={toggleFilter}></Filter> */}
       </div>
     </div>
   );

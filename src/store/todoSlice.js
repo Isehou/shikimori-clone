@@ -20,6 +20,53 @@ export const fetchTodos = createAsyncThunk(
   }
 );
 
+export const deleteTodo = createAsyncThunk(
+  "todos/deleteTodo",
+  async function (id, { rejectWithValue, dispatch }) {
+    try {
+      const response = await fetch(
+        `https://jsonplaceholder.typicode.com/todos/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
+      console.log(response);
+      if (!response.ok) {
+        throw new Error("cant delete task");
+      }
+      dispatch(removeTodo({ id }));
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const toggleStatus = createAsyncThunk(
+  "todos/toggleStatus",
+  async function (id, { rejectWithValue, dispatch, getState }) {
+    const todo = getState().todos.todos.fint((todo) => todo.id === id);
+    try {
+      const response = await fetch(
+        `https://jsonplaceholder.typicode.com/todos/${id}`,
+        {
+          method: "PATCH",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({
+            completed: !todo.completed,
+          }),
+        }
+      );
+      if (!response.ok) {
+        throw new Error("cant toggle status");
+      }
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
 const todoSlice = createSlice({
   name: "todos",
   initialState: {
