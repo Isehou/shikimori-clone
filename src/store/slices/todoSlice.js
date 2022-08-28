@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import "./style.css";
+import "../style.css";
 
 export const fetchTodos = createAsyncThunk(
   "todos/fetchTodos",
