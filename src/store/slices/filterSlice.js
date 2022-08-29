@@ -1,27 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  loading: false,
-  error: "",
-  filters: [],
+  categoryId: 0,
+  sort: {
+    name: "По популярности",
+    sortProperty: "rating",
+  },
 };
 
 const filterSlice = createSlice({
   name: "filter",
   initialState: initialState,
   reducers: {
-    fetching(state) {
-      state.loading = true;
-    },
-    fetchSucess(state, action) {
-      state.loading = false;
-      state.filters = action.payload;
-    },
-    fetchError(state, action) {
-      state.loading = false;
-      state.error = action.payload.message;
-    },
+    setCategoryId(state, action) {},
   },
 });
-export const {} = filterSlice.actions;
+export const { setCategoryId } = filterSlice.actions;
 export default filterSlice.reducer;

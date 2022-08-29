@@ -1,6 +1,6 @@
 import React from "react";
-import InputField from "./components/InputField";
-import TodoList from "./components/TodoList";
+import InputField from "./components/todos/InputField";
+import TodoList from "./components/todos/TodoList";
 import { useDispatch } from "react-redux";
 import { addTodo, fetchTodos } from "./slices/todoSlice";
 import { useState, useEffect } from "react";

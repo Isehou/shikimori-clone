@@ -43,3 +43,7 @@ filter.join()
 
 https://loading.io/spinner/
 https://rajdee.gitbooks.io/redux-in-russian/content/docs/basics/Actions.html
+
+
+Сделать вход в систему (Login) авторизацию
+перенести запросы (fetch) на redux
