@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import "./style.css";
 import { useSelector } from "react-redux/es/exports";
 
-const TodoApp = () => {
+const StoreApp = () => {
   const [text, setText] = useState("");
   const { status, error } = useSelector((state) => state.todos);
   const dispatch = useDispatch();
@@ -36,4 +36,4 @@ const TodoApp = () => {
     </div>
   );
 };
-export default TodoApp;
+export default StoreApp;

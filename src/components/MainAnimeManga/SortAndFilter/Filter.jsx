@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "./Filter__Sort.css";
+// import { itemsFromData } from "@reduxjs/toolkit";
 
 function Filter({ filterList, toggleFilter }) {
   const [itemsFromData, setItemsFromData] = useState([]);
