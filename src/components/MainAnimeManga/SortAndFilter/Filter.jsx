@@ -4,11 +4,11 @@ import "./Filter__Sort.css";
 import { useSelector } from "react-redux";
 
 function Filter({ filterList, toggleFilter }) {
-  // const [itemsFromData, setItemsFromData] = useState([]);
-  const itemsFromData = useSelector((state) => state.filter);
-  console.log(itemsFromData);
+  const [itemsFromData, setItemsFromData] = useState([]);
+  // const itemsFromData = useSelector((state) => state.filter.itemsFromData);
+  // console.log(itemsFromData);
 
-  const setItemsFromData = () => {};
+  // const setItemsFromData = () => {};
 
   useEffect(() => {
     fetch("https://shikimori.one/api/genres")
@@ -21,7 +21,7 @@ function Filter({ filterList, toggleFilter }) {
       <div className="filter__block">
         <ul className="filter__items">
           <div className="filter__item-genre">ЖАНРЫ</div>
-          {/* {itemsFromData.map((el, i) => (
+          {itemsFromData.map((el, i) => (
             <li
               className={`filter__item ${filterList[el.id] ? "active" : ""}`}
               key={el.id}
@@ -29,7 +29,7 @@ function Filter({ filterList, toggleFilter }) {
               <input type="checkbox" onClick={() => toggleFilter(el.id)} />
               <span>{el.russian}</span>
             </li>
-          ))} */}
+          ))}
         </ul>
       </div>
     </div>
