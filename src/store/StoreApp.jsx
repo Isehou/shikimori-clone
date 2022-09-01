@@ -4,8 +4,8 @@ import TodoList from "./components/todos/TodoList";
 import { useDispatch } from "react-redux";
 import { addTodo, fetchTodos } from "./slices/todoSlice";
 import { useState, useEffect } from "react";
-import "./style.css";
 import { useSelector } from "react-redux/es/exports";
+import "./store.css";
 
 const StoreApp = () => {
   const [text, setText] = useState("");
