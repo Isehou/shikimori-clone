@@ -47,3 +47,5 @@ https://rajdee.gitbooks.io/redux-in-russian/content/docs/basics/Actions.html
 
 Сделать вход в систему (Login) авторизацию
 перенести запросы (fetch) на redux
+
+https://blog.devgenius.io/async-api-fetching-with-redux-toolkit-2020-8623ff9da267
