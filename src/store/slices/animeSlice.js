@@ -14,7 +14,7 @@ const animeSlice = createSlice({
       state.loading = true;
     },
     getFetchAnimeSuccess: (state, { payload }) => {
-      state.recipes = payload;
+      state.animes = payload;
       state.loading = false;
       state.hasErrors = false;
     },
@@ -42,17 +42,21 @@ const animeSlice = createSlice({
 export const { getFetchingAnime, getFetchAnimeSuccess, getFetchAnimeFailure } =
   animeSlice.actions;
 export default animeSlice.reducer;
-
 export const animeSelector = (state) => state.animes;
 
-export const fetchAnimes = createAsyncThunk(
-  "animes/fetchAnimes",
-  async function () {
-    const response = await fetch(`https://shikimori.one/api/animes?&limit=10`);
-    if (!response.ok) {
-      throw new Error("Server error");
+export function fetchAnimes() {
+  return async (dispatch) => {
+    dispatch(getFetchingAnime());
+
+    try {
+      const response = await fetch(
+        "https://shikimori.one/api/animes?&limit=30"
+      );
+      const data = await response.json();
+
+      dispatch(getFetchAnimeSuccess(data));
+    } catch (error) {
+      dispatch(getFetchAnimeFailure());
     }
-    const data = await response.json();
-    return data;
-  }
-);
+  };
+}

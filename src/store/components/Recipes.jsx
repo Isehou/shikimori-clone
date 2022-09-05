@@ -16,10 +16,10 @@ const Recipes = () => {
     if (loading) return <p>Loading recipes...</p>;
     if (hasErrors) return <p>Cannot display recipes...</p>;
 
-    return recipes.map((recipe) => (
-      <div key={recipe.idMeal} className="tile">
-        <h2>{recipe.strMeal}</h2>
-        <img src={recipe.strMealThumb} alt="" />
+    return recipes.map((el, i) => (
+      <div key={el.idMeal} className="tile">
+        <h2>{el.strMeal}</h2>
+        <img src={el.strMealThumb} alt="" />
       </div>
     ));
   };
