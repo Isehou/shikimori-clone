@@ -6,7 +6,6 @@ import { addTodo, fetchTodos } from "./slices/todoSlice";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux/es/exports";
 import "./store.css";
-import { fetchAnimes } from "./slices/animeSlice";
 import { fetchRecipes, recipesSelector } from "./slices/recipesSlice";
 import Recipes from "./components/Recipes";
 import AnimeItems from "./components/AnimeItems";
@@ -32,21 +31,12 @@ const StoreApp = () => {
   }, [dispatch]);
 
   return (
-    <div className="todoApp">
+    <div className="home__page">
       <div className="wrapper">
-        <div className="button__block">
-          <button
-            className="btn"
-            onClick={() => setPage((curr) => (curr === 1 ? 1 : curr - 1))}
-          >
-            Пред
-          </button>
-          <button className="btn" onClick={() => setPage((curr) => curr + 1)}>
-            След
-          </button>
+        <div className="element__list">
+          <AnimeItems></AnimeItems>
+          {/* <Recipes></Recipes> */}
         </div>
-        <AnimeItems></AnimeItems>
-        {/* <Recipes></Recipes> */}
       </div>
     </div>
   );

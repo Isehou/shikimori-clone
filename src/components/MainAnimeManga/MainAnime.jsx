@@ -6,6 +6,7 @@ import Filter from "./SortAndFilter/Filter";
 import Sort from "./SortAndFilter/Sort";
 import "./style.css";
 import "./LoaderWindow.css";
+import AnimeItems from "../../store/components/AnimeItems";
 
 function MainAnime(props) {
   const [list, setList] = useState([]);

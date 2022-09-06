@@ -26,11 +26,7 @@ const AnimeItems = () => {
     ));
   };
 
-  return (
-    <div className="home__page">
-      <div className="element__list">{renderAnimes()}</div>
-    </div>
-  );
+  return <div className="element__list">{renderAnimes()}</div>;
 };
 
 export default AnimeItems;
