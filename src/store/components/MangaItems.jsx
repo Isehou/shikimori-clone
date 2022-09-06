@@ -2,19 +2,19 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux/es/exports";
-import { animeSelector, fetchAnimes } from "../slices/animeSlice";
+import { mangaSelector, fetchMangas } from "../slices/mangaSlice";
 import "./style.css";
 
-const AnimeItems = () => {
+const MangaItems = () => {
   const dispatch = useDispatch();
-  const { animes } = useSelector(animeSelector);
+  const { mangas } = useSelector(mangaSelector);
 
   useEffect(() => {
-    dispatch(fetchAnimes());
+    dispatch(fetchMangas());
   }, [dispatch]);
 
-  const renderAnimes = () => {
-    return animes.map((el, i) => (
+  const renderMangas = () => {
+    return mangas.map((el, i) => (
       <div className="block_content" key={el.id}>
         <img
           alt="#"
@@ -26,7 +26,7 @@ const AnimeItems = () => {
     ));
   };
 
-  return <div className="element__list">{renderAnimes()}</div>;
+  return <div className="element__list">{renderMangas()}</div>;
 };
 
-export default AnimeItems;
+export default MangaItems;

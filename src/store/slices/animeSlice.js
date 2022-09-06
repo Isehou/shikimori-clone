@@ -50,7 +50,7 @@ export function fetchAnimes() {
 
     try {
       const response = await fetch(
-        "https://shikimori.one/api/animes?&limit=30&order=popularity"
+        "https://shikimori.one/api/animes?&limit=10&order=popularity"
       );
       const data = await response.json();
       console.log(data);

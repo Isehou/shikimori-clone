@@ -1,12 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  itemsFromData: 0,
-  genres: {
-    name: "",
-    genreProperty: "",
-  },
-};
+const initialState = {};
 
 const filterFetch = createAsyncThunk(
   "filterFetch",
