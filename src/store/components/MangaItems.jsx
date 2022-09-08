@@ -7,14 +7,14 @@ import "./style.css";
 
 const MangaItems = () => {
   const dispatch = useDispatch();
-  const { mangas } = useSelector(mangaSelector);
+  const { manga } = useSelector(mangaSelector);
 
   useEffect(() => {
     dispatch(fetchMangas());
   }, [dispatch]);
 
-  const renderMangas = () => {
-    return mangas.map((el, i) => (
+  const renderManga = () => {
+    return manga.map((el, i) => (
       <div className="block_content" key={el.id}>
         <img
           alt="#"
@@ -26,7 +26,7 @@ const MangaItems = () => {
     ));
   };
 
-  return <div className="element__list">{renderMangas()}</div>;
+  return <div className="element__list">{renderManga()}</div>;
 };
 
 export default MangaItems;

@@ -97,18 +97,20 @@ function MainAnime(props) {
           {list.map((el, i) => {
             return (
               <div className="block_content" key={el.id}>
-                <img
-                  alt="#"
-                  src={"https://shikimori.one" + el.image.original}
-                  className="block_image"
-                />
-                <span className="block_text">{el.russian}</span>
-                <button
-                  className="open_modal_btn"
-                  onClick={() => openModal(true, el)}
-                >
-                  Подробнее
-                </button>
+                <AnimeItems>
+                  {/* <img
+                    alt="#"
+                    src={"https://shikimori.one" + el.image.original}
+                    className="block_image"
+                  />
+                  <span className="block_text">{el.russian}</span> */}
+                  <button
+                    className="open_modal_btn"
+                    onClick={() => openModal(true, el)}
+                  >
+                    Подробнее
+                  </button>
+                </AnimeItems>
               </div>
             );
           })}

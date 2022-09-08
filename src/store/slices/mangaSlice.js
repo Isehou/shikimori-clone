@@ -3,18 +3,18 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const initialState = {
   loading: false,
   hasErrors: false,
-  mangas: [],
+  manga: [],
 };
 
 const mangaSlice = createSlice({
-  name: "mangas",
+  name: "manga",
   initialState: initialState,
   reducers: {
     getFetchingManga: (state) => {
       state.loading = true;
     },
     getFetchMangaSuccess: (state, { payload }) => {
-      state.mangas = payload;
+      state.manga = payload;
       state.loading = false;
       state.hasErrors = false;
     },
@@ -28,8 +28,7 @@ const mangaSlice = createSlice({
 export const { getFetchingManga, getFetchMangaSuccess, getFetchMangaFailure } =
   mangaSlice.actions;
 export default mangaSlice.reducer;
-
-export const mangaSelector = (state) => state.mangas;
+export const mangaSelector = (state) => state.manga;
 
 export function fetchMangas() {
   return async (dispatch) => {
