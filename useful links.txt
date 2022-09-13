@@ -49,3 +49,5 @@ https://rajdee.gitbooks.io/redux-in-russian/content/docs/basics/Actions.html
 перенести запросы (fetch) на redux
 
 https://blog.devgenius.io/async-api-fetching-with-redux-toolkit-2020-8623ff9da267
+
+любой селектор с seletcUserData

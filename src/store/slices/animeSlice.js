@@ -9,55 +9,33 @@ const initialState = {
 const animeSlice = createSlice({
   name: "animes",
   initialState: initialState,
-  reducers: {
-    getFetchingAnime: (state) => {
-      state.loading = true;
-    },
-    getFetchAnimeSuccess: (state, { payload }) => {
-      state.animes = payload;
-      state.loading = false;
-      state.hasErrors = false;
-    },
-    getFetchAnimeFailure: (state) => {
-      state.loading = false;
-      state.hasErrors = true;
-    },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchAnimes.fulfilled, (state, { payload }) => {
+        state.animes = payload;
+        console.log(payload);
+        state.loading = false;
+        state.hasErrors = false;
+      })
+      .addCase(fetchAnimes.rejected, (state) => {
+        state.loading = false;
+        state.hasErrors = true;
+      })
+      .addCase(fetchAnimes.pending, (state) => {
+        state.loading = true;
+      });
   },
-  // extraReducers: {
-  //   [fetchAnimes.pending]: (state) => {
-  //     state.status = "loading";
-  //     state.error = null;
-  //   },
-  //   [fetchAnimes.fulfilled]: (state, action) => {
-  //     state.status = "resolved";
-  //     state.animes = action.payload;
-  //   },
-  //   [fetchAnimes.rejected]: (state, action) => {
-  //     state.status = "rejected";
-  //     state.error = action.error.message;
-  //   },
-  // },
 });
 
-export const { getFetchingAnime, getFetchAnimeSuccess, getFetchAnimeFailure } =
-  animeSlice.actions;
 export default animeSlice.reducer;
 export const animeSelector = (state) => state.animes;
 
-export function fetchAnimes() {
-  return async (dispatch) => {
-    dispatch(getFetchingAnime());
-
-    try {
-      const response = await fetch(
-        "https://shikimori.one/api/animes?&limit=10&order=popularity"
-      );
-      const data = await response.json();
-      console.log(data);
-
-      dispatch(getFetchAnimeSuccess(data));
-    } catch (error) {
-      dispatch(getFetchAnimeFailure());
-    }
-  };
-}
+export const fetchAnimes = createAsyncThunk(
+  "animes/fetchAnimes",
+  ({ page, filter, sortType }, { rejectWithValue }) => {
+    return fetch(
+      `https://shikimori.one/api/animes?&limit=30&page=${page}&genre=${filter.join()}&order=${sortType}`
+    ).then((res) => res.json());
+  }
+);

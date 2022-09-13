@@ -23,3 +23,10 @@
   position: relative;
   width: 100%;
 }
+hr {
+  border: 3px;
+  color: red;
+  background-color: red;
+  height: 10px;
+  width: 100%;
+}

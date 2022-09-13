@@ -1,14 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import "./Filter__Sort.css";
+import "./FilterSort.css";
 import { useSelector } from "react-redux";
 
 function Filter({ filterList, toggleFilter }) {
   const [itemsFromData, setItemsFromData] = useState([]);
-  // const itemsFromData = useSelector((state) => state.filter.itemsFromData);
-  // console.log(itemsFromData);
-
-  // const setItemsFromData = () => {};
 
   useEffect(() => {
     fetch("https://shikimori.one/api/genres")

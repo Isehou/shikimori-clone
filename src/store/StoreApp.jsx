@@ -7,13 +7,13 @@ import AnimeItems from "./components/AnimeItems";
 import MangaItems from "./components/MangaItems";
 
 const StoreApp = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   return (
     <div className="home__page">
       <div className="wrapper">
         <div className="element__list">
-          <MangaItems></MangaItems>
+          {/* <MangaItems></MangaItems> */}
           <hr></hr>
           <AnimeItems></AnimeItems>
         </div>

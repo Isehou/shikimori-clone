@@ -1,4 +1,4 @@
-import "./Filter__Sort.css";
+import "./FilterSort.css";
 import { React, useEffect, useState } from "react";
 
 function Sort({ sortValue, onChangeSort }) {
