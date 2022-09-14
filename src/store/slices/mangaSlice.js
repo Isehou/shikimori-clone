@@ -9,41 +9,33 @@ const initialState = {
 const mangaSlice = createSlice({
   name: "manga",
   initialState: initialState,
-  reducers: {
-    getFetchingManga: (state) => {
-      state.loading = true;
-    },
-    getFetchMangaSuccess: (state, { payload }) => {
-      state.manga = payload;
-      state.loading = false;
-      state.hasErrors = false;
-    },
-    getFetchMangaFailure: (state) => {
-      state.loading = false;
-      state.hasErrors = true;
-    },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchManga.fulfilled, (state, { payload }) => {
+        state.manga = payload;
+        console.log(payload);
+        state.loading = false;
+        state.hasErrors = false;
+      })
+      .addCase(fetchManga.rejected, (state) => {
+        state.loading = false;
+        state.hasErrors = true;
+      })
+      .addCase(fetchManga.pending, (state) => {
+        state.loading = true;
+      });
   },
 });
 
-export const { getFetchingManga, getFetchMangaSuccess, getFetchMangaFailure } =
-  mangaSlice.actions;
 export default mangaSlice.reducer;
 export const mangaSelector = (state) => state.manga;
 
-export function fetchMangas() {
-  return async (dispatch) => {
-    dispatch(getFetchingManga());
-
-    try {
-      const response = await fetch(
-        "https://shikimori.one/api/mangas?&limit=10&order=popularity"
-      );
-      const data = await response.json();
-      console.log(data);
-
-      dispatch(getFetchMangaSuccess(data));
-    } catch (error) {
-      dispatch(getFetchMangaFailure());
-    }
-  };
-}
+export const fetchManga = createAsyncThunk(
+  "manga/fetchManga",
+  ({ page, filter, sortType }, { rejectWithValue }) => {
+    return fetch(
+      `https://shikimori.one/api/mangas?&limit=30&page=${page}&genre=${filter.join()}&order=${sortType}`
+    ).then((res) => res.json());
+  }
+);

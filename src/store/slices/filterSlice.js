@@ -1,28 +1,38 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const initialState = {};
-
-const filterFetch = createAsyncThunk(
-  "filterFetch",
-  async function (_, { rejectWithValue }) {
-    try {
-      const response = await fetch("https://shikimori.one/api/genres");
-    } catch (error) {}
-  }
-);
+const initialState = {
+  loading: false,
+  hasErrors: false,
+  filter: [],
+};
 
 const filterSlice = createSlice({
   name: "filter",
   initialState: initialState,
-  reducers: {
-    itemsFromData(state, action) {
-      console.log(action);
-    },
-    fetchRequest(state, action) {},
-    fetchSucess(state, action) {},
-    fetchError(state, action) {},
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(filterFetch.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(filterFetch.fulfilled, (state, { payload }) => {
+      state.filter = payload;
+      console.log(payload);
+      state.loading = false;
+      state.hasErrors = false;
+    });
+    builder.addCase(filterFetch.rejected, (state) => {
+      state.loading = false;
+      state.hasErrors = true;
+    });
   },
 });
 
-export const { itemsFromData } = filterSlice.actions;
+export const filterSelector = (state) => state.filter;
 export default filterSlice.reducer;
+
+const filterFetch = createAsyncThunk(
+  "filter/filterFetch",
+  (__, rejectWithValue) => {
+    return fetch("https://shikimori.one/api/genres").then((res) => res.json());
+  }
+);

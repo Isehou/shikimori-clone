@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux/es/exports";
-import { mangaSelector, fetchMangas } from "../slices/mangaSlice";
+import { mangaSelector, fetchManga } from "../slices/mangaSlice";
 import "./style.css";
 
 const MangaItems = () => {
@@ -10,7 +10,7 @@ const MangaItems = () => {
   const { manga } = useSelector(mangaSelector);
 
   useEffect(() => {
-    dispatch(fetchMangas());
+    dispatch(fetchManga());
   }, [dispatch]);
 
   const renderManga = () => {

@@ -6,9 +6,12 @@ import Filter from "./SortAndFilter/Filter";
 import Sort from "./SortAndFilter/Sort";
 import "./style.css";
 import "./LoaderWindow.css";
+import MangaItems from "../../store/components/MangaItems";
+import { useSelector } from "react-redux/es/exports";
+import { useDispatch } from "react-redux";
+import { mangaSelector, fetchManga } from "../../store/slices/mangaSlice";
 
 function MainAnime({ props, filter }) {
-  const [list, setList] = useState([]);
   const [page, setPage] = useState(1);
   const [curr, setCurr] = useState(null);
   const [isModalOpen, setModalOpen] = useState(false);
@@ -16,7 +19,6 @@ function MainAnime({ props, filter }) {
     setModalOpen(state);
     setCurr(element);
   };
-  const [isLoading, setIsLoading] = useState(false);
   const [sortType, setSortType] = useState("");
   const [filterList, setFilterList] = useState({});
   const toggleFilter = (id) => {
@@ -28,26 +30,20 @@ function MainAnime({ props, filter }) {
     });
   };
 
+  const { manga, loading, hasErrors } = useSelector(mangaSelector);
+  const dispatch = useDispatch();
+
   useEffect(() => {
     const filterString = Object.keys(filterList).filter(
       (key) => filterList[key]
     );
-    setIsLoading(true);
-    fetch(
-      `https://shikimori.one/api/mangas?&limit=30&page=${page}&genre=${filterString.join()}&order=${sortType}`
-    )
-      .then((res) => {
-        console.log(res.status, res.ok);
-        if (res.status === 200 && res.ok) return res.json();
-      })
-      .then((res) => {
-        setList(res);
-        setIsLoading(false);
-      });
-  }, [filterList, page, sortType]);
+
+    dispatch(fetchManga({ page, filter: filterString, sortType }));
+  }, [dispatch, filterList, page, sortType]);
+
   return (
     <div className="home_page">
-      {isLoading && <div className="lds-hourglass"></div>}
+      {loading && <div className="lds-hourglass"></div>}
       <div className="wrapper">
         <div className="button__block">
           <button
@@ -88,24 +84,22 @@ function MainAnime({ props, filter }) {
               </Link>
             </Modal>
           )}
-          {list.map((el, i) => {
-            return (
-              <div className="block_content" key={el.id}>
-                <img
-                  alt="#"
-                  src={"https://shikimori.one" + el.image.original}
-                  className="block_image"
-                />
-                <span className="block_text">{el.russian}</span>
-                <button
-                  className="open_modal_btn"
-                  onClick={() => openModal(true, el)}
-                >
-                  Подробнее
-                </button>
-              </div>
-            );
-          })}
+          <MangaItems manga={manga} className="block_content">
+            <div>
+              {/* <img
+                    alt="#"
+                    src={"https://shikimori.one" + el.image.original}
+                    className="block_image"
+                  />
+                  <span className="block_text">{el.russian}</span> */}
+              <button
+                className="open_modal_btn"
+                onClick={() => openModal(true)}
+              >
+                Подробнее
+              </button>
+            </div>
+          </MangaItems>
         </div>
       </div>
       <div>
