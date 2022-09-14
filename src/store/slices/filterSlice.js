@@ -30,9 +30,9 @@ const filterSlice = createSlice({
 export const filterSelector = (state) => state.filter;
 export default filterSlice.reducer;
 
-const filterFetch = createAsyncThunk(
-  "filter/filterFetch",
-  (__, rejectWithValue) => {
-    return fetch("https://shikimori.one/api/genres").then((res) => res.json());
-  }
-);
+// const filterFetch = createAsyncThunk(
+//   "filter/filterFetch",
+//   (__, rejectWithValue) => {
+//     return fetch("https://shikimori.one/api/genres").then((res) => res.json());
+//   }
+// );
