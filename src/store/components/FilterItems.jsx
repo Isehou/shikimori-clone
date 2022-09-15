@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "./style.css";
 
-const FilterItems = () => {
+const FilterItems = (filterList, toggleFilter) => {
   const [itemsFromData, setItemsFromData] = useState([]);
   return (
     <div className="filter">
       <div className="filter__block">
         <ul className="filter__items">
           <div className="filter__item-genre">ЖАНРЫ</div>
-          {/* {itemsFromData.map((el, i) => (
+          {itemsFromData.map((el, i) => (
             <li
               className={`filter__item ${filterList[el.id] ? "active" : ""}`}
               key={el.id}
@@ -16,7 +16,7 @@ const FilterItems = () => {
               <input type="checkbox" onClick={() => toggleFilter(el.id)} />
               <span>{el.russian}</span>
             </li>
-          ))} */}
+          ))}
         </ul>
       </div>
     </div>
