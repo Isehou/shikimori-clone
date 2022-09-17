@@ -52,7 +52,7 @@
   background-color: white;
   color: rgb(13, 70, 114);
 }
-.open_modal_btn {
+/* .open_modal_btn {
   width: 250px;
   height: 40px;
   border-radius: none;
@@ -66,7 +66,7 @@
 .open_modal_btn:hover {
   background-color: white;
   color: rgb(13, 70, 114);
-}
+} */
 .element_list {
   display: flex;
   flex-wrap: wrap;

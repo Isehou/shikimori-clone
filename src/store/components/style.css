@@ -23,3 +23,18 @@
   max-height: 400px;
   border-radius: 5px;
 }
+.open_modal_btn {
+  width: 250px;
+  height: 40px;
+  border-radius: none;
+  font-size: 11pt;
+  background-color: rgb(13, 70, 114);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.open_modal_btn:active,
+.open_modal_btn:hover {
+  background-color: white;
+  color: rgb(13, 70, 114);
+}

@@ -11,16 +11,16 @@ const filterSlice = createSlice({
   initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(filterFetch.pending, (state) => {
+    builder.addCase(fetchFilters.pending, (state) => {
       state.loading = true;
     });
-    builder.addCase(filterFetch.fulfilled, (state, { payload }) => {
+    builder.addCase(fetchFilters.fulfilled, (state, { payload }) => {
       state.filter = payload;
       console.log(payload);
       state.loading = false;
       state.hasErrors = false;
     });
-    builder.addCase(filterFetch.rejected, (state) => {
+    builder.addCase(fetchFilters.rejected, (state) => {
       state.loading = false;
       state.hasErrors = true;
     });
@@ -30,9 +30,12 @@ const filterSlice = createSlice({
 export const filterSelector = (state) => state.filter;
 export default filterSlice.reducer;
 
-const filterFetch = createAsyncThunk(
+export const fetchFilters = createAsyncThunk(
   "filter/filterFetch",
-  (_, rejectWithValue) => {
-    return fetch("https://shikimori.one/api/genres").then((res) => res.json());
+  ({ setItemsFromData }, rejectWithValue) => {
+    return fetch("https://shikimori.one/api/genres").then(
+      (res) => res.json()
+      // .then((res) => setItemsFromData(res.filter((e) => e.kind === "anime")))
+    );
   }
 );

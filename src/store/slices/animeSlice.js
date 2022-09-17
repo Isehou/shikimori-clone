@@ -14,7 +14,7 @@ const animeSlice = createSlice({
     builder
       .addCase(fetchAnimes.fulfilled, (state, { payload }) => {
         state.animes = payload;
-        console.log(payload);
+        // console.log(payload);
         state.loading = false;
         state.hasErrors = false;
       })

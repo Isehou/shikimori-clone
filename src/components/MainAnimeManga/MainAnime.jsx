@@ -1,9 +1,10 @@
 import React from "react";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState } from "react";
+import Filter from "./SortAndFilter/Filter";
+import FilterItems from "../../store/components/FilterItems";
+import Sort from "./SortAndFilter/Sort";
 import { Link } from "react-router-dom";
 import Modal from "./Modal/Modal";
-import Filter from "./SortAndFilter/Filter";
-import Sort from "./SortAndFilter/Sort";
 import "./style.css";
 import "./LoaderWindow.css";
 import AnimeItems from "../../store/components/AnimeItems";
@@ -11,7 +12,7 @@ import { useSelector } from "react-redux/es/exports";
 import { useDispatch } from "react-redux";
 import { animeSelector, fetchAnimes } from "../../store/slices/animeSlice";
 
-function MainAnime(props) {
+const MainAnime = ({ props }) => {
   const [page, setPage] = useState(1);
   const [curr, setCurr] = useState(null);
   const [isModalOpen, setModalOpen] = useState(false);
@@ -56,64 +57,54 @@ function MainAnime(props) {
             След
           </button>
         </div>
-        <div className="element_list">
-          {curr && (
-            <Modal
-              isOpen={isModalOpen}
-              changeModalVisible={setModalOpen}
-              className="modal_content"
-            >
-              <h4 className="modal_content_text">
-                {curr.russian} / {curr.name}
-              </h4>
-              <div className="modal_content_text-all">
-                <p>Тип: {curr.kind}</p>
-                <p>
-                  Количество серий:{" "}
-                  {curr.episodes >= null ? curr.episodes : "Неизвестно"}
-                </p>
-                <p>Статус: {curr.status}</p>
-                <p>
-                  Дата релиза:{" "}
-                  {curr.released_on >= null ? "Неизвестно" : curr.released_on}
-                </p>
-                <p>
-                  Начало показа:{" "}
-                  {curr.aired_on >= null ? "Неизвестно" : curr.aired_on}
-                </p>
-              </div>
-              <div className="modal_content_text-rating">
-                Рейтинг: {curr.score}
-              </div>
-              <Link to={"/anime/" + curr.id}>
-                <button className="btn_modal_more_details">Посмотреть</button>
-              </Link>
-            </Modal>
-          )}
-          <AnimeItems animes={animes} className="block_content">
-            <div>
-              {/* <img
-                    alt="#"
-                    src={"https://shikimori.one" + el.image.original}
-                    className="block_image"
-                  />
-                  <span className="block_text">{el.russian}</span> */}
-              <button
-                className="open_modal_btn"
-                onClick={() => openModal(true)}
-              >
-                Подробнее
-              </button>
+        {curr && (
+          <Modal
+            isOpen={isModalOpen}
+            changeModalVisible={setModalOpen}
+            className="modal_content"
+          >
+            <h4 className="modal_content_text">
+              {curr.russian} / {curr.name}
+            </h4>
+            <div className="modal_content_text-all">
+              <p>Тип: {curr.kind}</p>
+              <p>
+                Количество серий:{" "}
+                {curr.episodes >= null ? curr.episodes : "Неизвестно"}
+              </p>
+              <p>Статус: {curr.status}</p>
+              <p>
+                Дата релиза:{" "}
+                {curr.released_on >= null ? "Неизвестно" : curr.released_on}
+              </p>
+              <p>
+                Начало показа:{" "}
+                {curr.aired_on >= null ? "Неизвестно" : curr.aired_on}
+              </p>
             </div>
-          </AnimeItems>
-        </div>
+            <div className="modal_content_text-rating">
+              Рейтинг: {curr.score}
+            </div>
+            <Link to={"/anime/" + curr.id}>
+              <button className="btn_modal_more_details">Посмотреть</button>
+            </Link>
+          </Modal>
+        )}
+        <AnimeItems
+          openModal={openModal}
+          animes={animes}
+          className="block_content"
+        ></AnimeItems>
       </div>
       <div className="filters">
         <Sort sortValue={sortType} onChangeSort={setSortType}></Sort>
-        <Filter filterList={filterList} toggleFilter={toggleFilter}></Filter>
+        <FilterItems
+          filterList={filterList}
+          toggleFilter={toggleFilter}
+        ></FilterItems>
       </div>
     </div>
   );
-}
+};
 
 export default MainAnime;

@@ -29,15 +29,12 @@ function MainAnime({ props, filter }) {
       return { ...prev, [id]: true };
     });
   };
-
   const { manga, loading, hasErrors } = useSelector(mangaSelector);
   const dispatch = useDispatch();
-
   useEffect(() => {
     const filterString = Object.keys(filterList).filter(
       (key) => filterList[key]
     );
-
     dispatch(fetchManga({ page, filter: filterString, sortType }));
   }, [dispatch, filterList, page, sortType]);
 
@@ -85,20 +82,9 @@ function MainAnime({ props, filter }) {
             </Modal>
           )}
           <MangaItems manga={manga} className="block_content">
-            <div>
-              {/* <img
-                    alt="#"
-                    src={"https://shikimori.one" + el.image.original}
-                    className="block_image"
-                  />
-                  <span className="block_text">{el.russian}</span> */}
-              <button
-                className="open_modal_btn"
-                onClick={() => openModal(true)}
-              >
-                Подробнее
-              </button>
-            </div>
+            <button className="open_modal_btn" onClick={() => openModal(true)}>
+              Подробнее
+            </button>
           </MangaItems>
         </div>
       </div>

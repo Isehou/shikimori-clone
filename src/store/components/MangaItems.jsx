@@ -1,18 +1,7 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux/es/exports";
-import { mangaSelector, fetchManga } from "../slices/mangaSlice";
 import "./style.css";
 
-const MangaItems = () => {
-  const dispatch = useDispatch();
-  const { manga } = useSelector(mangaSelector);
-
-  useEffect(() => {
-    dispatch(fetchManga());
-  }, [dispatch]);
-
+const MangaItems = ({ manga }) => {
   const renderManga = () => {
     return manga.map((el, i) => (
       <div className="block_content" key={el.id}>
@@ -22,6 +11,12 @@ const MangaItems = () => {
           className="block_image"
         />
         <span className="block_text">{el.russian}</span>
+        <button
+          className="open_modal_btn"
+          onClick={() => this.props.openModal(true)}
+        >
+          Подробнее
+        </button>
       </div>
     ));
   };
