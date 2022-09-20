@@ -36,7 +36,6 @@
   width: 260px;
   height: 60px;
 }
-
 .sort__item-genre {
   background-color: rgb(13, 70, 114);
   color: white;
@@ -53,9 +52,4 @@
 }
 .sort__item span {
   padding-left: 10px;
-}
-@media (max-width: 767px) {
-  .filter {
-    /* display: none; */
-  }
 }

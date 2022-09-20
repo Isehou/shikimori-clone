@@ -1,13 +1,13 @@
 import "./App.css";
 import { useState } from "react";
 import Header from "./components/Header/Header";
-import MainAnime from "./components/MainAnimeManga/MainAnime";
-import UseEffectTest from "./components/someTest/UseEffectTest";
+import MainAnime from "./pages/AnimePages";
+import UseEffectTest from "./pages/someTest/UseEffectTest";
 import { Routes, Route, Link } from "react-router-dom";
 import AnimeTab from "./components/LinkAnimeManga/AnimeTab";
 import MangaTab from "./components/LinkAnimeManga/MangaTab";
-import MainManga from "./components/MainAnimeManga/MainManga";
-import Example from "./components/someTest/DeviceTest";
+import MainManga from "./pages/MangaPages";
+import Example from "./pages/someTest/DeviceTest";
 import StoreApp from "./store/StoreApp";
 
 function App() {

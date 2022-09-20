@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchFilters } from "../slices/filterSlice";
-import "./FilterStyle.css";
+import "./Filter.css";
 
 const FilterItems = (filterList, toggleFilter) => {
   const [itemsFromData, setItemsFromData] = useState([]);

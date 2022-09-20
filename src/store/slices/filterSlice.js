@@ -33,9 +33,10 @@ export default filterSlice.reducer;
 export const fetchFilters = createAsyncThunk(
   "filter/filterFetch",
   ({ setItemsFromData }, rejectWithValue) => {
-    return fetch("https://shikimori.one/api/genres").then(
-      (res) => res.json()
-      // .then((res) => setItemsFromData(res.filter((e) => e.kind === "anime")))
+    return fetch("https://shikimori.one/api/genres").then((res) =>
+      res
+        .json()
+        .then((res) => setItemsFromData(res.filter((e) => e.kind === "manga")))
     );
   }
 );

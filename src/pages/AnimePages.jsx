@@ -1,16 +1,15 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import Filter from "./SortAndFilter/Filter";
-import FilterItems from "../../store/components/FilterItems";
-import Sort from "./SortAndFilter/Sort";
+import Filter from "../components/PageFunctions/SortAndFilter/Filter";
+import Sort from "../components/PageFunctions/SortAndFilter/Sort";
 import { Link } from "react-router-dom";
-import Modal from "./Modal/Modal";
-import "./style.css";
-import "./LoaderWindow.css";
-import AnimeItems from "../../store/components/AnimeItems";
+import Modal from "../components/PageFunctions/Modal";
+import "./pageStyle.css";
+import "../components/PageFunctions/LoaderWindow.css";
+import AnimeItems from "../store/components/AnimeItems";
 import { useSelector } from "react-redux/es/exports";
 import { useDispatch } from "react-redux";
-import { animeSelector, fetchAnimes } from "../../store/slices/animeSlice";
+import { animeSelector, fetchAnimes } from "../store/slices/animeSlice";
 
 const MainAnime = ({ props }) => {
   const [page, setPage] = useState(1);
@@ -98,10 +97,7 @@ const MainAnime = ({ props }) => {
       </div>
       <div className="filters">
         <Sort sortValue={sortType} onChangeSort={setSortType}></Sort>
-        <FilterItems
-          filterList={filterList}
-          toggleFilter={toggleFilter}
-        ></FilterItems>
+        <Filter filterList={filterList} toggleFilter={toggleFilter}></Filter>
       </div>
     </div>
   );

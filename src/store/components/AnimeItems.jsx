@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
 
-const AnimeItems = ({ animes }) => {
+const AnimeItems = ({ animes, openModal }) => {
   return (
     <div className="element__list">
       {animes &&
@@ -13,10 +13,7 @@ const AnimeItems = ({ animes }) => {
               className="block_image"
             />
             <span className="block_text">{el.russian}</span>
-            <button
-              className="open_modal_btn"
-              onClick={() => this.props.openModal(true)}
-            >
+            <button className="open_modal_btn" onClick={() => openModal(true)}>
               Подробнее
             </button>
           </div>
