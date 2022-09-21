@@ -5,6 +5,7 @@ import { useSelector } from "react-redux/es/exports";
 import "./store.css";
 import AnimeItems from "./components/AnimeItems";
 import MangaItems from "./components/MangaItems";
+import FilterItems from "./components/FilterItems";
 
 const StoreApp = () => {
   return (
@@ -14,6 +15,7 @@ const StoreApp = () => {
           <MangaItems></MangaItems>
           <hr></hr>
           <AnimeItems></AnimeItems>
+          <FilterItems></FilterItems>
         </div>
       </div>
     </div>
