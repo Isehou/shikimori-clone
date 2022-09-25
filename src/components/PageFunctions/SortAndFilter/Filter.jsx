@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "./FilterSort.css";
-import { useSelector } from "react-redux";
 
 function Filter({ filterList, toggleFilter }) {
   const [itemsFromData, setItemsFromData] = useState([]);
@@ -19,7 +18,7 @@ function Filter({ filterList, toggleFilter }) {
           <div className="filter__item-genre">ЖАНРЫ</div>
           {itemsFromData.map((el, i) => (
             <li
-              className={`filter__item ${filterList[el.id] ? "active" : ""}`}
+              className={`filter__item ${filterList[el.id] ? "selected" : ""}`}
               key={el.id}
             >
               <input type="checkbox" onClick={() => toggleFilter(el.id)} />

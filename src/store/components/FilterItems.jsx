@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchFilters } from "../slices/filterSlice";
 import "./Filter.css";
 
 const FilterItems = (filterList, toggleFilter) => {
-  const [itemsFromData, setItemsFromData] = useState([]);
   const dispatch = useDispatch();
-
+  const itemsFromData = useSelector((state) => state.filter.filter);
   useEffect(() => {
     dispatch(fetchFilters());
   }, []);

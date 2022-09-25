@@ -12,6 +12,10 @@ import { useDispatch } from "react-redux";
 import { mangaSelector, fetchManga } from "../store/slices/mangaSlice";
 
 function MainAnime({ props, filter }) {
+  // delete after fix modal window
+  const [list, setList] = useState([]);
+  const [loading, setIsLoading] = useState();
+  //
   const [page, setPage] = useState(1);
   const [curr, setCurr] = useState(null);
   const [isModalOpen, setModalOpen] = useState(false);
@@ -29,15 +33,37 @@ function MainAnime({ props, filter }) {
       return { ...prev, [id]: true };
     });
   };
-  const { manga, loading, hasErrors } = useSelector(mangaSelector);
-  const dispatch = useDispatch();
+
+  // New version
+  // const { manga, loading, hasErrors } = useSelector(mangaSelector);
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   const filterString = Object.keys(filterList).filter(
+  //     (key) => filterList[key]
+  //   );
+  //   dispatch(fetchManga({ page, filter: filterString, sortType }));
+  // }, [dispatch, filterList, page, sortType]);
+
+  // Old version (delete after fix modal window)
   useEffect(() => {
     const filterString = Object.keys(filterList).filter(
       (key) => filterList[key]
     );
-    dispatch(fetchManga({ page, filter: filterString, sortType }));
-  }, [dispatch, filterList, page, sortType]);
-
+    setIsLoading(true);
+    fetch(
+      `https://shikimori.one/api/mangas?&limit=30&page=${page}&genre=${filterString.join()}&order=${sortType}`
+    )
+      .then((res) => {
+        console.log(res.status, res.ok);
+        if (res.status === 200 && res.ok) return res.json();
+      })
+      .then((res) => {
+        setList(res);
+        setIsLoading(false);
+      });
+  }, [filterList, page, sortType]);
+  //
   return (
     <div className="home_page">
       {loading && <div className="lds-hourglass"></div>}
@@ -80,12 +106,35 @@ function MainAnime({ props, filter }) {
                 <button className="btn_modal_more_details">Посмотреть</button>
               </Link>
             </Modal>
-          )}{" "}
-          <MangaItems manga={manga} className="block_content">
+          )}
+
+          {/* new version */}
+          {/* <MangaItems manga={manga} className="block_content">
             <button className="open_modal_btn" onClick={() => openModal(true)}>
               Подробнее
             </button>
-          </MangaItems>
+          </MangaItems> */}
+
+          {/* delete after fix */}
+          {list.map((el, i) => {
+            return (
+              <div className="block_content" key={el.id}>
+                <img
+                  alt="#"
+                  src={"https://shikimori.one" + el.image.original}
+                  className="block_image"
+                />
+                <span className="block_text">{el.russian}</span>
+                <button
+                  className="open_modal_btn"
+                  onClick={() => openModal(true, el)}
+                >
+                  Подробнее
+                </button>
+              </div>
+            );
+          })}
+          {/*  */}
         </div>
       </div>
       <div>

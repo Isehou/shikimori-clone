@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -28,7 +29,7 @@ a:hover {
   position: relative;
   display: flex;
   justify-content: space-between;
-  height: 70px;
+  height: 60px;
   align-items: center;
 }
 .container::before {
@@ -55,14 +56,19 @@ a:hover {
   /* background-color: red; */
 }
 .head__title-text {
-  font-size: 16pt;
+  font-size: 22pt;
   text-transform: uppercase;
   color: #fff;
   cursor: pointer;
   z-index: 2;
-  padding-right: 500px;
+  padding-right: 80px;
   position: fixed;
-  margin-left: 100px;
+  padding-left: 70px;
+  font-family: "Anton", sans-serif;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .head__title-text:hover {
   color: black;

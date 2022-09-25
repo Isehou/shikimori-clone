@@ -8,12 +8,12 @@
 .someDiv {
   width: 40%;
   margin-left: 50px;
+  margin-top: 120px;
 }
 .device_block {
   margin: 20px;
 }
 .TestUl {
-  margin-top: 150px;
 }
 @media (max-width: 767px) {
   .device_block {

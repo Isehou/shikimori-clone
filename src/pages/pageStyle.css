@@ -3,10 +3,10 @@
   font-family: "Montserrat", sans-serif;
 }
 .home_page {
-  margin-top: 120px;
   display: flex;
-  /* background-color: blueviolet; */
+  background-image: url(../Img/bg-lightl-896.jpg);
   height: auto;
+  padding-top: 120px;
 }
 .wrapper {
   justify-content: center;
@@ -52,7 +52,7 @@
   background-color: white;
   color: rgb(13, 70, 114);
 }
-/* .open_modal_btn {
+.open_modal_btn {
   width: 250px;
   height: 40px;
   border-radius: none;
@@ -66,7 +66,7 @@
 .open_modal_btn:hover {
   background-color: white;
   color: rgb(13, 70, 114);
-} */
+}
 .element_list {
   display: flex;
   flex-wrap: wrap;
@@ -75,7 +75,7 @@
   position: relative;
   width: 100%;
 }
-.block_content {
+/* .block_content {
   border: 1px solid rgb(13, 70, 114);
   width: 300px;
   height: 550px;
@@ -98,8 +98,7 @@
   height: 400px;
   max-width: 300px;
   max-height: 400px;
-  border-radius: 5px;
-}
+} */
 .modal_content {
   position: fixed;
   border: 1px solid black;
@@ -135,6 +134,6 @@
 }
 @media (max-width: 767px) {
   .home_page {
-    margin-top: 80px;
+    padding-top: 80px;
   }
 }

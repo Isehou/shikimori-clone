@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./testStyle.css";
+import "./style.css";
 
 function UseEffectTest() {
   const [type, setType] = useState("users");

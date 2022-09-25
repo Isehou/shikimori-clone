@@ -15,7 +15,7 @@ const StoreApp = () => {
           <MangaItems></MangaItems>
           <hr></hr>
           <AnimeItems></AnimeItems>
-          <FilterItems></FilterItems>
+          {/* <FilterItems></FilterItems> */}
         </div>
       </div>
     </div>

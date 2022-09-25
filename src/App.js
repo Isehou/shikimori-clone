@@ -15,7 +15,7 @@ function App() {
   const links = [
     { label: "Anime", link: "/" },
     { label: "Manga", link: "/manga" },
-    { label: "Some_API", link: "/resource" },
+    { label: "Placeholder", link: "/resource" },
     { label: "StoreApp", link: "/StoreApp" },
     // { label: "Device Test", link: "/device" },
   ];
