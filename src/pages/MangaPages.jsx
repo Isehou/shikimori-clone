@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from "../components/PageFunctions/Modal";
-import FilterItems from "../store/components/FilterItems";
+import Filter from "../components/PageFunctions/SortAndFilter/Filter";
 import Sort from "../components/PageFunctions/SortAndFilter/Sort";
 import "./pageStyle.css";
 import "../components/PageFunctions/LoaderWindow.css";
@@ -92,10 +92,7 @@ function MainAnime({ props, filter }) {
       </div>
       <div>
         <Sort sortValue={sortType} onChangeSort={setSortType}></Sort>
-        <FilterItems
-          filterList={filterList}
-          toggleFilter={toggleFilter}
-        ></FilterItems>
+        <Filter filterList={filterList} toggleFilter={toggleFilter}></Filter>
       </div>
     </div>
   );
