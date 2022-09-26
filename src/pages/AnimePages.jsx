@@ -18,6 +18,7 @@ const MainAnime = ({ props }) => {
   const openModal = (state, element) => {
     setModalOpen(state);
     setCurr(element);
+    console.log("openModalFunc");
   };
   const [sortType, setSortType] = useState("");
   const [filterList, setFilterList] = useState({});

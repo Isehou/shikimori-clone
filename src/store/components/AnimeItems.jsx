@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import AnimePages from "../../pages/AnimePages";
 import "./style.css";
 
 const AnimeItems = ({ animes, openModal }) => {
@@ -13,7 +14,10 @@ const AnimeItems = ({ animes, openModal }) => {
               className="block_image"
             />
             <span className="block_text">{el.russian}</span>
-            <button className="open_modal_btn" onClick={() => openModal(true)}>
+            <button
+              className="open_modal_btn"
+              onClick={() => openModal("true")}
+            >
               Подробнее
             </button>
           </div>

@@ -18,10 +18,12 @@ function MainAnime({ props, filter }) {
   const openModal = (state, element) => {
     setModalOpen(state);
     setCurr(element);
+    console.log("openmodal");
   };
   const [sortType, setSortType] = useState("");
   const [filterList, setFilterList] = useState({});
   const toggleFilter = (id) => {
+    console.log("togglefilter");
     setFilterList((prev) => {
       if (prev.hasOwnProperty(id)) {
         return { ...prev, [id]: !prev[id] };
