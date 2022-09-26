@@ -2,12 +2,12 @@ import "./App.css";
 import { useState } from "react";
 import Header from "./components/Header/Header";
 import MainAnime from "./pages/AnimePages";
-import UseEffectTest from "./pages/someTest/UseEffectTest";
+import UseEffectTest from "./pages/somePage/UseEffectTest";
 import { Routes, Route, Link } from "react-router-dom";
 import AnimeTab from "./components/LinkAnimeManga/AnimeTab";
 import MangaTab from "./components/LinkAnimeManga/MangaTab";
 import MainManga from "./pages/MangaPages";
-import Example from "./pages/someTest/DeviceTest";
+import Example from "./pages/somePage/DeviceTest";
 import StoreApp from "./store/StoreApp";
 
 function App() {

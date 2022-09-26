@@ -1,8 +1,17 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchFilters } from "../../../store/slices/filterSlice";
 import "./FilterSort.css";
 
 function Filter({ filterList, toggleFilter }) {
+  const dispatch = useDispatch();
+  const itemsFromData = useSelector((state) => state.filter.filter);
+  useEffect(() => {
+    dispatch(fetchFilters());
+  }, []);
+
+  /* 
   const [itemsFromData, setItemsFromData] = useState([]);
 
   useEffect(() => {
@@ -10,6 +19,7 @@ function Filter({ filterList, toggleFilter }) {
       .then((res) => res.json())
       .then((res) => setItemsFromData(res.filter((e) => e.kind === "anime")));
   }, []);
+  */
 
   return (
     <div className="filter">
