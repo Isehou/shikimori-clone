@@ -1,0 +1,24 @@
+@import "./nullstyle.scss";
+
+$color_red: red;
+$color_blue: blue;
+.tplborder {
+  border-bottom: 5px dashed red;
+  color: $color_red;
+}
+
+.header {
+}
+.wrapper {
+}
+.block {
+  .block__title {
+    color: $color_red;
+  }
+  .block__desc {
+    color: $color_blue;
+  }
+}
+.link-2 {
+  @extend .tplborder;
+}
