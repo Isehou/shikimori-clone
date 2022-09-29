@@ -2,13 +2,12 @@ import "./App.css";
 import { useState } from "react";
 import Header from "./components/Header/Header";
 import MainAnime from "./pages/AnimePages";
-import UseEffectTest from "./pages/somePage/UseEffectTest";
+import UseEffectTest from "./pages/somePageTest/UseEffectTest";
 import { Routes, Route, Link } from "react-router-dom";
 import AnimeTab from "./components/LinkAnimeManga/AnimeTab";
 import MangaTab from "./components/LinkAnimeManga/MangaTab";
 import MainManga from "./pages/MangaPages";
-import Example from "./pages/somePage/DeviceTest";
-import StoreApp from "./store/StoreApp";
+import Example from "./pages/somePageTest/DeviceTest";
 
 function App() {
   const [counter, setCounter] = useState(0);
@@ -16,8 +15,7 @@ function App() {
     { label: "Anime", link: "/" },
     { label: "Manga", link: "/manga" },
     { label: "Placeholder", link: "/resource" },
-    { label: "StoreApp", link: "/StoreApp" },
-    // { label: "Device Test", link: "/device" },
+    { label: "Temp", link: "/device" },
   ];
 
   return (
@@ -29,8 +27,7 @@ function App() {
         <Route path="/manga/:id" element={<MangaTab />}></Route>
         <Route path="/anime/:id" element={<AnimeTab />}></Route>
         <Route path="/resource" element={<UseEffectTest />}></Route>
-        <Route path="/StoreApp" element={<StoreApp />}></Route>
-        {/* <Route path="/device" element={<Example />}></Route> */}
+        <Route path="/device" element={<Example />}></Route>
       </Routes>
     </div>
   );

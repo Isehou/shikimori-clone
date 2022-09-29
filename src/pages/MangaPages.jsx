@@ -1,17 +1,17 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Modal from "../components/PageFunctions/Modal";
-import Filter from "../components/PageFunctions/SortAndFilter/Filter";
-import Sort from "../components/PageFunctions/SortAndFilter/Sort";
+import Modal from "../components/PageProperties/Modal";
+import Filter from "../components/PageProperties/SortAndFilter/Filter";
+import Sort from "../components/PageProperties/SortAndFilter/Sort";
 import "./pageStyle.css";
-import "../components/PageFunctions/LoaderWindow.css";
+import "../components/PageProperties/LoaderWindow.css";
 import MangaItems from "../store/components/MangaItems";
 import { useSelector } from "react-redux/es/exports";
 import { useDispatch } from "react-redux";
 import { mangaSelector, fetchManga } from "../store/slices/mangaSlice";
 
-function MainAnime({ props, filter }) {
+const MangaPages = ({ props, filter }) => {
   const [page, setPage] = useState(1);
   const [curr, setCurr] = useState(null);
   const [isModalOpen, setModalOpen] = useState(false);
@@ -55,40 +55,38 @@ function MainAnime({ props, filter }) {
             След
           </button>
         </div>
-        <div className="element_list">
-          {curr && (
-            <Modal
-              isOpen={isModalOpen}
-              changeModalVisible={setModalOpen}
-              className="modal_content"
-            >
-              <h4 className="modal_content_text">
-                {curr.russian} / {curr.name}
-              </h4>
-              <div className="modal_content_text-all">
-                <p>Тип: {curr.kind}</p>
-                <p>
-                  Количество глав:{" "}
-                  {curr.chapters >= null ? curr.chapters : "Неизвестно"}
-                </p>
-                <p>Статус: {curr.status}</p>
-                <p>Дата релиза: {curr.released_on}</p>
-                <p>Начало показа: {curr.aired_on}</p>
-              </div>
-              <div className="modal_content_text-rating">
-                Рейтинг: {curr.score}
-              </div>
-              <Link to={"/manga/" + curr.id}>
-                <button className="btn_modal_more_details">Посмотреть</button>
-              </Link>
-            </Modal>
-          )}{" "}
-          <MangaItems manga={manga} className="block_content">
-            <button className="open_modal_btn" onClick={() => openModal(true)}>
-              Подробнее
-            </button>
-          </MangaItems>
-        </div>
+        {curr && (
+          <Modal
+            isOpen={isModalOpen}
+            changeModalVisible={setModalOpen}
+            className="modal_content"
+          >
+            <h4 className="modal_content_text">
+              {curr.russian} / {curr.name}
+            </h4>
+            <div className="modal_content_text-all">
+              <p>Тип: {curr.kind}</p>
+              <p>
+                Количество глав:{" "}
+                {curr.chapters >= null ? curr.chapters : "Неизвестно"}
+              </p>
+              <p>Статус: {curr.status}</p>
+              <p>Дата релиза: {curr.released_on}</p>
+              <p>Начало показа: {curr.aired_on}</p>
+            </div>
+            <div className="modal_content_text-rating">
+              Рейтинг: {curr.score}
+            </div>
+            <Link to={"/manga/" + curr.id}>
+              <button className="btn_modal_more_details">Посмотреть</button>
+            </Link>
+          </Modal>
+        )}{" "}
+        <MangaItems manga={manga} className="block_content">
+          <button className="open_modal_btn" onClick={() => openModal(true)}>
+            Подробнее
+          </button>
+        </MangaItems>
       </div>
       <div>
         <Sort sortValue={sortType} onChangeSort={setSortType}></Sort>
@@ -96,5 +94,5 @@ function MainAnime({ props, filter }) {
       </div>
     </div>
   );
-}
-export default MainAnime;
+};
+export default MangaPages;

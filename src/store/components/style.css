@@ -1,3 +1,11 @@
+.element__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+  position: relative;
+  width: 100%;
+}
 .block_content {
   border: 1px solid rgb(13, 70, 114);
   width: 300px;

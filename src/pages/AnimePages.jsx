@@ -1,17 +1,17 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import Filter from "../components/PageFunctions/SortAndFilter/Filter";
-import Sort from "../components/PageFunctions/SortAndFilter/Sort";
+import Filter from "../components/PageProperties/SortAndFilter/Filter";
+import Sort from "../components/PageProperties/SortAndFilter/Sort";
 import { Link } from "react-router-dom";
-import Modal from "../components/PageFunctions/Modal";
+import Modal from "../components/PageProperties/Modal";
 import "./pageStyle.css";
-import "../components/PageFunctions/LoaderWindow.css";
+import "../components/PageProperties/LoaderWindow.css";
 import AnimeItems from "../store/components/AnimeItems";
 import { useSelector } from "react-redux/es/exports";
 import { useDispatch } from "react-redux";
 import { animeSelector, fetchAnimes } from "../store/slices/animeSlice";
 
-const MainAnime = ({ props }) => {
+const AnimePages = ({ props }) => {
   const [page, setPage] = useState(1);
   const [curr, setCurr] = useState(null);
   const [isModalOpen, setModalOpen] = useState(false);
@@ -104,4 +104,4 @@ const MainAnime = ({ props }) => {
   );
 };
 
-export default MainAnime;
+export default AnimePages;
