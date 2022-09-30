@@ -1,5 +1,6 @@
 .filter {
   width: 200px;
+  margin-right: 50px;
 }
 .filter__block {
   height: auto;
@@ -30,6 +31,7 @@
 .sort {
   margin-top: 30px;
   font-size: 11pt;
+  margin-right: 50px;
 }
 .sort__block {
   width: 200px;

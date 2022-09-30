@@ -41,10 +41,10 @@ const MangaPages = ({ props, filter }) => {
   }, [dispatch, filterList, page, sortType]);
 
   return (
-    <div className="home_page">
+    <div className="home-page">
       {loading && <div className="lds-hourglass"></div>}
       <div className="wrapper">
-        <div className="button__block">
+        <div className="button-block">
           <button
             className="btn"
             onClick={() => setPage((curr) => (curr === 1 ? 1 : curr - 1))}
@@ -59,12 +59,12 @@ const MangaPages = ({ props, filter }) => {
           <Modal
             isOpen={isModalOpen}
             changeModalVisible={setModalOpen}
-            className="modal_content"
+            className="modal-content"
           >
-            <h4 className="modal_content_text">
+            <h4 className="modal-content_text">
               {curr.russian} / {curr.name}
             </h4>
-            <div className="modal_content_text-all">
+            <div className="modal-content_text-all">
               <p>Тип: {curr.kind}</p>
               <p>
                 Количество глав:{" "}
@@ -74,7 +74,7 @@ const MangaPages = ({ props, filter }) => {
               <p>Дата релиза: {curr.released_on}</p>
               <p>Начало показа: {curr.aired_on}</p>
             </div>
-            <div className="modal_content_text-rating">
+            <div className="modal-content_text-rating">
               Рейтинг: {curr.score}
             </div>
             <Link to={"/manga/" + curr.id}>

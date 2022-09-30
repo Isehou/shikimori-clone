@@ -8,14 +8,16 @@ import AnimeTab from "./components/LinkAnimeManga/AnimeTab";
 import MangaTab from "./components/LinkAnimeManga/MangaTab";
 import MainManga from "./pages/MangaPages";
 import Example from "./pages/somePageTest/DeviceTest";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
   const [counter, setCounter] = useState(0);
   const links = [
     { label: "Anime", link: "/" },
     { label: "Manga", link: "/manga" },
+    { label: "About Site", link: "/about" },
     { label: "Placeholder", link: "/resource" },
-    { label: "Temp", link: "/device" },
+    // { label: "Temp", link: "/device" },
   ];
 
   return (
@@ -26,8 +28,9 @@ function App() {
         <Route path="/manga" element={<MainManga />}></Route>
         <Route path="/manga/:id" element={<MangaTab />}></Route>
         <Route path="/anime/:id" element={<AnimeTab />}></Route>
+        <Route path="/about" element={<AboutPage />}></Route>
         <Route path="/resource" element={<UseEffectTest />}></Route>
-        <Route path="/device" element={<Example />}></Route>
+        {/* <Route path="/device" element={<Example />}></Route> */}
       </Routes>
     </div>
   );

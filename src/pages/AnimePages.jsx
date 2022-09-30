@@ -43,10 +43,10 @@ const AnimePages = ({ props }) => {
   }, [dispatch, filterList, page, sortType]);
 
   return (
-    <div className="home_page">
+    <div className="home-page">
       {loading && <div className="loader"></div>}
       <div className="wrapper">
-        <div className="button__block">
+        <div className="button-block">
           <button
             className="btn"
             onClick={() => setPage((curr) => (curr === 1 ? 1 : curr - 1))}
@@ -61,12 +61,12 @@ const AnimePages = ({ props }) => {
           <Modal
             isOpen={isModalOpen}
             changeModalVisible={setModalOpen}
-            className="modal_content"
+            className="modal-content"
           >
-            <h4 className="modal_content_text">
+            <h4 className="modal-content_text">
               {curr.russian} / {curr.name}
             </h4>
-            <div className="modal_content_text-all">
+            <div className="modal-content_text-all">
               <p>Тип: {curr.kind}</p>
               <p>
                 Количество серий:{" "}
@@ -82,7 +82,7 @@ const AnimePages = ({ props }) => {
                 {curr.aired_on >= null ? "Неизвестно" : curr.aired_on}
               </p>
             </div>
-            <div className="modal_content_text-rating">
+            <div className="modal-content_text-rating">
               Рейтинг: {curr.score}
             </div>
             <Link to={"/anime/" + curr.id}>
