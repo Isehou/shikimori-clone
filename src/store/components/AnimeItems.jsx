@@ -16,7 +16,7 @@ const AnimeItems = ({ animes, openModal }) => {
             <span className="block_text">{el.russian}</span>
             <button
               className="open_modal_btn"
-              onClick={() => openModal("true")}
+              onClick={() => openModal(true, el)}
             >
               Подробнее
             </button>

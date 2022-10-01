@@ -18,7 +18,6 @@ const AnimePages = ({ props }) => {
   const openModal = (state, element) => {
     setModalOpen(state);
     setCurr(element);
-    console.log("openModalFunc");
   };
   const [sortType, setSortType] = useState("");
   const [filterList, setFilterList] = useState({});
@@ -98,7 +97,11 @@ const AnimePages = ({ props }) => {
       </div>
       <div className="filters">
         <Sort sortValue={sortType} onChangeSort={setSortType}></Sort>
-        <Filter filterList={filterList} toggleFilter={toggleFilter}></Filter>
+        <Filter
+          kind={"anime"}
+          filterList={filterList}
+          toggleFilter={toggleFilter}
+        ></Filter>
       </div>
     </div>
   );

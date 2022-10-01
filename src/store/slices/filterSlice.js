@@ -3,7 +3,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const initialState = {
   loading: false,
   hasErrors: false,
-  filter: [],
+  anime: [],
+  manga: [],
 };
 
 const filterSlice = createSlice({
@@ -15,8 +16,15 @@ const filterSlice = createSlice({
       state.loading = true;
     });
     builder.addCase(fetchFilters.fulfilled, (state, { payload }) => {
-      state.filter = payload;
-      console.log(payload);
+      const obj = {
+        anime: [],
+        manga: [],
+      };
+      payload.forEach((e) => {
+        obj[e.kind].push(e);
+      });
+      state.anime = obj.anime;
+      state.manga = obj.manga;
       state.loading = false;
       state.hasErrors = false;
     });
@@ -33,8 +41,6 @@ export default filterSlice.reducer;
 export const fetchFilters = createAsyncThunk(
   "filter/filterFetch",
   (__, rejectWithValue) => {
-    return fetch("https://shikimori.one/api/genres").then((res) =>
-      res.json().then((res) => res.filter((e) => e.kind === "anime"))
-    );
+    return fetch("https://shikimori.one/api/genres").then((res) => res.json());
   }
 );

@@ -4,7 +4,7 @@ $color_red: red;
 $color_blue: blue;
 $font-stack: Helvetica, sans-serif;
 $primary-color: #333;
-.tplborder {
+tplborder {
   border-bottom: 5px dashed red;
   color: $color_red;
 }
@@ -14,7 +14,7 @@ $primary-color: #333;
 .wrapper {
 }
 .block {
-  .block__title {
+  &__title {
     color: $color_red;
   }
   .block__desc {

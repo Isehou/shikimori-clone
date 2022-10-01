@@ -90,7 +90,11 @@ const MangaPages = ({ props, filter }) => {
       </div>
       <div>
         <Sort sortValue={sortType} onChangeSort={setSortType}></Sort>
-        <Filter filterList={filterList} toggleFilter={toggleFilter}></Filter>
+        <Filter
+          kind={"manga"}
+          filterList={filterList}
+          toggleFilter={toggleFilter}
+        ></Filter>
       </div>
     </div>
   );
