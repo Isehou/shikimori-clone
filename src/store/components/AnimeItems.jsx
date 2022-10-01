@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import AnimePages from "../../pages/AnimePages";
 import "./style.css";
 
 const AnimeItems = ({ animes, openModal }) => {
