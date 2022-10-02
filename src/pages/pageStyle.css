@@ -2,11 +2,12 @@
 * {
   font-family: "Montserrat", sans-serif;
 }
-.home_page {
+.home-page {
   display: flex;
   background-image: url(../Img/bg-lightl-896.jpg);
-  height: 100%;
+  height: auto;
   padding-top: 120px;
+  background-attachment: fixed;
 }
 .wrapper {
   justify-content: center;
@@ -99,6 +100,21 @@
   display: block;
   min-height: 1300px;
 }
+
+/* MainPage */
+.main-page {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+}
+.content__links {
+  margin: 150px;
+  text-decoration: none;
+}
+/*  */
+
 @media (max-width: 767px) {
   .home_page {
     padding-top: 80px;

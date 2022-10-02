@@ -30,7 +30,7 @@ const AnimePages = ({ props }) => {
     });
   };
 
-  const { animes, loading, hasErrors } = useSelector(animeSelector);
+  const { animes, loading } = useSelector(animeSelector);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const AnimePages = ({ props }) => {
   }, [dispatch, filterList, page, sortType]);
 
   return (
-    <div className="home_page">
+    <div className="home-page">
       {loading && <div className="loader"></div>}
       <div className="wrapper">
         <div className="button__block">

@@ -11,9 +11,9 @@ import Example from "./pages/somePageTest/DeviceTest";
 import MainPage from "./pages/MainPage";
 
 function App() {
-  const [counter, setCounter] = useState(0);
+  const [counter] = useState(0);
   const links = [
-    // { label: "Anime", link: "/" },
+    { label: "Home", link: "/" },
     { label: "Anime", link: "/anime" },
     { label: "Manga", link: "/manga" },
     { label: "Placeholder", link: "/resource" },

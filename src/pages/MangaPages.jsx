@@ -31,7 +31,7 @@ const MangaPages = ({ props, filter }) => {
       return { ...prev, [id]: true };
     });
   };
-  const { manga, loading, hasErrors } = useSelector(mangaSelector);
+  const { manga, loading } = useSelector(mangaSelector);
   const dispatch = useDispatch();
   useEffect(() => {
     const filterString = Object.keys(filterList).filter(
@@ -41,7 +41,7 @@ const MangaPages = ({ props, filter }) => {
   }, [dispatch, filterList, page, sortType]);
 
   return (
-    <div className="home_page">
+    <div className="home-page">
       {loading && <div className="lds-hourglass"></div>}
       <div className="wrapper">
         <div className="button__block">
