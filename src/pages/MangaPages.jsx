@@ -31,7 +31,7 @@ const MangaPages = ({ props, filter }) => {
       return { ...prev, [id]: true };
     });
   };
-  const { manga, loading, hasErrors } = useSelector(mangaSelector);
+  const { manga, loading } = useSelector(mangaSelector);
   const dispatch = useDispatch();
   useEffect(() => {
     const filterString = Object.keys(filterList).filter(
@@ -90,7 +90,11 @@ const MangaPages = ({ props, filter }) => {
       </div>
       <div>
         <Sort sortValue={sortType} onChangeSort={setSortType}></Sort>
-        <Filter filterList={filterList} toggleFilter={toggleFilter}></Filter>
+        <Filter
+          kind={"manga"}
+          filterList={filterList}
+          toggleFilter={toggleFilter}
+        ></Filter>
       </div>
     </div>
   );

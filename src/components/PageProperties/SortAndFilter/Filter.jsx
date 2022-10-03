@@ -4,22 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchFilters } from "../../../store/slices/filterSlice";
 import "./FilterSort.css";
 
-function Filter({ filterList, toggleFilter }) {
+function Filter({ filterList, toggleFilter, kind }) {
   const dispatch = useDispatch();
-  const itemsFromData = useSelector((state) => state.filter.filter);
+  const itemsFromData = useSelector((state) => state.filter[kind]);
   useEffect(() => {
     dispatch(fetchFilters());
   }, []);
-
-  /* 
-  const [itemsFromData, setItemsFromData] = useState([]);
-
-  useEffect(() => {
-    fetch("https://shikimori.one/api/genres")
-      .then((res) => res.json())
-      .then((res) => setItemsFromData(res.filter((e) => e.kind === "anime")));
-  }, []);
-  */
 
   return (
     <div className="filter">
