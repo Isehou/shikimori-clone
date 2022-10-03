@@ -21,8 +21,10 @@ function Filter({ filterList, toggleFilter, kind }) {
               className={`filter__item ${filterList[el.id] ? "selected" : ""}`}
               key={el.id}
             >
-              <input type="checkbox" onClick={() => toggleFilter(el.id)} />
-              <span>{el.russian}</span>
+              <label className="filter__item-chkbox">
+                <input type="checkbox" onChange={() => toggleFilter(el.id)} />
+                <span>{el.russian}</span>
+              </label>
             </li>
           ))}
         </ul>

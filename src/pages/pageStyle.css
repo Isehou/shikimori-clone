@@ -5,7 +5,7 @@
 .home-page {
   display: flex;
   background-image: url(../Img/bg-lightl-896.jpg);
-  height: 100vh;
+  height: auto;
   padding-top: 120px;
   background-attachment: fixed;
 }

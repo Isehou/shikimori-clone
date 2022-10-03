@@ -9,34 +9,40 @@ function Sort({ sortValue, onChangeSort }) {
         <ul className="sort__items">
           <div className="sort__item-genre">СОРТИРОВКА</div>
           <div className="sort__item">
-            <input
-              name="sortBy"
-              defaultChecked={sortValue === "id"}
-              value="id"
-              type="radio"
-              onChange={(e) => onChangeSort(e.target.value)}
-            />
-            <span>По ID</span>
+            <label className="sort__item-chkbox">
+              <input
+                name="sortBy"
+                defaultChecked={sortValue === "id"}
+                value="id"
+                type="radio"
+                onChange={(e) => onChangeSort(e.target.value)}
+              />
+              <span>По ID</span>
+            </label>
           </div>
           <div className="sort__item">
-            <input
-              name="sortBy"
-              defaultChecked={sortValue === "popularity"}
-              value="popularity"
-              type="radio"
-              onChange={(e) => onChangeSort(e.target.value)}
-            />
-            <span>По популярности</span>
+            <label className="sort__item-chkbox">
+              <input
+                name="sortBy"
+                defaultChecked={sortValue === "popularity"}
+                value="popularity"
+                type="radio"
+                onChange={(e) => onChangeSort(e.target.value)}
+              />
+              <span>По популярности</span>
+            </label>
           </div>
           <div className="sort__item">
-            <input
-              name="sortBy"
-              defaultChecked={sortValue === "name"}
-              value="name"
-              type="radio"
-              onChange={(e) => onChangeSort(e.target.value)}
-            />
-            <span>По алфавиту</span>
+            <label className="sort__item-chkbox">
+              <input
+                name="sortBy"
+                defaultChecked={sortValue === "name"}
+                value="name"
+                type="radio"
+                onChange={(e) => onChangeSort(e.target.value)}
+              />
+              <span>По алфавиту</span>
+            </label>
           </div>
         </ul>
       </div>
