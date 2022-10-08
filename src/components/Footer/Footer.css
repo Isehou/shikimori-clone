@@ -1,22 +1,21 @@
 .footer {
   width: 100%;
-  height: 300px;
+  height: 30px;
   display: flex;
   background-color: rgb(13, 70, 114);
-  justify-content: space-between;
-}
-.ft_main {
   align-items: center;
-  list-style-type: none;
-  color: #ffffff;
-  font-size: 16pt;
-  margin: 50px 200px 0px 200px;
+  color: white;
+  font-family: "Trebuchet MS", tahoma, arial, verdana;
+  font-size: 12pt;
+  justify-content: flex-end;
 }
-.ft_main .ft_nav {
-  font-size: 13pt;
-  margin-top: 30px;
+.copyright {
+  padding-right: 50px;
+  display: flex;
+  justify-content: flex-end;
+  color: white;
 }
-.ft_mail {
-  color: wheat;
-  padding-top: 20px;
+.adress {
+  padding-left: 50px;
+  justify-content: start;
 }

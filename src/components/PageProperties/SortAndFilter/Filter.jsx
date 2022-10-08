@@ -17,15 +17,17 @@ function Filter({ filterList, toggleFilter, kind }) {
         <ul className="filter__items">
           <div className="filter__item-genre">ЖАНРЫ</div>
           {itemsFromData.map((el, i) => (
-            <li
-              className={`filter__item ${filterList[el.id] ? "selected" : ""}`}
-              key={el.id}
-            >
-              <label className="filter__item-chkbox">
+            <label>
+              <li
+                className={`filter__item ${
+                  filterList[el.id] ? "selected" : ""
+                }`}
+                key={el.id}
+              >
                 <input type="checkbox" onChange={() => toggleFilter(el.id)} />
                 <span>{el.russian}</span>
-              </label>
-            </li>
+              </li>
+            </label>
           ))}
         </ul>
       </div>

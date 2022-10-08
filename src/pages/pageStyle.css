@@ -106,8 +106,8 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  align-items: center;
   width: 100%;
+  min-height: 100vh;
 }
 .content__links {
   margin: 150px;
@@ -124,6 +124,7 @@
 /* AboutPage */
 .about-page {
   display: flex;
+  min-height: 100vh;
 }
 .text-block {
   width: 100%;

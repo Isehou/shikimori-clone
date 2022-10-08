@@ -8,6 +8,7 @@ import MangaTab from "./components/LinkAnimeManga/MangaTab";
 import MangaPages from "./pages/MangaPages";
 import AboutPage from "./pages/AboutPage";
 import MainPage from "./pages/MainPage";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [counter] = useState(0);
@@ -29,6 +30,7 @@ function App() {
         <Route path="/anime/:id" element={<AnimeTab />}></Route>
         <Route path="/about" element={<AboutPage />}></Route>
       </Routes>
+      <Footer />
     </div>
   );
 }

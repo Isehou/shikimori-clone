@@ -8,8 +8,8 @@ function Sort({ sortValue, onChangeSort }) {
       <div className="sort__block">
         <ul className="sort__items">
           <div className="sort__item-genre">СОРТИРОВКА</div>
-          <div className="sort__item">
-            <label className="sort__item-chkbox">
+          <label>
+            <div className="sort__item">
               <input
                 name="sortBy"
                 defaultChecked={sortValue === "id"}
@@ -18,10 +18,10 @@ function Sort({ sortValue, onChangeSort }) {
                 onChange={(e) => onChangeSort(e.target.value)}
               />
               <span>По ID</span>
-            </label>
-          </div>
-          <div className="sort__item">
-            <label className="sort__item-chkbox">
+            </div>
+          </label>
+          <label>
+            <div className="sort__item">
               <input
                 name="sortBy"
                 defaultChecked={sortValue === "popularity"}
@@ -30,10 +30,10 @@ function Sort({ sortValue, onChangeSort }) {
                 onChange={(e) => onChangeSort(e.target.value)}
               />
               <span>По популярности</span>
-            </label>
-          </div>
-          <div className="sort__item">
-            <label className="sort__item-chkbox">
+            </div>
+          </label>
+          <label>
+            <div className="sort__item">
               <input
                 name="sortBy"
                 defaultChecked={sortValue === "name"}
@@ -42,8 +42,8 @@ function Sort({ sortValue, onChangeSort }) {
                 onChange={(e) => onChangeSort(e.target.value)}
               />
               <span>По алфавиту</span>
-            </label>
-          </div>
+            </div>
+          </label>
         </ul>
       </div>
     </div>
