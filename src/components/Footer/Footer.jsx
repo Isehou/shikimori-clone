@@ -5,7 +5,9 @@ const Footer = () => {
   return (
     <div className="footer">
       {/* <div className="adress">ETERNITY</div> */}
-      <div className="copyright">© Shikimori clone 2022</div>
+      <div className="copyright">
+        SHIKIMORI CLONE. Project start: March 2022
+      </div>
     </div>
   );
 };

@@ -10,15 +10,14 @@ function Header(props) {
     setIsOpen((prev) => !prev);
   };
   return (
-    <div className="header">
+    <div className="head">
       <div className="container">
         <Link className="title__logo__link" to="/">
-          <SiShikimori className="head__shiki-logo"></SiShikimori>
-          <div className="head__title-text">Shikimori clone</div>
+          <SiShikimori className="head-shiki__logo"></SiShikimori>
+          <div className="head-title__text">Shikimori clone</div>
         </Link>
         <button
-          className="head__adaptive__btn"
-          id="head__adaptive__btn"
+          className={`head-adaptive__btn ${isOpen && "active"}}`}
           onClick={handleClick}
         >
           <span></span>
