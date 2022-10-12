@@ -1,23 +1,31 @@
-.aniManga {
-  margin-top: 130px;
-  padding: 0px 70px;
+html,
+body {
+  height: 100%;
 }
-.aniManga__content {
+SwiperImg {
+  align-items: flex-start;
+}
+.aniManga {
+  padding: 120px 20px 0;
+  min-height: 100vh;
+  background-image: url(../../Img/bg-lightl-896.jpg);
+}
+.aniManga-content {
   display: flex;
   flex-wrap: wrap;
 }
-.aniManga__content h2 {
+.aniManga-content h2 {
   width: 100%;
   text-transform: uppercase;
   margin: 10px 15px 10px;
 }
-.aniManga__image-block {
+.aniManga-image__block {
   width: 300px;
   height: 420px;
-  border-radius: 7px;
+  border-radius: 5px;
   margin: 10px 15px 20px;
 }
-.aniManga__text-block {
+.aniManga-text__block {
   margin: 10px 15px 20px;
   width: 300px;
   height: 420px;
@@ -25,17 +33,17 @@
   max-width: 450px;
   font-size: 14pt;
   line-height: 30px;
-  background-color: rgb(235, 235, 235);
-  border-radius: 7px;
+  background-color: rgb(202, 202, 202);
+  border-radius: 5px;
 }
-.aniManga__content-description {
+.aniManga-content__description {
   height: auto;
   width: 100%;
   font-size: 14pt;
   padding: 10px;
-  border-radius: 7px;
+  border-radius: 5px;
   margin: 10px 15px 10px;
-  background-color: rgb(235, 235, 235);
+  background-color: rgb(211, 211, 211);
 }
 @media (max-width: 767px) {
   * {
@@ -46,28 +54,28 @@
   .aniManga {
     margin: 70px 15px 10px;
   }
-  .aniManga__content {
+  .aniManga-content {
     justify-content: center;
     margin: 10px 15px 10px;
   }
-  .aniManga__content h2 {
+  .aniManga-content h2 {
     font-size: 13pt;
     text-transform: uppercase;
     margin: 10px 15px 10px;
     height: auto;
     width: auto;
   }
-  .aniManga__text-block {
+  .aniManga-text__block {
     margin: 10px 15px 10px;
     height: auto;
     font-size: 12pt;
     width: 320px;
   }
-  .aniManga__image-block {
-    border-radius: 7px;
+  .aniManga-image__block {
+    border-radius: 5px;
     margin: 10px 15px 10px;
   }
-  .aniManga__content-description {
+  .aniManga-content__description {
     margin: 10px 15px 10px;
     font-size: 12pt;
     width: auto;

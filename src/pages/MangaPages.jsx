@@ -82,11 +82,11 @@ const MangaPages = ({ props, filter }) => {
             </Link>
           </Modal>
         )}{" "}
-        <MangaItems manga={manga} className="block_content">
-          <button className="open_modal_btn" onClick={() => openModal(true)}>
-            Подробнее
-          </button>
-        </MangaItems>
+        <MangaItems
+          manga={manga}
+          openModal={openModal}
+          className="block_content"
+        ></MangaItems>
       </div>
       <div>
         <Sort sortValue={sortType} onChangeSort={setSortType}></Sort>

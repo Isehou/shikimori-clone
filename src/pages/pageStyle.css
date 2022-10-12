@@ -2,11 +2,15 @@
 * {
   font-family: "Montserrat", sans-serif;
 }
+html,
+body {
+  height: 100%;
+}
 .home-page {
   display: flex;
   background-image: url(../Img/bg-lightl-896.jpg);
-  height: auto;
-  padding-top: 120px;
+  min-height: 100vh;
+  padding: 120px 0 80px 0;
   background-attachment: fixed;
 }
 .wrapper {
