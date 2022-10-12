@@ -22,7 +22,7 @@
   background-color: rgb(202, 202, 202);
   border-radius: 3px;
 }
-.filter__item .selected {
+.filter__item.selected {
   background-color: rgb(202, 202, 202);
 }
 .filter__item span {
@@ -70,7 +70,8 @@
   background-color: rgb(202, 202, 202);
   border-radius: 3px;
 }
-.sort__item-chkbox {
+.sort__item:checked {
+  background-color: rgb(202, 202, 202);
 }
 .sort__item span {
   padding-left: 10px;
