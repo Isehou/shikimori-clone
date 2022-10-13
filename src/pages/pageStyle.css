@@ -5,13 +5,15 @@
 html,
 body {
   height: 100%;
+  padding: 0;
+  margin: 0;
 }
 .home-page {
   display: flex;
   background-image: url(../Img/bg-lightl-896.jpg);
-  min-height: 100vh;
   padding: 120px 0 80px 0;
   background-attachment: fixed;
+  min-height: 100%;
 }
 .wrapper {
   justify-content: center;
@@ -107,11 +109,12 @@ body {
 
 /* MainPage */
 .main-page {
+  position: relative;
   display: flex;
   justify-content: center;
   text-align: center;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
 }
 .content__links {
   margin: 150px;
@@ -129,6 +132,8 @@ body {
 .about-page {
   display: flex;
   min-height: 100vh;
+  padding: 0;
+  margin: 0;
 }
 .text-block {
   width: 100%;
