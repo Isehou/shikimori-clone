@@ -13,7 +13,7 @@ body {
   background-image: url(../Img/bg-lightl-896.jpg);
   padding: 120px 0 80px 0;
   background-attachment: fixed;
-  min-height: 100%;
+  min-height: 100vh;
 }
 .wrapper {
   justify-content: center;
@@ -119,6 +119,12 @@ body {
 .content__links {
   margin: 150px;
   text-decoration: none;
+  z-index: 2;
+}
+.content__links__image {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
 }
 /*  */
 

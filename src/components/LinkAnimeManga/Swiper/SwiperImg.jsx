@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Navigation, Pagination } from "swiper";
-import "./SwiperImg.css";
 import "swiper/css";
+import "./SwiperImg.css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
