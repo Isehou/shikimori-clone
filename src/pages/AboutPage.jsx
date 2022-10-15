@@ -23,9 +23,9 @@ const AboutPage = () => {
               aliquid accusantium rerum omnis molestiae dolor culpa minima
               consectetur eos illo porro nulla illum sequi quae facere officia?
             </p>
-            {/* <div className="device_block dark:bg-slate-900 text-white h-screen">
-            <h1 className="text-3xl font-bold underline ">Tailwind</h1>{" "}
-          </div> */}
+            <div className="device_block dark:bg-slate-900 text-white h-screen">
+              <h1 className="text-3xl font-bold underline ">Tailwind</h1>{" "}
+            </div>
           </div>
         </div>
       </div>
