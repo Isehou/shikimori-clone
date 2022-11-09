@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Modal from "../components/PageProperties/Modal";
 import Filter from "../components/PageProperties/SortAndFilter/Filter";
 import Sort from "../components/PageProperties/SortAndFilter/Sort";
-import "./pageStyle.css";
+import "./pagesStyle.css";
 import "../components/PageProperties/LoaderWindow.css";
 import MangaItems from "../store/components/MangaItems";
 import { useSelector } from "react-redux/es/exports";

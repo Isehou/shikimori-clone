@@ -107,27 +107,6 @@ body {
   min-height: 1300px;
 }
 
-/* MainPage */
-.main-page {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  width: 100%;
-  min-height: 100%;
-}
-.content__links {
-  margin: 150px;
-  text-decoration: none;
-  z-index: 2;
-}
-.content__links__image {
-  position: fixed;
-  z-index: 1;
-  width: 100%;
-}
-/*  */
-
 @media (max-width: 767px) {
   .home_page {
     padding-top: 80px;

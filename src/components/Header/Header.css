@@ -76,7 +76,7 @@ a:hover {
 }
 
 .head__list {
-  font-size: 14pt;
+  font-size: 15pt;
   list-style-type: none;
   gap: 30px;
   cursor: pointer;
@@ -88,6 +88,7 @@ a:hover {
 }
 .head__link {
   color: #fff;
+  font-family: "Quintessential", cursive;
 }
 .head-adaptive__btn {
   display: none;
