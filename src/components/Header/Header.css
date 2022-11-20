@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 
 * {
   margin: 0;
@@ -19,6 +20,8 @@ a:hover {
 .head {
   position: fixed;
   background-color: rgb(13, 70, 114);
+  opacity: 98%;
+  /* border-bottom: 2px solid rgb(13, 70, 114); */
   top: 0;
   left: 0;
   width: 100%;
@@ -88,7 +91,7 @@ a:hover {
 }
 .head__link {
   color: #fff;
-  font-family: "Quintessential", cursive;
+  font-family: "Oswald", sans-serif;
 }
 .head-adaptive__btn {
   display: none;

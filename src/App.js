@@ -7,7 +7,7 @@ import AnimeTab from "./components/LinkAnimeManga/AnimeTab";
 import MangaTab from "./components/LinkAnimeManga/MangaTab";
 import MangaPages from "./pages/MangaPages";
 import AboutPage from "./pages/AboutPage";
-import MainPage from "./pages/MainPage";
+import HomePage from "./pages/HomePage";
 import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
     <div className="main-container">
       <Header links={links} />
       <Routes>
-        <Route path="/" element={<MainPage counter={counter} />} />
+        <Route path="/" element={<HomePage counter={counter} />} />
         <Route path="/anime" element={<AnimePages />}></Route>
         <Route path="/manga" element={<MangaPages />}></Route>
         <Route path="/manga/:id" element={<MangaTab />}></Route>

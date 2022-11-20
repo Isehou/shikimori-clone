@@ -5,6 +5,7 @@ import DetailsImage from "./Details/DetailsImage";
 import DetailsInfo from "./Details/DetailsInfo";
 import StarRating from "./StarRating/StarRating";
 import SwiperImg from "./Swiper/SwiperImg";
+import LinkBack from "../PageProperties/LinkBack/LinkBack";
 
 function MangaTab(props) {
   const [aniMangaData, setAniMangaData] = useState(null);
@@ -16,6 +17,7 @@ function MangaTab(props) {
   }, [params]);
   return (
     <div className="aniManga">
+      <LinkBack></LinkBack>
       {aniMangaData && (
         <div className="aniManga-content">
           <DetailsTitle

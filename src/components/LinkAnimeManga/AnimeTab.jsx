@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory, Link } from "react-router-dom";
 import DetailsTitle from "./Details/DetailsTitle";
 import DetailsImage from "./Details/DetailsImage";
 import DetailsInfo from "./Details/DetailsInfo";
 import StarRating from "./StarRating/StarRating";
 import SwiperImg from "./Swiper/SwiperImg";
+import LinkBack from "../PageProperties/LinkBack/LinkBack";
 
 function AnimeTab(props) {
   const [aniMangaData, setAniMangaData] = useState(null);
@@ -15,8 +16,10 @@ function AnimeTab(props) {
       .then((res) => res.json())
       .then((res) => setAniMangaData(res));
   }, [params]);
+
   return (
     <div className="aniManga">
+      <LinkBack></LinkBack>
       {aniMangaData && (
         <div className="aniManga-content">
           <DetailsTitle

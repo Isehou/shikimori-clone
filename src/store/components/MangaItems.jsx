@@ -6,19 +6,17 @@ const MangaItems = ({ manga, openModal }) => {
     <div className="element__list">
       {manga &&
         manga.map((el, i) => (
-          <div className="block_content" key={el.id}>
+          <div
+            className="block_content"
+            key={el.id}
+            onClick={() => openModal(true, el)}
+          >
             <img
               alt="#"
               src={"https://shikimori.one" + el.image.original}
               className="block_image"
             />
             <span className="block_text">{el.russian}</span>
-            <button
-              className="open_modal_btn"
-              onClick={() => openModal(true, el)}
-            >
-              Подробнее
-            </button>
           </div>
         ))}
     </div>

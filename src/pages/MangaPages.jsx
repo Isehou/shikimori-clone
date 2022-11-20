@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Modal from "../components/PageProperties/Modal";
 import Filter from "../components/PageProperties/SortAndFilter/Filter";
 import Sort from "../components/PageProperties/SortAndFilter/Sort";
-import "./pagesStyle.css";
+import "./pagestyle.css";
 import "../components/PageProperties/LoaderWindow.css";
 import MangaItems from "../store/components/MangaItems";
 import { useSelector } from "react-redux/es/exports";
@@ -41,7 +41,7 @@ const MangaPages = ({ props, filter }) => {
   }, [dispatch, filterList, page, sortType]);
 
   return (
-    <div className="home-page">
+    <div className="pages">
       {loading && <div className="lds-hourglass"></div>}
       <div className="wrapper">
         <div className="button-block">

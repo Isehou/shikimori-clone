@@ -4,12 +4,12 @@ import cat from "../Img/cat.jpg";
 
 const AboutPage = () => {
   return (
-    <div className="home-page">
+    <div className="pages">
       <div className="wrapper">
         <div className="about-page">
           <div className="photo-block">
             <img className="photo-block_img" src={cat} alt="#" />
-            <a href="https://www.linkedin.com/in/islam-matenov-20a073248/">
+            <a href="https://www.linkedin.com/in/isan-matenov-20a073248/">
               My LinkedIn profile
             </a>
           </div>

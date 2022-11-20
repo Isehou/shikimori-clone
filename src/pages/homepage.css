@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Quintessential&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+.links a:link {
+  color: white;
+}
+.links a:visited {
+  color: white;
+}
+.links a:active {
+  color: white;
+}
+
+.homepage {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.homepage__main {
+  padding: 120px 0px;
+}
+.main__bg {
+  text-decoration: none;
+  display: flex;
+  transition: 0.5s ease-in;
+}
+.image {
+  width: 1170px;
+  height: 630px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+}
+.main-title-name {
+  padding-left: 20px;
+  text-decoration: none;
+  font-size: 22pt;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  position: absolute;
+  display: flex;
+  color: white;
+}
+/* .main-page__content:hover {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1.2);
+} */
+
+.main__content {
+  width: 1170px;
+  height: 860px;
+  background-color: red;
+  margin-top: 70px;
+  font-family: "Oswald", sans-serif;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 20pt;
+}
+.main__content .links {
+  font-size: 12pt;
+}
+.links {
+  color: white;
+  transition: 1s;
+  height: 30px;
+}
+.links:hover {
+  color: white;
+}
+.arrow-right {
+  color: white;
+  height: 30px;
+  width: auto;
+}

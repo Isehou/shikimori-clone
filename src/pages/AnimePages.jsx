@@ -4,7 +4,7 @@ import Filter from "../components/PageProperties/SortAndFilter/Filter";
 import Sort from "../components/PageProperties/SortAndFilter/Sort";
 import { Link } from "react-router-dom";
 import Modal from "../components/PageProperties/Modal";
-import "./pagesStyle.css";
+import "./pagestyle.css";
 import "../components/PageProperties/LoaderWindow.css";
 import AnimeItems from "../store/components/AnimeItems";
 import { useSelector } from "react-redux/es/exports";
@@ -42,7 +42,7 @@ const AnimePages = ({ props }) => {
   }, [dispatch, filterList, page, sortType]);
 
   return (
-    <div className="home-page">
+    <div className="pages">
       {loading && <div className="loader"></div>}
       <div className="wrapper">
         <div className="button-block">
