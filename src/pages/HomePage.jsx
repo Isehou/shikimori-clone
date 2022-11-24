@@ -7,8 +7,10 @@ import "../components/PageProperties/LoaderWindow.css";
 import { Link } from "react-router-dom";
 import fatebg from "../Img/725584.png";
 import { VscArrowRight } from "react-icons/vsc";
+import MangaItems from "./../store/components/MangaItems";
+import { useState } from "react";
 
-const MainPage = () => {
+const MainPage = ({ manga, openModal }) => {
   const { loading } = useSelector(animeSelector);
   return (
     <div className="homepage">
@@ -29,6 +31,7 @@ const MainPage = () => {
         </div>
         <div className="main__content">
           Trending manga
+          <MangaItems></MangaItems>
           <Link className="links" to={"/manga"}>
             View all
             <span className="arrow-right">
