@@ -17,10 +17,10 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  box-sizing: border-box;
 }
 .homepage__main {
   padding: 120px 0px;
+  box-sizing: border-box;
 }
 .main__bg {
   text-decoration: none;
@@ -35,13 +35,15 @@
   border-radius: 5px;
 }
 .main-title-name {
-  padding-left: 20px;
   text-decoration: none;
-  font-size: 22pt;
+  font-size: 40pt;
   text-transform: uppercase;
   font-family: "Oswald", sans-serif;
   position: absolute;
   display: flex;
+  color: white;
+  margin-top: 430px;
+  padding-left: 70px;
   color: white;
 }
 /* .main-page__content:hover {
@@ -53,19 +55,23 @@
 .main__content {
   width: 1170px;
   height: 860px;
-  background-color: red;
+  background-color: rgb(13, 70, 114);
   margin-top: 70px;
   font-family: "Oswald", sans-serif;
   border-radius: 5px;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 30px;
+  padding: 30px 30px;
   color: white;
   text-transform: uppercase;
   font-size: 20pt;
 }
 .main__content .links {
   font-size: 12pt;
+}
+.main__content p {
+  margin-top: 320px;
+  font-size: 28pt;
+  display: flex;
+  justify-content: center;
 }
 .links {
   color: white;
