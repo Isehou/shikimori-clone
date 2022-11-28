@@ -1,11 +1,11 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import Filter from "../components/PageProperties/SortAndFilter/Filter";
-import Sort from "../components/PageProperties/SortAndFilter/Sort";
+import Filter from "../components/Properties/SortAndFilter/Filter";
+import Sort from "../components/Properties/SortAndFilter/Sort";
 import { Link } from "react-router-dom";
-import Modal from "../components/PageProperties/Modal";
+import Modal from "../components/Properties/Modal";
 import "./pagestyle.css";
-import "../components/PageProperties/LoaderWindow.css";
+import "../components/Properties/LoaderWindow.css";
 import AnimeItems from "../store/components/AnimeItems";
 import { useSelector } from "react-redux/es/exports";
 import { useDispatch } from "react-redux";

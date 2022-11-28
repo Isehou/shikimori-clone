@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./pagestyle.css";
 import "./homepage.css";
-import "../components/PageProperties/LoaderWindow.css";
+import "../components/Properties/LoaderWindow.css";
 import { Link } from "react-router-dom";
 import fatebg from "../Img/725584.png";
 import sw from "../Img/sw-1.jpg";

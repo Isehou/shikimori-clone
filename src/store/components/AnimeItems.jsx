@@ -17,7 +17,6 @@ const AnimeItems = ({ animes, openModal }) => {
               className="block_image"
             />
             <span className="block_text">{el.russian}</span>
-            {/* <button className="open_modal_btn">Подробнее</button> */}
           </div>
         ))}
     </div>

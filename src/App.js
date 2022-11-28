@@ -9,6 +9,7 @@ import MangaPages from "./pages/MangaPages";
 import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
 import Footer from "./components/Footer/Footer";
+import ScrollToTop from "./components/Properties/ScrollToTop";
 
 function App() {
   const [counter] = useState(0);
@@ -21,6 +22,7 @@ function App() {
 
   return (
     <div className="main-container">
+      <ScrollToTop />
       <Header links={links} />
       <Routes>
         <Route path="/" element={<HomePage counter={counter} />} />

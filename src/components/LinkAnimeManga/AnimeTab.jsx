@@ -6,7 +6,7 @@ import DetailsImage from "./Details/DetailsImage";
 import DetailsInfo from "./Details/DetailsInfo";
 import StarRating from "./StarRating/StarRating";
 import SwiperImg from "./Swiper/SwiperImg";
-import LinkBack from "../PageProperties/LinkBack/LinkBack";
+import LinkBack from "../Properties/LinkBack/LinkBack";
 
 function AnimeTab(props) {
   const [aniMangaData, setAniMangaData] = useState(null);
