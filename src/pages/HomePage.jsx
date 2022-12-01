@@ -13,12 +13,20 @@ import AnimeItems from "../store/components/AnimeItems";
 import { mangaSelector, fetchManga } from "../store/slices/mangaSlice";
 import MangaItems from "../store/components/MangaItems";
 
-const MainPage = () => {
+const HomePage = () => {
   const { animes, manga, loading } = useSelector(animeSelector, mangaSelector);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchAnimes(), fetchManga());
+    dispatch(fetchAnimes());
   }, [dispatch]);
+  console.log(animes);
+
+  // const [data, setData] = useState();
+  // useEffect(() => {
+  //   return fetch(`https://shikimori.one/api/animes?&order=popularity&limit=10`)
+  //     .then((res) => res.json())
+  //     .then((data) => console.log(data));
+  // }, []);
 
   return (
     <div className="homepage">
@@ -54,4 +62,4 @@ const MainPage = () => {
     </div>
   );
 };
-export default MainPage;
+export default HomePage;

@@ -10,6 +10,7 @@ import AnimeItems from "../store/components/AnimeItems";
 import { useSelector } from "react-redux/es/exports";
 import { useDispatch } from "react-redux";
 import { animeSelector, fetchAnimes } from "../store/slices/animeSlice";
+import HomePage from "./HomePage";
 
 const AnimePages = ({ props }) => {
   const [page, setPage] = useState(1);
@@ -94,6 +95,7 @@ const AnimePages = ({ props }) => {
           animes={animes}
           className="block_content"
         ></AnimeItems>
+        <HomePage openModal={openModal}></HomePage>
       </div>
       <div className="filters">
         <Sort sortValue={sortType} onChangeSort={setSortType}></Sort>

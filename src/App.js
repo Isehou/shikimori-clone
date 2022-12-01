@@ -1,11 +1,11 @@
 import "./App.css";
 import { useState } from "react";
 import Header from "./components/Header/Header";
-import AnimePages from "./pages/AnimePages";
 import { Routes, Route } from "react-router-dom";
 import AnimeTab from "./components/LinkAnimeManga/AnimeTab";
 import MangaTab from "./components/LinkAnimeManga/MangaTab";
-import MangaPages from "./pages/MangaPages";
+import AnimePages from "./pages/AnimePage";
+import MangaPages from "./pages/MangaPage";
 import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
 import Footer from "./components/Footer/Footer";
