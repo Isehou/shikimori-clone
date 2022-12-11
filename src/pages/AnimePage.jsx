@@ -95,7 +95,6 @@ const AnimePages = ({ props }) => {
           animes={animes}
           className="block_content"
         ></AnimeItems>
-        <HomePage openModal={openModal}></HomePage>
       </div>
       <div className="filters">
         <Sort sortValue={sortType} onChangeSort={setSortType}></Sort>
