@@ -14,10 +14,10 @@ import ScrollToTop from "./components/Properties/ScrollToTop";
 function App() {
   const [counter] = useState(0);
   const links = [
-    { label: "Home", link: "/" },
-    { label: "Anime", link: "/anime" },
-    { label: "Manga", link: "/manga" },
-    { label: "About Site", link: "/about" },
+    { label: "Главная", link: "/" },
+    { label: "Аниме", link: "/anime" },
+    { label: "Манга", link: "/manga" },
+    { label: "О сайте", link: "/about" },
   ];
 
   return (

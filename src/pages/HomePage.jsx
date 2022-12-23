@@ -3,30 +3,39 @@ import "./pagestyle.css";
 import "./homepage.css";
 import "../components/Properties/LoaderWindow.css";
 import { Link } from "react-router-dom";
-import fatebg from "../Img/725584.png";
-import sw from "../Img/sw-1.jpg";
+import onepiece from "../Img/onepiece-2.jpg";
 import { VscArrowRight } from "react-icons/vsc";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { animeSelector, fetchAnimes } from "../store/slices/animeSlice";
-import AnimeItems from "../store/components/AnimeItems";
+// import AnimeItems from "../store/components/AnimeItems";
 import { mangaSelector, fetchManga } from "../store/slices/mangaSlice";
-import MangaItems from "../store/components/MangaItems";
+// import MangaItems from "../store/components/MangaItems";
 
 const HomePage = () => {
   const { animes, manga, loading } = useSelector(animeSelector, mangaSelector);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchAnimes());
-  }, [dispatch]);
-  console.log(animes);
-
-  // const [data, setData] = useState();
+  // const dispatch = useDispatch();
   // useEffect(() => {
-  //   return fetch(`https://shikimori.one/api/animes?&order=popularity&limit=10`)
-  //     .then((res) => res.json())
-  //     .then((data) => console.log(data));
-  // }, []);
+  //   dispatch(fetchAnimes());
+  // }, [dispatch]);
+  // console.log(animes);
+
+  const [animeData, setAnimeData] = useState([]);
+  useEffect(() => {
+    return fetch(`https://shikimori.one/api/animes?&order=popularity&limit=8`)
+      .then((res) => res.json())
+      .then((json) => {
+        setAnimeData(json);
+      });
+  }, []);
+
+  const [mangaData, setMangaData] = useState([]);
+  useEffect(() => {
+    return fetch(`https://shikimori.one/api/mangas?&order=popularity&limit=8`)
+      .then((res) => res.json())
+      .then((json) => {
+        setMangaData(json);
+      });
+  }, []);
 
   return (
     <div className="homepage">
@@ -34,29 +43,52 @@ const HomePage = () => {
       <div className="homepage__main">
         <div className="main__bg">
           <p className="main-title-name">Shikimori Clone</p>
-          <img className="image" src={sw} alt="#" />
+          <img className="image" src={onepiece} alt="#" />
         </div>
         <div className="main__content">
-          Trending anime
+          <div className="title">В тренде - Аниме</div>
+
           <Link className="links" to={"/anime"}>
-            View all
+            Показать
             <span className="arrow-right">
               <VscArrowRight></VscArrowRight>
             </span>
           </Link>
-          <AnimeItems className="main__fetch-data" animes={animes}></AnimeItems>
-          <p>В разработке...</p>
+          <div className="trending-data">
+            {animeData.map((el, i) => (
+              <div className="trending__data-content" key={el.id}>
+                <img
+                  alt="#"
+                  src={"https://shikimori.one" + el.image.original}
+                  className="trending-img"
+                />
+                <span className="trending-text">{el.russian}</span>
+              </div>
+            ))}
+          </div>
         </div>
+
         <div className="main__content">
-          Trending manga
+          <div className="title">В тренде - Манга</div>
           <Link className="links" to={"/manga"}>
-            View all
+            Показать
             <span className="arrow-right">
               <VscArrowRight></VscArrowRight>
             </span>
           </Link>
-          <MangaItems manga={manga}></MangaItems>
-          <p>В разработке...</p>
+          <div className="trending-data">
+            {mangaData.map((el, i) => (
+              <div className="trending__data-content" key={el.id}>
+                <img
+                  alt="#"
+                  src={"https://shikimori.one" + el.image.original}
+                  className="trending-img"
+                />
+                <span className="trending-text">{el.russian}</span>
+              </div>
+            ))}
+          </div>
+          {/* <p>В разработке...</p> */}
         </div>
       </div>
     </div>

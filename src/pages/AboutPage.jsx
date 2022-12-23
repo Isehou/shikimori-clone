@@ -10,11 +10,11 @@ const AboutPage = () => {
           <div className="photo-block">
             <img className="photo-block_img" src={cat} alt="#" />
             <a href="https://www.linkedin.com/in/isan-matenov-20a073248/">
-              My LinkedIn profile
+              Мой профиль в Linkedin
             </a>
           </div>
           <div className="text-block">
-            <h2>About site</h2>
+            <h2>О сайте</h2>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Similique ex tenetur perspiciatis eius. Accusamus quibusdam animi
