@@ -20,7 +20,7 @@ a:hover {
 .head {
   position: fixed;
   background-color: rgb(13, 70, 114);
-  opacity: 98%;
+  /* opacity: 98%; */
   /* border-bottom: 2px solid rgb(13, 70, 114); */
   top: 0;
   left: 0;
