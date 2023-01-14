@@ -1,23 +1,16 @@
 import React, { useState, useEffect } from "react";
-import "./pagestyle.css";
-import "./homepage.css";
-import "../components/Properties/LoaderWindow.css";
+import "./page-style.css";
+import "./home-page.css";
+import "../components/properties/loader-window.css";
 import { Link } from "react-router-dom";
-import onepiece from "../Img/onepiece-2.jpg";
+import onepiece from "../img/onepiece-2.jpg";
 import { VscArrowRight } from "react-icons/vsc";
 import { useSelector, useDispatch } from "react-redux";
 import { animeSelector, fetchAnimes } from "../store/slices/animeSlice";
-// import AnimeItems from "../store/components/AnimeItems";
 import { mangaSelector, fetchManga } from "../store/slices/mangaSlice";
-// import MangaItems from "../store/components/MangaItems";
 
 const HomePage = () => {
   const { animes, manga, loading } = useSelector(animeSelector, mangaSelector);
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(fetchAnimes());
-  // }, [dispatch]);
-  // console.log(animes);
 
   const [animeData, setAnimeData] = useState([]);
   useEffect(() => {

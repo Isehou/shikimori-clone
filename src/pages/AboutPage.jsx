@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import cat from "../Img/cat.jpg";
+import cat from "../img/cat.jpg";
 
 const AboutPage = () => {
   return (

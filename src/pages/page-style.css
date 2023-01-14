@@ -10,8 +10,7 @@ body {
 }
 .pages {
   display: flex;
-  /* background-color: #070720; */
-  background-image: url(../Img/bg-lightl-896.jpg);
+  background-image: url(../img/bg-lightl-896.jpg);
   padding: 120px 0 80px 0;
   background-attachment: fixed;
   min-height: 100vh;

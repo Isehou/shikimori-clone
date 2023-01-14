@@ -1,15 +1,15 @@
 import "./App.css";
 import { useState } from "react";
-import Header from "./components/Header/Header";
+import Header from "./components/header/Header";
 import { Routes, Route } from "react-router-dom";
-import AnimeTab from "./components/LinkAnimeManga/AnimeTab";
-import MangaTab from "./components/LinkAnimeManga/MangaTab";
+import AnimeTab from "./components/linkAnimeManga/AnimeTab";
+import MangaTab from "./components/linkAnimeManga/MangaTab";
 import AnimePages from "./pages/AnimePage";
 import MangaPages from "./pages/MangaPage";
 import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
-import Footer from "./components/Footer/Footer";
-import ScrollToTop from "./components/Properties/ScrollToTop";
+import Footer from "./components/footer/Footer";
+import ScrollToTop from "./components/properties/ScrollToTop";
 
 function App() {
   const [counter] = useState(0);

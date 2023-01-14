@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import DetailsTitle from "./Details/DetailsTitle";
-import DetailsImage from "./Details/DetailsImage";
-import DetailsInfo from "./Details/DetailsInfo";
-import StarRating from "./StarRating/StarRating";
-import SwiperImg from "./Swiper/SwiperImg";
-import LinkBack from "../Properties/LinkBack/LinkBack";
+import DetailsTitle from "./details/DetailsTitle";
+import DetailsImage from "./details/DetailsImage";
+import DetailsInfo from "./details/DetailsInfo";
+import StarRating from "./starRating/StarRating";
+import SwiperImg from "./swiper/SwiperImg";
+import LinkBack from "../properties/linkBack/LinkBack";
 
 function MangaTab(props) {
   const [aniMangaData, setAniMangaData] = useState(null);
