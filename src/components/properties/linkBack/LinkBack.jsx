@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "./linkback.css";
+import "./link-back.css";
 
 function LinkBack() {
   const navigate = useNavigate();

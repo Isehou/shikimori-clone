@@ -6,7 +6,7 @@ import Filter from "../components/properties/sortAndFilter/Filter";
 import Sort from "../components/properties/sortAndFilter/Sort";
 import "./page-style.css";
 import "../components/properties/loader-window.css";
-import MangaItems from "../store/components/MangaItems";
+import MangaItems from "../components/items/MangaItems";
 import { useSelector } from "react-redux/es/exports";
 import { useDispatch } from "react-redux";
 import { mangaSelector, fetchManga } from "../store/slices/mangaSlice";

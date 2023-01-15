@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Modal from "../components/properties/Modal";
 import "./page-style.css";
 import "../components/properties/loader-window.css";
-import AnimeItems from "../store/components/AnimeItems";
+import AnimeItems from "../components/items/AnimeItems";
 import { useSelector } from "react-redux/es/exports";
 import { useDispatch } from "react-redux";
 import { animeSelector, fetchAnimes } from "../store/slices/animeSlice";

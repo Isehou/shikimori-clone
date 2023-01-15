@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFilters } from "../../../store/slices/filterSlice";
-import "./FilterSort.css";
+import "./filter-and-sort.css";
 
 function Filter({ filterList, toggleFilter, kind }) {
   const dispatch = useDispatch();
