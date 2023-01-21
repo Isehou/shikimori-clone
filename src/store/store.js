@@ -1,7 +1,7 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import filterReducer from "./slices/filterSlice.tsx";
-import animeReducer from "./slices/animeSlice.tsx";
-import mangaReducer from "./slices/mangaSlice.tsx";
+import filterReducer from "./slices/filterSlice";
+import animeReducer from "./slices/animeSlice";
+import mangaReducer from "./slices/mangaSlice";
 
 const store = configureStore({
   reducer: {

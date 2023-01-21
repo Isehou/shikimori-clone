@@ -14,12 +14,12 @@ body {
   justify-content: flex-end;
 }
 .copyright {
-  padding-right: 100px;
+  padding-right: 50px;
   display: flex;
   justify-content: flex-end;
   color: white;
 }
 .adress {
-  padding-left: 70px;
+  padding-left: 50px;
   justify-content: start;
 }

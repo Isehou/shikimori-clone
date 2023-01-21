@@ -9,7 +9,7 @@ import "../components/properties/loader-window.css";
 import AnimeItems from "../components/items/AnimeItems";
 import { useSelector } from "react-redux/es/exports";
 import { useDispatch } from "react-redux";
-import { animeSelector, fetchAnimes } from "../store/slices/animeSlice.tsx";
+import { animeSelector, fetchAnimes } from "../store/slices/animeSlice";
 import HomePage from "./HomePage";
 
 const AnimePages = ({ props }) => {

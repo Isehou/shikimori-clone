@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 import onepiece from "../img/onepiece-2.jpg";
 import { VscArrowRight } from "react-icons/vsc";
 import { useSelector, useDispatch } from "react-redux";
-import { animeSelector, fetchAnimes } from "../store/slices/animeSlice.tsx";
-import { mangaSelector, fetchManga } from "../store/slices/mangaSlice.tsx";
+import { animeSelector, fetchAnimes } from "../store/slices/animeSlice";
+import { mangaSelector, fetchManga } from "../store/slices/mangaSlice";
 
 const HomePage = () => {
   const { animes, manga, loading } = useSelector(animeSelector, mangaSelector);
