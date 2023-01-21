@@ -2,9 +2,6 @@ html,
 body {
   height: 100%;
 }
-SwiperImg {
-  align-items: flex-start;
-}
 .aniManga {
   padding: 100px 60px 0;
   min-height: 100vh;
@@ -51,9 +48,6 @@ SwiperImg {
     padding: 0;
     box-sizing: border-box;
   }
-  .aniManga {
-    margin: 70px 15px 10px;
-  }
   .aniManga-content {
     justify-content: center;
     margin: 10px 15px 10px;
@@ -71,13 +65,9 @@ SwiperImg {
     font-size: 12pt;
     width: 320px;
   }
-  .aniManga-image__block {
-    border-radius: 5px;
-    margin: 10px 15px 10px;
-  }
+}
+@media (max-width: 1224px) {
   .aniManga-content__description {
-    margin: 10px 15px 10px;
-    font-size: 12pt;
-    width: auto;
+    width: 630px;
   }
 }

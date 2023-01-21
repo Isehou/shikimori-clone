@@ -9,7 +9,7 @@ import "../components/properties/loader-window.css";
 import MangaItems from "../components/items/MangaItems";
 import { useSelector } from "react-redux/es/exports";
 import { useDispatch } from "react-redux";
-import { mangaSelector, fetchManga } from "../store/slices/mangaSlice";
+import { mangaSelector, fetchManga } from "../store/slices/mangaSlice.tsx";
 
 const MangaPages = ({ props, filter }) => {
   const [page, setPage] = useState(1);

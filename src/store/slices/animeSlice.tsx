@@ -1,6 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+type initialStateType = {
+  loading: boolean;
+  hasErrors: boolean;
+  animes: Array<string>;
+};
+
+const initialState: initialStateType = {
   loading: false,
   hasErrors: false,
   animes: [],
@@ -32,7 +38,7 @@ export default animeSlice.reducer;
 export const animeSelector = (state) => state.animes;
 
 export const fetchAnimes = createAsyncThunk(
-  "animes/fetchAnimes",
+  "animes/fetchingAnimes",
   ({ page, filter, sortType }, { rejectWithValue }) => {
     return fetch(
       `https://shikimori.one/api/animes?&order=popularity&limit=30&page=${page}&genre=${filter.join()}&order=${sortType}`
