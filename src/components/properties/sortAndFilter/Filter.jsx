@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchFilters } from "../../../store/slices/filterSlice";
+import { fetchFilters } from "../../../store/slices/filterSlice.tsx";
 import "./filter-and-sort.css";
 
 function Filter({ filterList, toggleFilter, kind }) {

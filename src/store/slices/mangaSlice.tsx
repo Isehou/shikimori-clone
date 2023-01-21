@@ -1,6 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+type initialStateType = {
+  loading: boolean;
+  hasErrors: boolean;
+  manga: Array<string>;
+};
+
+const initialState: initialStateType = {
   loading: false,
   hasErrors: false,
   manga: [],
