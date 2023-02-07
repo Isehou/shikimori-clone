@@ -9,47 +9,45 @@ import SwiperImg from "./swiper/SwiperImg";
 import LinkBack from "../properties/link-back/LinkBack";
 
 function AnimeTab(props) {
-  const [aniMangaData, setAniMangaData] = useState(null);
+  const [titleData, setTitleData] = useState(null);
   let params = useParams();
   useEffect(() => {
     fetch(`https://shikimori.one/api/animes/${params.id}`)
       .then((res) => res.json())
-      .then((res) => setAniMangaData(res));
+      .then((res) => setTitleData(res));
   }, [params]);
 
   return (
     <div className="title">
       <LinkBack></LinkBack>
-      {aniMangaData && (
+      {titleData && (
         <div className="title-content">
           <DetailsTitle
-            name={aniMangaData.name}
-            russian={aniMangaData.russian}
-            english={aniMangaData.english}
-            japanese={aniMangaData.japanese}
+            name={titleData.name}
+            russian={titleData.russian}
+            english={titleData.english}
+            japanese={titleData.japanese}
           ></DetailsTitle>
-          {aniMangaData?.image?.original && (
-            <DetailsImage src={aniMangaData.image.original} />
+          {titleData?.image?.original && (
+            <DetailsImage src={titleData.image.original} />
           )}
           <div className="title-text__block">
             ИНФОРМАЦИЯ
             <DetailsInfo
               data={[
-                { title: "Тип:", info: aniMangaData.kind },
-                { title: "Начало показа: с", info: aniMangaData.aired_on },
-                { title: "Дата релиза:", info: aniMangaData.released_on },
-                { title: "Количество серий:", info: aniMangaData.episodes },
+                { title: "Тип:", info: titleData.kind },
+                { title: "Начало показа: с", info: titleData.aired_on },
+                { title: "Дата релиза:", info: titleData.released_on },
+                { title: "Количество серий:", info: titleData.episodes },
               ]}
             />
             <br />
             Рейтинг
-            <StarRating rating={Number(aniMangaData.score)}></StarRating>
+            <StarRating rating={Number(titleData.score)}></StarRating>
           </div>
-          {aniMangaData.screenshots && (
-            <SwiperImg list={aniMangaData.screenshots} />
-          )}
+          {titleData.screenshots && <SwiperImg list={titleData.screenshots} />}
           <div className="title-content__description">
-            <div>{aniMangaData.description}</div>
+            <div>{titleData.description}</div>
           </div>
         </div>
       )}
