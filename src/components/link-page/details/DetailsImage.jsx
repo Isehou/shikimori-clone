@@ -2,7 +2,7 @@ import "../style.css";
 function DetailsImage(props) {
   return (
     <img
-      className="aniManga-image__block"
+      className="title-image__block"
       src={"https://shikimori.one" + props.src}
       alt="#"
     ></img>

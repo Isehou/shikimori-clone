@@ -2,30 +2,26 @@ html,
 body {
   height: 100%;
 }
-SwiperImg {
-  align-items: flex-start;
-}
-.aniManga {
+.title {
   padding: 100px 60px 0;
   min-height: 100vh;
-  background-image: url(../../img/bg-lightl-896.jpg);
 }
-.aniManga-content {
+.title-content {
   display: flex;
   flex-wrap: wrap;
 }
-.aniManga-content h2 {
+.title-content h2 {
   width: 100%;
   text-transform: uppercase;
   margin: 10px 15px 10px;
 }
-.aniManga-image__block {
+.title-image__block {
   width: 300px;
   height: 420px;
   border-radius: 5px;
   margin: 10px 15px 20px;
 }
-.aniManga-text__block {
+.title-text__block {
   margin: 10px 15px 20px;
   width: 300px;
   height: 420px;
@@ -36,7 +32,7 @@ SwiperImg {
   background-color: rgb(202, 202, 202);
   border-radius: 5px;
 }
-.aniManga-content__description {
+.title-content__description {
   height: auto;
   width: 100%;
   font-size: 14pt;
@@ -51,31 +47,31 @@ SwiperImg {
     padding: 0;
     box-sizing: border-box;
   }
-  .aniManga {
+  .title {
     margin: 70px 15px 10px;
   }
-  .aniManga-content {
+  .title-content {
     justify-content: center;
     margin: 10px 15px 10px;
   }
-  .aniManga-content h2 {
+  .title-content h2 {
     font-size: 13pt;
     text-transform: uppercase;
     margin: 10px 15px 10px;
     height: auto;
     width: auto;
   }
-  .aniManga-text__block {
+  .title-text__block {
     margin: 10px 15px 10px;
     height: auto;
     font-size: 12pt;
     width: 320px;
   }
-  .aniManga-image__block {
+  .title-image__block {
     border-radius: 5px;
     margin: 10px 15px 10px;
   }
-  .aniManga-content__description {
+  .title-content__description {
     margin: 10px 15px 10px;
     font-size: 12pt;
     width: auto;

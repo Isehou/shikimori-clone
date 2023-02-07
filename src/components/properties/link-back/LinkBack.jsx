@@ -10,7 +10,7 @@ function LinkBack() {
 
   return (
     <button type="button" className="prev-button" onClick={handleGoBack}>
-      Назад
+      « Назад
     </button>
   );
 }

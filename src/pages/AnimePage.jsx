@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux/es/exports";
 import { useDispatch } from "react-redux";
 
-import Filter from "../components/properties/sortAndFilter/Filter";
-import Sort from "../components/properties/sortAndFilter/Sort";
+import Filter from "../components/properties/filter-and-sort/Filter";
+import Sort from "../components/properties/filter-and-sort/Sort";
 import Modal from "../components/properties/Modal";
 import AnimeItems from "../components/items/AnimeItems";
 import { animeSelector, fetchingAnimes } from "../store/slices/animeSlice.tsx";
-import { Pagination } from "@mui/material";
+import Palette from "../components/properties/MuiPalette";
 
 import "./page-style.css";
 import "../components/properties/loader-window.css";
@@ -42,10 +42,6 @@ const AnimePages = ({ props }) => {
 
     dispatch(fetchingAnimes({ page, filter: filterString, sortType }));
   }, [dispatch, filterList, page, sortType]);
-
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
 
   return (
     <div className="pages">
@@ -93,15 +89,7 @@ const AnimePages = ({ props }) => {
               « Пред
             </button>
             <div className="current-page">
-              <Pagination
-                count={100}
-                page={page}
-                onChange={handleChangePage}
-                color="primary"
-                shape="rounded"
-                hideNextButton="false"
-                hidePrevButton="false"
-              ></Pagination>
+              <Palette page={page} setPage={setPage}></Palette>
             </div>
             <button className="btn" onClick={() => setPage((curr) => curr + 1)}>
               След »

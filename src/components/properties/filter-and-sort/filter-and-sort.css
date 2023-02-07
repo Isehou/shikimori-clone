@@ -29,7 +29,7 @@
   padding-left: 10px;
 }
 .filter__item-genre {
-  background-color: rgb(13, 70, 114);
+  background-color: #173a5e;
   color: white;
   width: 200px;
   height: 30px;
@@ -54,7 +54,7 @@ chekbox {
 }
 
 .sort__item-genre {
-  background-color: rgb(13, 70, 114);
+  background-color: #173a5e;
   color: white;
   width: 200px;
   height: 30px;

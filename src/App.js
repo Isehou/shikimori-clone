@@ -3,8 +3,8 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Header from "./components/header/Header";
-import AnimeTab from "./components/linkAnimeManga/AnimeTab";
-import MangaTab from "./components/linkAnimeManga/MangaTab";
+import AnimeTab from "./components/link-page/AnimeTab";
+import MangaTab from "./components/link-page/MangaTab";
 import AnimePages from "./pages/AnimePage";
 import MangaPages from "./pages/MangaPage";
 import AboutPage from "./pages/AboutPage";

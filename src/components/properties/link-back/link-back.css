@@ -1,0 +1,21 @@
+.prev-button {
+  color: white;
+  width: 180px;
+  height: 35px;
+  margin: 5px 15px;
+  font-size: 12pt;
+  text-transform: uppercase;
+  border-radius: 3px;
+  cursor: pointer;
+  background: none;
+  border: 1px solid #173a5e;
+  color: #173a5e;
+}
+.prev-button:hover {
+  text-decoration: none;
+  background-color: white;
+  color: #173a5e;
+  border: none;
+  background-color: #173a5e;
+  color: white;
+}

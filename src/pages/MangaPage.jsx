@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux/es/exports";
 import { useDispatch } from "react-redux";
-import { Pagination } from "@mui/material";
 
 import Modal from "../components/properties/Modal";
-import Filter from "../components/properties/sortAndFilter/Filter";
-import Sort from "../components/properties/sortAndFilter/Sort";
+import Filter from "../components/properties/filter-and-sort/Filter";
+import Sort from "../components/properties/filter-and-sort/Sort";
 import MangaItems from "../components/items/MangaItems";
 import { mangaSelector, fetchManga } from "../store/slices/mangaSlice.tsx";
+import Palette from "../components/properties/MuiPalette";
 
 import "./page-style.css";
 import "../components/properties/loader-window.css";
@@ -42,10 +42,6 @@ const MangaPages = ({ props, filter }) => {
     );
     dispatch(fetchManga({ page, filter: filterString, sortType }));
   }, [dispatch, filterList, page, sortType]);
-
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
 
   return (
     <div className="pages">
@@ -87,15 +83,7 @@ const MangaPages = ({ props, filter }) => {
               « Пред
             </button>
             <div className="current-page">
-              <Pagination
-                count={100}
-                page={page}
-                onChange={handleChangePage}
-                color="primary"
-                shape="rounded"
-                hideNextButton="false"
-                hidePrevButton="false"
-              ></Pagination>
+              <Palette page={page} setPage={setPage}></Palette>
             </div>
             <button className="btn" onClick={() => setPage((curr) => curr + 1)}>
               След »

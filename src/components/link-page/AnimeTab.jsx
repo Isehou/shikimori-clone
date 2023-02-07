@@ -1,25 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import "./style.css";
+import { useParams, useHistory, Link } from "react-router-dom";
 import DetailsTitle from "./details/DetailsTitle";
 import DetailsImage from "./details/DetailsImage";
 import DetailsInfo from "./details/DetailsInfo";
-import StarRating from "./starRating/StarRating";
+import StarRating from "./star-rating/StarRating";
 import SwiperImg from "./swiper/SwiperImg";
-import LinkBack from "../properties/linkBack/LinkBack";
+import LinkBack from "../properties/link-back/LinkBack";
 
-function MangaTab(props) {
+function AnimeTab(props) {
   const [aniMangaData, setAniMangaData] = useState(null);
   let params = useParams();
   useEffect(() => {
-    fetch(`https://shikimori.one/api/mangas/${params.id}`)
+    fetch(`https://shikimori.one/api/animes/${params.id}`)
       .then((res) => res.json())
       .then((res) => setAniMangaData(res));
   }, [params]);
+
   return (
-    <div className="aniManga">
+    <div className="title">
       <LinkBack></LinkBack>
       {aniMangaData && (
-        <div className="aniManga-content">
+        <div className="title-content">
           <DetailsTitle
             name={aniMangaData.name}
             russian={aniMangaData.russian}
@@ -28,25 +30,25 @@ function MangaTab(props) {
           ></DetailsTitle>
           {aniMangaData?.image?.original && (
             <DetailsImage src={aniMangaData.image.original} />
-          )}{" "}
-          <div className="aniManga-text__block">
+          )}
+          <div className="title-text__block">
+            ИНФОРМАЦИЯ
             <DetailsInfo
               data={[
                 { title: "Тип:", info: aniMangaData.kind },
-                {
-                  title: "Начало показа: с",
-                  info: aniMangaData.aired_on,
-                },
+                { title: "Начало показа: с", info: aniMangaData.aired_on },
                 { title: "Дата релиза:", info: aniMangaData.released_on },
-                { title: "Количество глав:", info: aniMangaData.chapters },
-                { title: "Статус:", info: aniMangaData.status },
-                { title: "Объем:", info: aniMangaData.volumes },
+                { title: "Количество серий:", info: aniMangaData.episodes },
               ]}
             />
             <br />
-            Рейтинг<StarRating rating={Number(aniMangaData.score)}></StarRating>
+            Рейтинг
+            <StarRating rating={Number(aniMangaData.score)}></StarRating>
           </div>
-          <div className="aniManga-content__description">
+          {aniMangaData.screenshots && (
+            <SwiperImg list={aniMangaData.screenshots} />
+          )}
+          <div className="title-content__description">
             <div>{aniMangaData.description}</div>
           </div>
         </div>
@@ -55,4 +57,4 @@ function MangaTab(props) {
   );
 }
 
-export default MangaTab;
+export default AnimeTab;
