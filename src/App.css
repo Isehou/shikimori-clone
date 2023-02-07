@@ -1,18 +1,19 @@
 #app {
-    text-transform: uppercase;
+  text-transform: uppercase;
+  box-sizing: border-box;
 }
 @media all and (width: 1200px) {
-    .main-container {
-        width: 950px;
-    }
+  .main-container {
+    width: 950px;
+  }
 }
 @media all and (width: 992px) {
-    .main-container {
-        width: 750px;
-    }
+  .main-container {
+    width: 750px;
+  }
 }
 @media all and (width: 767px) {
-    .main-container {
-        width: none;
-    }
+  .main-container {
+    width: none;
+  }
 }

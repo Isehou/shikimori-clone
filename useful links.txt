@@ -56,3 +56,7 @@ https://blog.devgenius.io/async-api-fetching-with-redux-toolkit-2020-8623ff9da26
 
 любой селектор с seletcUserData
 
+
+
+Обновление запроса при изменение кнопки, 
+общее Количество страниц

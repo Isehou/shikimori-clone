@@ -12,16 +12,15 @@ a {
 }
 a:active,
 a:hover {
-  color: black;
+  color: rgb(190, 190, 190);
+  text-decoration: underline;
 }
 .clear {
   clear: both;
 }
 .head {
   position: fixed;
-  background-color: rgb(13, 70, 114);
-  /* opacity: 98%; */
-  /* border-bottom: 2px solid rgb(13, 70, 114); */
+  background-color: #173a5e;
   top: 0;
   left: 0;
   width: 100%;
@@ -74,10 +73,6 @@ a:hover {
   align-items: center;
   justify-content: center;
 }
-.head-title__text:hover {
-  color: black;
-}
-
 .head__list {
   font-size: 15pt;
   list-style-type: none;

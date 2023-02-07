@@ -55,7 +55,7 @@
 .main__content {
   width: 1170px;
   height: 860px;
-  background-color: rgb(13, 70, 114);
+  background-color: #173a5e;
   margin-top: 70px;
   font-family: "Oswald", sans-serif;
   border-radius: 5px;
@@ -81,6 +81,12 @@
   display: flex;
   justify-content: center;
 }
+.title-block {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 0 20px;
+}
 .links {
   color: white;
   transition: 1s;
@@ -92,11 +98,24 @@
   color: white;
 }
 .arrow-right {
+  cursor: pointer;
+  width: 170px;
+  height: 40px;
+  font-size: 12pt;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #fff;
+  background: none;
   color: white;
-  height: 30px;
-  width: auto;
 }
-
+.arrow-right:hover {
+  text-decoration: none;
+  background-color: white;
+  color: rgb(13, 70, 114);
+  background-color: none;
+}
 /* trending content */
 
 .trending-data {

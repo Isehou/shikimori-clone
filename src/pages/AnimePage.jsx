@@ -1,16 +1,18 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import Filter from "../components/properties/sortAndFilter/Filter";
-import Sort from "../components/properties/sortAndFilter/Sort";
 import { Link } from "react-router-dom";
-import Modal from "../components/properties/Modal";
-import "./page-style.css";
-import "../components/properties/loader-window.css";
-import AnimeItems from "../components/items/AnimeItems";
 import { useSelector } from "react-redux/es/exports";
 import { useDispatch } from "react-redux";
-import { animeSelector, fetchAnimes } from "../store/slices/animeSlice.tsx";
-import HomePage from "./HomePage";
+
+import Filter from "../components/properties/sortAndFilter/Filter";
+import Sort from "../components/properties/sortAndFilter/Sort";
+import Modal from "../components/properties/Modal";
+import AnimeItems from "../components/items/AnimeItems";
+import { animeSelector, fetchingAnimes } from "../store/slices/animeSlice.tsx";
+import { Pagination } from "@mui/material";
+
+import "./page-style.css";
+import "../components/properties/loader-window.css";
 
 const AnimePages = ({ props }) => {
   const [page, setPage] = useState(1);
@@ -33,30 +35,22 @@ const AnimePages = ({ props }) => {
 
   const { animes, loading } = useSelector(animeSelector);
   const dispatch = useDispatch();
-
   useEffect(() => {
     const filterString = Object.keys(filterList).filter(
       (key) => filterList[key]
     );
 
-    dispatch(fetchAnimes({ page, filter: filterString, sortType }));
+    dispatch(fetchingAnimes({ page, filter: filterString, sortType }));
   }, [dispatch, filterList, page, sortType]);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
 
   return (
     <div className="pages">
       {loading && <div className="loader"></div>}
       <div className="wrapper">
-        <div className="button-block">
-          <button
-            className="btn"
-            onClick={() => setPage((curr) => (curr === 1 ? 1 : curr - 1))}
-          >
-            Пред
-          </button>
-          <button className="btn" onClick={() => setPage((curr) => curr + 1)}>
-            След
-          </button>
-        </div>
         {curr && (
           <Modal
             isOpen={isModalOpen}
@@ -90,11 +84,35 @@ const AnimePages = ({ props }) => {
             </Link>
           </Modal>
         )}
-        <AnimeItems
-          openModal={openModal}
-          animes={animes}
-          className="block_content"
-        ></AnimeItems>
+        <div>
+          <div className="button-block">
+            <button
+              className="btn"
+              onClick={() => setPage((curr) => (curr === 1 ? 1 : curr - 1))}
+            >
+              « Пред
+            </button>
+            <div className="current-page">
+              <Pagination
+                count={100}
+                page={page}
+                onChange={handleChangePage}
+                color="primary"
+                shape="rounded"
+                hideNextButton="false"
+                hidePrevButton="false"
+              ></Pagination>
+            </div>
+            <button className="btn" onClick={() => setPage((curr) => curr + 1)}>
+              След »
+            </button>
+          </div>
+          <AnimeItems
+            openModal={openModal}
+            animes={animes}
+            className="block_content"
+          ></AnimeItems>
+        </div>
       </div>
       <div className="filters">
         <Sort sortValue={sortType} onChangeSort={setSortType}></Sort>

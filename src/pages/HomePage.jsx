@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useSpring, animated } from "@react-spring/web";
+
+import { useSelector } from "react-redux";
+import { animeSelector } from "../store/slices/animeSlice.tsx";
+import { mangaSelector } from "../store/slices/mangaSlice.tsx";
+
 import "./page-style.css";
 import "./home-page.css";
 import "../components/properties/loader-window.css";
-import { Link } from "react-router-dom";
 import onepiece from "../img/onepiece-2.jpg";
-import { VscArrowRight } from "react-icons/vsc";
-import { useSelector, useDispatch } from "react-redux";
-import { animeSelector, fetchAnimes } from "../store/slices/animeSlice.tsx";
-import { mangaSelector, fetchManga } from "../store/slices/mangaSlice.tsx";
 
 const HomePage = () => {
   const { animes, manga, loading } = useSelector(animeSelector, mangaSelector);
@@ -30,59 +32,63 @@ const HomePage = () => {
       });
   }, []);
 
+  const props = useSpring({
+    from: { opacity: 0, transform: "translateY(-2rem)" },
+    to: { opacity: 1, transform: "translateY(2rem)" },
+    config: { duration: 500 },
+  });
   return (
     <div className="homepage">
       {loading && <div className="loader"></div>}
       <div className="homepage__main">
-        <div className="main__bg">
-          <p className="main-title-name">Shikimori Clone</p>
-          <img className="image" src={onepiece} alt="#" />
-        </div>
-        <div className="main__content">
-          <div className="title">В тренде - Аниме</div>
-
-          <Link className="links" to={"/anime"}>
-            Показать
-            <span className="arrow-right">
-              <VscArrowRight></VscArrowRight>
-            </span>
-          </Link>
-          <div className="trending-data">
-            {animeData.map((el, i) => (
-              <div className="trending__data-content" key={el.id}>
-                <img
-                  alt="#"
-                  src={"https://shikimori.one" + el.image.original}
-                  className="trending-img"
-                />
-                <span className="trending-text">{el.russian}</span>
-              </div>
-            ))}
+        <animated.div style={props}>
+          <div className="main__bg">
+            <p className="main-title-name">Shikimori Clone</p>
+            <img className="image" src={onepiece} alt="#" />
           </div>
-        </div>
-
-        <div className="main__content">
-          <div className="title">В тренде - Манга</div>
-          <Link className="links" to={"/manga"}>
-            Показать
-            <span className="arrow-right">
-              <VscArrowRight></VscArrowRight>
-            </span>
-          </Link>
-          <div className="trending-data">
-            {mangaData.map((el, i) => (
-              <div className="trending__data-content" key={el.id}>
-                <img
-                  alt="#"
-                  src={"https://shikimori.one" + el.image.original}
-                  className="trending-img"
-                />
-                <span className="trending-text">{el.russian}</span>
-              </div>
-            ))}
+          <div className="main__content">
+            <div className="title-block">
+              <div className="title">В тренде - Аниме</div>
+              <Link className="links" to={"/manga"}>
+                <button className="arrow-right">Показать »</button>
+              </Link>
+            </div>
+            <div className="trending-data">
+              {animeData.map((el, i) => (
+                <div className="trending__data-content" key={el.id}>
+                  <img
+                    alt="#"
+                    src={"https://shikimori.one" + el.image.original}
+                    className="trending-img"
+                  />
+                  <span className="trending-text">{el.russian}</span>
+                </div>
+              ))}
+            </div>
           </div>
-          {/* <p>В разработке...</p> */}
-        </div>
+
+          <div className="main__content">
+            <div className="title-block">
+              <div className="title">В тренде - Манга</div>
+              <Link className="links" to={"/manga"}>
+                <button className="arrow-right">Показать »</button>
+              </Link>
+            </div>
+            <div className="trending-data">
+              {mangaData.map((el, i) => (
+                <div className="trending__data-content" key={el.id}>
+                  <img
+                    alt="#"
+                    src={"https://shikimori.one" + el.image.original}
+                    className="trending-img"
+                  />
+                  <span className="trending-text">{el.russian}</span>
+                </div>
+              ))}
+            </div>
+            {/* <p>В разработке...</p> */}
+          </div>
+        </animated.div>
       </div>
     </div>
   );

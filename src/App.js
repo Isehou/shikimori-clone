@@ -1,7 +1,8 @@
 import "./App.css";
 import { useState } from "react";
-import Header from "./components/header/Header";
 import { Routes, Route } from "react-router-dom";
+
+import Header from "./components/header/Header";
 import AnimeTab from "./components/linkAnimeManga/AnimeTab";
 import MangaTab from "./components/linkAnimeManga/MangaTab";
 import AnimePages from "./pages/AnimePage";

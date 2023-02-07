@@ -1,15 +1,18 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux/es/exports";
+import { useDispatch } from "react-redux";
+import { Pagination } from "@mui/material";
+
 import Modal from "../components/properties/Modal";
 import Filter from "../components/properties/sortAndFilter/Filter";
 import Sort from "../components/properties/sortAndFilter/Sort";
+import MangaItems from "../components/items/MangaItems";
+import { mangaSelector, fetchManga } from "../store/slices/mangaSlice.tsx";
+
 import "./page-style.css";
 import "../components/properties/loader-window.css";
-import MangaItems from "../components/items/MangaItems";
-import { useSelector } from "react-redux/es/exports";
-import { useDispatch } from "react-redux";
-import { mangaSelector, fetchManga } from "../store/slices/mangaSlice.tsx";
 
 const MangaPages = ({ props, filter }) => {
   const [page, setPage] = useState(1);
@@ -40,21 +43,14 @@ const MangaPages = ({ props, filter }) => {
     dispatch(fetchManga({ page, filter: filterString, sortType }));
   }, [dispatch, filterList, page, sortType]);
 
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
   return (
     <div className="pages">
       {loading && <div className="lds-hourglass"></div>}
       <div className="wrapper">
-        <div className="button-block">
-          <button
-            className="btn"
-            onClick={() => setPage((curr) => (curr === 1 ? 1 : curr - 1))}
-          >
-            Пред
-          </button>
-          <button className="btn" onClick={() => setPage((curr) => curr + 1)}>
-            След
-          </button>
-        </div>
         {curr && (
           <Modal
             isOpen={isModalOpen}
@@ -81,12 +77,36 @@ const MangaPages = ({ props, filter }) => {
               <button className="btn_modal_more_details">Посмотреть</button>
             </Link>
           </Modal>
-        )}{" "}
-        <MangaItems
-          manga={manga}
-          openModal={openModal}
-          className="block_content"
-        ></MangaItems>
+        )}
+        <div>
+          <div className="button-block">
+            <button
+              className="btn"
+              onClick={() => setPage((curr) => (curr === 1 ? 1 : curr - 1))}
+            >
+              « Пред
+            </button>
+            <div className="current-page">
+              <Pagination
+                count={100}
+                page={page}
+                onChange={handleChangePage}
+                color="primary"
+                shape="rounded"
+                hideNextButton="false"
+                hidePrevButton="false"
+              ></Pagination>
+            </div>
+            <button className="btn" onClick={() => setPage((curr) => curr + 1)}>
+              След »
+            </button>
+          </div>
+          <MangaItems
+            manga={manga}
+            openModal={openModal}
+            className="block_content"
+          ></MangaItems>
+        </div>
       </div>
       <div>
         <Sort sortValue={sortType} onChangeSort={setSortType}></Sort>

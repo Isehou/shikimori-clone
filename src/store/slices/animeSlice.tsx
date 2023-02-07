@@ -1,9 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 type initialStateType = {
-  loading: boolean,
-  hasErrors: boolean,
-  animes: Array<string>,
+  loading: boolean;
+  hasErrors: boolean;
+  animes: Array<string>;
 };
 
 const initialState: initialStateType = {
@@ -18,17 +18,17 @@ const animeSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchAnimes.fulfilled, (state, { payload }) => {
+      .addCase(fetchingAnimes.fulfilled, (state, { payload }) => {
         state.animes = payload;
         // console.log(payload);
         state.loading = false;
         state.hasErrors = false;
       })
-      .addCase(fetchAnimes.rejected, (state) => {
+      .addCase(fetchingAnimes.rejected, (state) => {
         state.loading = false;
         state.hasErrors = true;
       })
-      .addCase(fetchAnimes.pending, (state) => {
+      .addCase(fetchingAnimes.pending, (state) => {
         state.loading = true;
       });
   },
@@ -37,8 +37,8 @@ const animeSlice = createSlice({
 export default animeSlice.reducer;
 export const animeSelector = (state) => state.animes;
 
-export const fetchAnimes = createAsyncThunk(
-  "animes/fetchAnimes",
+export const fetchingAnimes = createAsyncThunk(
+  "animes/fetchingAnimes",
   ({ page, filter, sortType }, { rejectWithValue }) => {
     return fetch(
       `https://shikimori.one/api/animes?&order=popularity&limit=30&page=${page}&genre=${filter.join()}&order=${sortType}`
