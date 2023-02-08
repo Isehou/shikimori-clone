@@ -8,7 +8,7 @@ import Modal from "../components/properties/Modal";
 import Filter from "../components/properties/filter-and-sort/Filter";
 import Sort from "../components/properties/filter-and-sort/Sort";
 import MangaItems from "../components/items/MangaItems";
-import { mangaSelector, fetchManga } from "../store/slices/mangaSlice.tsx";
+import { mangaSelector, fetchingManga } from "../store/slices/mangaSlice.tsx";
 import Palette from "../components/properties/MuiPalette";
 
 import "./page-style.css";
@@ -40,7 +40,7 @@ const MangaPages = ({ props, filter }) => {
     const filterString = Object.keys(filterList).filter(
       (key) => filterList[key]
     );
-    dispatch(fetchManga({ page, filter: filterString, sortType }));
+    dispatch(fetchingManga({ page, filter: filterString, sortType }));
   }, [dispatch, filterList, page, sortType]);
 
   return (

@@ -18,17 +18,17 @@ const mangaSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchManga.fulfilled, (state, { payload }) => {
+      .addCase(fetchingManga.fulfilled, (state, { payload }) => {
         state.manga = payload;
         // console.log(payload);
         state.loading = false;
         state.hasErrors = false;
       })
-      .addCase(fetchManga.rejected, (state) => {
+      .addCase(fetchingManga.rejected, (state) => {
         state.loading = false;
         state.hasErrors = true;
       })
-      .addCase(fetchManga.pending, (state) => {
+      .addCase(fetchingManga.pending, (state) => {
         state.loading = true;
       });
   },
@@ -37,7 +37,7 @@ const mangaSlice = createSlice({
 export default mangaSlice.reducer;
 export const mangaSelector = (state) => state.manga;
 
-export const fetchManga = createAsyncThunk(
+export const fetchingManga = createAsyncThunk(
   "manga/fetchManga",
   ({ page, filter, sortType }, { rejectWithValue }) => {
     return fetch(
