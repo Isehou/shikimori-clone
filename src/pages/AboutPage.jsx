@@ -2,7 +2,8 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
 
-import cat from "../img/cat.jpg";
+import api from "../img/api.jpg";
+import { color } from "@mui/system";
 
 const AboutPage = () => {
   const props = useSpring({
@@ -12,12 +13,15 @@ const AboutPage = () => {
   });
 
   return (
-    <div className="pages">
-      <div className="wrapper">
+    <div
+      className="pages"
+      style={{ display: "flex", justifyContent: "center" }}
+    >
+      <div className="wrapper" style={{ width: "1200px" }}>
         <animated.div style={props}>
           <div className="about-page">
             <div className="photo-block">
-              <img className="photo-block_img" src={cat} alt="#" />
+              <img className="photo-block_img" src={api} alt="#" />
               <a href="https://www.linkedin.com/in/isan-matenov-20a073248/">
                 Мой профиль в Linkedin
               </a>
@@ -25,17 +29,21 @@ const AboutPage = () => {
             <div className="text-block">
               <h2>О сайте</h2>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Similique ex tenetur perspiciatis eius. Accusamus quibusdam
-                animi aliquam molestias, quia deleniti ipsa mollitia sint id
-                voluptatem laudantium nostrum? Nesciunt aspernatur soluta,
-                blanditiis quam aliquid accusantium rerum omnis molestiae dolor
-                culpa minima consectetur eos illo porro nulla illum sequi quae
-                facere officia?
+                Проект является аналогом сайта -
+                <a
+                  href="https://shikimori.one/"
+                  target="_blank"
+                  style={{ cursor: "pointer", color: "red" }}
+                >
+                  https://shikimori.one/
+                </a>
+                , разрабатывалась исключительно для учебных целей и развития
+                скилла кодить и верстать. Большую часть логики проекта в
+                основном занимают запросы данных с api, - это получение,
+                фильтрация, сортировка данных и соответственно последующее их
+                отображение у пользователя. Верстал для полноразмерных экранов,
+                но есть и немного адаптива с использованием медиа-запросов.
               </p>
-              {/* <div className="device_block dark:bg-slate-900 text-white h-screen">
-              <h1 className="text-3xl font-bold underline ">Tailwind</h1>{" "}
-            </div> */}
             </div>
           </div>
         </animated.div>

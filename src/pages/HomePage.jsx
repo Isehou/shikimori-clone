@@ -40,22 +40,22 @@ const HomePage = () => {
   return (
     <div className="homepage">
       {loading && <div className="loader"></div>}
-      <div className="homepage__main">
+      <div className="homepage-main">
         <animated.div style={props}>
-          <div className="main__bg">
+          <div className="main-bg-block">
             <p className="main-title-name">Shikimori Clone</p>
             <img className="image" src={onepiece} alt="#" />
           </div>
-          <div className="main__content">
+          <div className="main-content">
             <div className="title-block">
-              <div className="title">В тренде - Аниме</div>
+              <div className="title-text">В тренде - Аниме</div>
               <Link className="links" to={"/manga"}>
                 <button className="arrow-right">Показать »</button>
               </Link>
             </div>
-            <div className="trending-data">
+            <div className="trending-data-block">
               {animeData.map((el, i) => (
-                <div className="trending__data-content" key={el.id}>
+                <div className="trending-data-content" key={el.id}>
                   <img
                     alt="#"
                     src={"https://shikimori.one" + el.image.original}
@@ -67,16 +67,16 @@ const HomePage = () => {
             </div>
           </div>
 
-          <div className="main__content">
+          <div className="main-content">
             <div className="title-block">
-              <div className="title">В тренде - Манга</div>
+              <div className="title-text">В тренде - Манга</div>
               <Link className="links" to={"/manga"}>
                 <button className="arrow-right">Показать »</button>
               </Link>
             </div>
-            <div className="trending-data">
+            <div className="trending-data-block">
               {mangaData.map((el, i) => (
-                <div className="trending__data-content" key={el.id}>
+                <div className="trending-data-content" key={el.id}>
                   <img
                     alt="#"
                     src={"https://shikimori.one" + el.image.original}
@@ -86,7 +86,6 @@ const HomePage = () => {
                 </div>
               ))}
             </div>
-            {/* <p>В разработке...</p> */}
           </div>
         </animated.div>
       </div>

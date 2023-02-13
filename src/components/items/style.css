@@ -25,6 +25,7 @@
   width: 100%;
   height: 70px;
   padding-top: 5px;
+  color: var(--colors-text);
 }
 .block_image {
   width: 250px;

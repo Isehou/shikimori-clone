@@ -9,6 +9,7 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
+
 .pages {
   display: flex;
   /* background-image: url(../img/bg-lightl-896.jpg); */
@@ -41,7 +42,6 @@ body {
   padding: 0 5px;
 }
 .btn {
-  color: white;
   width: 180px;
   height: 35px;
   margin: 5px 20px;
@@ -50,16 +50,14 @@ body {
   border-radius: 3px;
   cursor: pointer;
   background: none;
-  border: 1px solid #173a5e;
-  color: #173a5e;
+  border: 1px solid var(--colors-border);
 }
 .btn:hover {
   text-decoration: none;
-  background-color: white;
   color: #173a5e;
-  border: none;
   background-color: #173a5e;
-  color: white;
+  border: 1px solid var(--colors-border);
+  color: var(--colors-bg);
 }
 .btn:disabled {
   background-color: #173a5e;
@@ -137,22 +135,28 @@ body {
 /* AboutPage */
 .about-page {
   display: flex;
-  min-height: 100vh;
-  width: 1170px;
+  justify-content: center;
   border-radius: 5px;
-  padding-left: 50px;
+  color: var(--colors-text);
+  font-family: var(--family);
 }
 .text-block {
   width: 100%;
-  padding: 5px 20px;
+  padding: 5px 40px;
 }
 .photo-block {
   width: 300px;
   text-transform: uppercase;
+  margin-bottom: 15px;
 }
 .photo-block_img {
-  width: 270px;
+  width: 320px;
   height: 270px;
-  border: 2px solid #173a5e;
-  border-radius: 5px;
+  border: 1px solid var(--colors-border);
+  border-radius: 3px;
+  box-shadow: var(--shadow);
+}
+.photo-block a {
+  color: var(--colors-text);
+  margin-top: 15px;
 }

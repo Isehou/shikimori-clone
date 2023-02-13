@@ -19,17 +19,17 @@
   display: flex;
   justify-content: center;
 }
-.homepage__main {
+.homepage-main {
   padding: 120px 0px;
   box-sizing: border-box;
 }
-.main__bg {
+.main-bg-block {
   text-decoration: none;
   display: flex;
   transition: 0.5s ease-in;
 }
 .image {
-  width: 1170px;
+  width: 1200px;
   height: 630px;
   background-position: center;
   background-size: cover;
@@ -46,40 +46,28 @@
   margin-top: 470px;
   padding-left: 70px;
 }
-/* .main-page__content:hover {
-  opacity: 1;
-  filter: blur(0);
-  transform: scale(1.2);
-} */
-
-.main__content {
-  width: 1170px;
+.main-content {
+  width: 1200px;
   height: 860px;
   background-color: #173a5e;
   margin-top: 70px;
   font-family: "Oswald", sans-serif;
-  border-radius: 5px;
+  border-radius: 3px;
   padding: 30px 60px;
   color: white;
   text-transform: uppercase;
   font-size: 20pt;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  border: 1px solid var(--colors-border);
+  box-shadow: var(--shadow);
 }
-.title {
-  margin-left: 15px;
-}
-.main__content .links {
+
+.main-content .links {
   font-size: 12pt;
   margin-right: 15px;
-}
-.main__content p {
-  margin-top: 320px;
-  font-size: 28pt;
-  display: flex;
-  justify-content: center;
 }
 .title-block {
   display: flex;
@@ -87,12 +75,17 @@
   width: 100%;
   margin: 0 0 20px;
 }
+.title-text {
+  padding: 0;
+  margin-left: 15px;
+  width: 400px;
+}
 .links {
   color: white;
   transition: 1s;
   height: 30px;
   padding-top: 5px;
-  /* background-color: red; */
+  text-transform: none;
 }
 .links:hover {
   color: white;
@@ -116,20 +109,18 @@
   color: #173a5e;
   background-color: none;
 }
+
 /* trending content */
 
-.trending-data {
-  margin-top: 20px;
+.trending-data-block {
   font-size: 13pt;
   border-radius: 5px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   text-align: left;
-  width: 1050px;
-  height: 730px;
 }
-.trending__data-content {
+.trending-data-content {
   width: 200px;
   height: 350px;
   margin: 0 15px 0px;

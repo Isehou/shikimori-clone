@@ -9,6 +9,7 @@ body {
 .title-content {
   display: flex;
   flex-wrap: wrap;
+  color: var(--colors-text);
 }
 .title-content h2 {
   width: 100%;
@@ -29,8 +30,10 @@ body {
   max-width: 450px;
   font-size: 14pt;
   line-height: 30px;
-  background-color: rgb(202, 202, 202);
+  background-color: #173a5e;
+  border: 1px solid var(--colors-border);
   border-radius: 5px;
+  color: white;
 }
 .title-content__description {
   height: auto;
@@ -39,7 +42,9 @@ body {
   padding: 10px;
   border-radius: 5px;
   margin: 10px 15px 10px;
-  background-color: rgb(211, 211, 211);
+  background-color: #173a5e;
+  border: 1px solid var(--colors-border);
+  color: white;
 }
 @media (max-width: 767px) {
   * {

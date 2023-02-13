@@ -7,7 +7,7 @@
   height: auto;
   display: flex;
   flex-wrap: wrap;
-  color: black;
+  color: var(--colors-text);
 }
 .filter__items {
   list-style: none;
@@ -30,6 +30,7 @@
 }
 .filter__item-genre {
   background-color: #173a5e;
+  border: 1px solid var(--colors-border);
   color: white;
   width: 200px;
   height: 30px;
@@ -51,10 +52,12 @@ chekbox {
 .sort__block {
   width: 200px;
   height: 110px;
+  color: var(--colors-text);
 }
 
 .sort__item-genre {
   background-color: #173a5e;
+  border: 1px solid var(--colors-border);
   color: white;
   width: 200px;
   height: 30px;
