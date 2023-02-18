@@ -2,10 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { SiShikimori } from "react-icons/si";
 import { HiOutlineMoon, HiMoon } from "react-icons/hi";
-import styled from "styled-components";
 
 import "./header.css";
-import { height } from "@mui/system";
 
 function Header(props) {
   const [isOpen, setIsOpen] = useState();
