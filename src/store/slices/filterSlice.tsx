@@ -1,10 +1,16 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-type initialStateType = {
+export type initialStateType = {
   loading: boolean;
   hasErrors: boolean;
   anime: Array<string>;
   manga: Array<string>;
+};
+
+export type paramsType = {
+  page: any;
+  filter: any;
+  sortType: any;
 };
 
 const initialState: initialStateType = {

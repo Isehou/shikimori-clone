@@ -39,7 +39,7 @@ export const animeSelector = (state) => state.animes;
 
 export const fetchingAnimes = createAsyncThunk(
   "animes/fetchingAnimes",
-  ({ page, filter, sortType }, { rejectWithValue }) => {
+  ({ page, filter, sortType }: any, { rejectWithValue }) => {
     return fetch(
       `https://shikimori.one/api/animes?&order=popularity&limit=30&page=${page}&genre=${filter.join()}&order=${sortType}`
     ).then((res) => res.json());

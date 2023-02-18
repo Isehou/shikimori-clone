@@ -39,7 +39,7 @@ export const mangaSelector = (state) => state.manga;
 
 export const fetchingManga = createAsyncThunk(
   "manga/fetchManga",
-  ({ page, filter, sortType }, { rejectWithValue }) => {
+  ({ page, filter, sortType }: any, { rejectWithValue }) => {
     return fetch(
       `https://shikimori.one/api/mangas?&limit=30&page=${page}&genre=${filter.join()}&order=${sortType}`
     ).then((res) => res.json());
