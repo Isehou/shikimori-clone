@@ -1,4 +1,5 @@
 {
+  "homepage": "https://isehou.github.io/shikimori-clone",
   "name": "shikimori-clone",
   "version": "0.1.0",
   "private": true,
@@ -27,6 +28,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -52,6 +55,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.12",
-    "postcss": "^8.4.16"
+    "postcss": "^8.4.16",
+    "typescript": "^5.1.3"
   }
 }
