@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/shikimori-clone/static/css/main.ac5a380d.css",
+    "main.js": "/shikimori-clone/static/js/main.f907eb26.js",
+    "static/media/onepiece-2.jpg": "/shikimori-clone/static/media/onepiece-2.7b89bada6495ffb001eb.jpg",
+    "static/media/api.jpg": "/shikimori-clone/static/media/api.bde9e3838c523d916152.jpg",
+    "index.html": "/shikimori-clone/index.html",
+    "main.ac5a380d.css.map": "/shikimori-clone/static/css/main.ac5a380d.css.map",
+    "main.f907eb26.js.map": "/shikimori-clone/static/js/main.f907eb26.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ac5a380d.css",
+    "static/js/main.f907eb26.js"
+  ]
+}
