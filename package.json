@@ -1,5 +1,5 @@
 {
-  "homepage": "https://isehou.github.io/shikimori-clone",
+  "homepage": ".",
   "name": "shikimori-clone",
   "version": "0.1.0",
   "private": true,
@@ -55,6 +55,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.12",
+    "gh-pages": "^5.0.0",
     "postcss": "^8.4.16",
     "typescript": "^5.1.3"
   }
