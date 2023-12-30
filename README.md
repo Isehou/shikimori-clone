@@ -45,4 +45,4 @@
 
 <h2>Демо</h2>
 
-isehou.github.io/shikimori-clone/
+https://isehou.github.io/shikimori-clone/
